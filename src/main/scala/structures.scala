@@ -1,6 +1,6 @@
 package edu.luc.cs.cs372.team2.shapeAlgebraic
 
-import scalaz.Functor
+import scalaz.{ Equal, Functor, Show }
 import scalamu._ // algebra types and injected cata method
 
 /*
@@ -9,7 +9,6 @@ import scalamu._ // algebra types and injected cata method
  */
 
 object structures {
-
   /**
    * Endofunctor for (nongeneric) F-algebra in the category Scala types.
    * Note that `A` is not a generic item type of the resulting algebraic
@@ -36,12 +35,15 @@ object structures {
       case Group(s)  => Group (f(s))
     }
   }
-
   /**
    * Least fixpoint of `ShapeF` as carrier object for the initial algebra.
    */
   type Shape = µ[ShapeF]
 
+  /* for equal in test later */
+  implicit def ShapeFEqual[A]: Equal[ShapeF[A]] = Equal.equalA
+  implicit def ExprFShow[A]: Show[ShapeF[A]] = Show.showFromToString
+  implicit val ShapeFEqual: Equal[ShapeF] = Equal.equalA
   /**
    * Factory for creating Shape instances.
    */
