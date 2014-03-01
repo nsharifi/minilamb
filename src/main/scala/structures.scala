@@ -13,8 +13,8 @@ object structures {
   /**
    * Endofunctor for (nongeneric) F-algebra in the category Scala types.
    * Note that `A` is not a generic item type of the resulting algebraic
-   * data type. As can be seen below, once we form `Expr` as the least
-   * fixpoint of `ExprF`, `A` will go away.
+   * data type. As can be seen below, once we form `Shape` as the least
+   * fixpoint of `ShapeF`, `A` will go away.
    *
    * @tparam A argument of the endofunctor
    */
@@ -25,7 +25,7 @@ object structures {
   case class Group[A](children: A*) extends ShapeF[A]
 
   /**
-   * Implicit value for declaring `ExprF` as an instance of
+   * Implicit value for declaring `ShapeF` as an instance of
    * typeclass `Functor` in scalaz.
    */
   implicit object ShapeFunctor extends Functor[ShapeF] {
@@ -33,7 +33,7 @@ object structures {
       case Ellipse(a, b) => Ellipse(a, b)
       case Rectangle(w, h)   => Rectangle(w, h)
       case Location(x, y, s)  => Location (x, y, f(s))
-      case Group(s)  => Group (f(s))
+      case Group(s @_*)  => Group(s.map(f(_)): _*) // Group (f(s))
     }
   }
 
@@ -49,6 +49,11 @@ object structures {
     def ellipse(a: Int, b: Int): Shape = In(Ellipse(a, b))
     def rectangle(width: Int, height: Int): Shape = In(Rectangle(width, height))
     def location(x: Int, y: Int, shape: Shape): Shape = In(Location(x, y, shape))
-    def group(s: Shape): Shape = In(Group(s))
+    def group(s: Shape*): Shape = In(Group(s: _*))
+//      s.map( e => {
+//      case Ellipse(a, b) => In(Ellipse(a, b))
+//      case Rectangle(w, h) => In(Rectangle(w, h))
+//      case Location(x, y, s1) => In(Location(x, y, s1))
+//    })
   }
 }
