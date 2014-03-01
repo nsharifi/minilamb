@@ -41,9 +41,10 @@ object structures {
   type Shape = µ[ShapeF]
 
   /* for equal in behaviorTests later */
- // implicit def ShapeFEqual[A]: Equal[ShapeF[A]] = Equal.equalA
-  //implicit def ShapeFShow[A]: Show[ShapeF[A]] = Show.showFromToString
-  //implicit val ShapeFEqual: Equal[ShapeF] = Equal.equalA
+  implicit def ShapeFEqual[A]: Equal[ShapeF[A]] = Equal.equalA
+  implicit def ShapeFShow[A]: Show[ShapeF[A]] = Show.showFromToString
+  implicit val ShapeEqual: Equal[Shape] = Equal.equalA
+  implicit val ShapeShow: Show[Shape] = Show.showFromToString
 
   /**
    * Factory for creating Shape instances.

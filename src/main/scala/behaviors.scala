@@ -33,8 +33,31 @@ object behaviors {
     case Group(s @_*)      => In(Group(s: _*))
   }
 
-//  val boundingBox: Algebra[ShapeF, Rectangle]  = {
-//    case Rectangle(_, _) => Location(0, 0, )
-//
+//  val boundingBox: Algebra[ShapeF, Location]  = {
+//    case Rectangle(w, h) => Location(0, 0, Rectangle(w, h))
+//    case Ellipse(a, b) => Location(-a, -b, Rectangle(2*a, 2*b))
+//    case Location(x, y, s) => {
+//      val b = s
+//      Location(x+b.x, y+b.x, b.shape)
+//    }
+//    case Group(s @_*) => {
+//      s.reduceLeft((r, e) => {
+//        val r1 = r.shape.asInstanceOf[Rectangle]
+//        val r2 = e.shape.asInstanceOf[Rectangle]
+//        val width = getMax(r.x, r.x+r1.width, e.x, e.x+r2.width) - getMin(r.x, r.x+r1.width, e.x, e.x+r2.width)
+//        val height = getMax(r.y, r.y+r1.height, e.y, e.y+r2.height) - getMin(r.y, r.y+r1.height, e.y, e.y+r2.height)
+//        Location(r.x.min(e.x), r.y.min(e.y), Rectangle(
+//          width,
+//          height))
+//      })
+//    }
 //  }
+
+  def getMax(nums: Int*): Int = {
+    nums.max
+  }
+  def getMin(nums: Int*): Int = {
+    nums.min
+  }
+
 }
