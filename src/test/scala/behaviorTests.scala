@@ -10,8 +10,7 @@ class behaviorTests extends FunSuite {
   import behaviors._
 
   test("size works") { fixtures.Ellipse cata size assert_=== 1  }
-  /*  If you add Equal and Show instances for your ShapeF and Shape, you will be able to use
-  assert_===   like in "equality works" here        */
-
+  /*  If you add Equal and Show instances for your ShapeF and Shape, you
+   will be able to use assert_===   like in "equality works" here        */
 
 }

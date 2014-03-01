@@ -7,7 +7,7 @@ you to process one shape at a time. How would you compare such a foldRight with 
 
 Catamorphism takes a simple algebra and creates a recursive evaluator for a nested data structure (the fix point
 of the functor in question). This is a generalization of list folding to arbitrary recursive data structures.
-Cata is the short terminology of catamorphism. One such example is http://slid.es/davidtan/deck--5?token=6wSLsqqBZydzxUHp1oa8utkkuUEr.
+Cata is the short terminology of catamorphism. One such example is http://slid.es/davidtan/catamorphism?token=6wSLsqqBZydzxUHp1oa8utkkuUEr.
 
 You should see the obvious parallels between the definition of the algSum algebra and the two arguments to foldr.
 The difference is that the algebraic approach can be generalized beyond lists to any recursive data structure.
