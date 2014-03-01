@@ -1,7 +1,6 @@
 
 
 
-
 Consider a foldRight function over your shape tree that would flatten the tree using some traversal order and allow
 you to process one shape at a time. How would you compare such a foldRight with cata?
 
