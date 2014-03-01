@@ -25,4 +25,11 @@ object behaviors {
     //case Group(_, _, s @_*) => math.max(s.)
      case Group(s @_*) => 1 + s.max
   }
+
+  def scale: Algebra[ShapeF, Int] = {
+    case Rectangle(_, _) => Rectangle(_,_)
+    case Ellipse(_, _) => 1
+    case Location(_,_,s) => Location(factor*x, factor*y, scale(s, f))
+    case Group(s @ _*) =>  Group(s.map(scale(_, f)):_*)
+  }
 }
