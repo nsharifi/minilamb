@@ -3,8 +3,5 @@ import org.scalatest.FunSuite
 
 import behaviors._
 import fixtures._
-object Main extends App {
 
-  println("test = ")
-
-}
+object Main extends App {  println("test = ")}
