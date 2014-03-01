@@ -1,4 +1,3 @@
-<<<<<<< local
 package edu.luc.cs.cs372.team2.shapeAlgebraic
 
 import structures.ShapeFactory._
@@ -32,15 +31,4 @@ object fixtures {
           )),
         rectangle(100, 200)
       ))
-}=======
-
-package edu.luc.cs.cs372.team2.shapeAlgebraic
-
-import structures.ShapeFactory._
-
-object fixtures {
-
-  val simpleEllipse = Ellipse(50, 30)
-
 }
->>>>>>> other

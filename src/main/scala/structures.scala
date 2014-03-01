@@ -53,10 +53,5 @@ object structures {
     def rectangle(width: Int, height: Int): Shape = In(Rectangle(width, height))
     def location(x: Int, y: Int, shape: Shape): Shape = In(Location(x, y, shape))
     def group(s: Shape*): Shape = In(Group(s: _*))
-//      s.map( e => {
-//      case Ellipse(a, b) => In(Ellipse(a, b))
-//      case Rectangle(w, h) => In(Rectangle(w, h))
-//      case Location(x, y, s1) => In(Location(x, y, s1))
-//    })
   }
 }
