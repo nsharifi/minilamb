@@ -8,11 +8,14 @@ class behaviorTests extends FunSuite {
 
   import scalamu.ToMuOps
   import behaviors._
+  import structures._
 
-//  test("boundingBox works") {
-//    fixtures.simpleEllipse cata boundingBox assert_===
-//    fixtures.basicGroup cata boundingBox assert_=== 0
-//  }
+  test("boundingBox works") {
+    fixtures.simpleEllipse cata boundingBox assert_=== Location(-50, -30, Rectangle(100, 60))
+    fixtures.basicGroup cata boundingBox assert_=== Location(-50, -30, Rectangle(100, 70))
+    fixtures.simpleGroup cata boundingBox assert_=== Location(150, 70, Rectangle(350, 280))
+    fixtures.complexGroup cata boundingBox assert_=== Location(30, 60, Rectangle(470, 320))
+  }
 
   test("size works") {
     fixtures.simpleEllipse cata size assert_=== 1
