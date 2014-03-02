@@ -33,9 +33,9 @@ object behaviors {
     case Group(s @_*)      => In(Group(s: _*))
   }
 
-  val boundingBox: Algebra[ShapeF, Location]  = {
-    case Rectangle(w, h) => Location(0, 0, Rectangle(w, h))
-    case Ellipse(a, b) => Location(-a, -b, Rectangle(2*a, 2*b))
+  val boundingBox: Algebra[ShapeF, Location[Shape]]  = {
+    case Rectangle(w, h) => Location(0, 0, In(Rectangle(w, h)))
+    case Ellipse(a, b) => Location(-a, -b, In(Rectangle(2*a, 2*b)))
     case Location(x, y, s) => {
       val b = s
       Location(x+b.x, y+b.x, b.shape)
@@ -46,9 +46,7 @@ object behaviors {
         val r2 = e.shape.asInstanceOf[Rectangle]
         val width = getMax(r.x, r.x+r1.width, e.x, e.x+r2.width) - getMin(r.x, r.x+r1.width, e.x, e.x+r2.width)
         val height = getMax(r.y, r.y+r1.height, e.y, e.y+r2.height) - getMin(r.y, r.y+r1.height, e.y, e.y+r2.height)
-        Location(r.x.min(e.x), r.y.min(e.y), Rectangle(
-          width,
-          height))
+        Location(r.x.min(e.x), r.y.min(e.y), In(Rectangle( width, height)))
       })
     }
   }
