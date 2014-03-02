@@ -31,7 +31,7 @@ object behaviors {
                                  Rectangle(s.asInstanceOf[Rectangle].width*fctr,
                                     s.asInstanceOf[Rectangle].height*fctr))))
     case Group(s @_*)      => In(Group(s: _*))
-  }
+  } /* no error*/
 
 //  val boundingBox: Algebra[ShapeF, Location]  = {
 //    case Rectangle(w, h) => Location(0, 0, Rectangle(w, h))

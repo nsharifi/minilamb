@@ -40,7 +40,7 @@ object structures {
    */
   type Shape = µ[ShapeF]
 
-  /* for equal in behaviorTests later */
+  /* for assert_===  in behaviorTests later */
   implicit def ShapeFEqual[A]: Equal[ShapeF[A]] = Equal.equalA
   implicit def ShapeFShow[A]: Show[ShapeF[A]] = Show.showFromToString
   implicit val ShapeEqual: Equal[Shape] = Equal.equalA
@@ -50,7 +50,7 @@ object structures {
    * Factory for creating Shape instances.
    */
   object ShapeFactory {
-    def ellipse(a: Int, b: Int): Shape = In(Ellipse(a, b))
+    def ellipse(a: Int, b: Int): Shape = In(Ellipse(a, b))/* no error awaiting upgrades from Scalaz*/
     def rectangle(width: Int, height: Int): Shape = In(Rectangle(width, height))
     def location(x: Int, y: Int, shape: Shape): Shape = In(Location(x, y, shape))
     def group(s: Shape*): Shape = In(Group(s: _*))
