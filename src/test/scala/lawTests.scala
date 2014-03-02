@@ -4,7 +4,7 @@ import org.scalatest.FunSuite
 import scalaz.syntax.equal._
 import scalaz.std.anyVal._
 import scalamu._
-
+/* this is an exploratory test learning in progress..NOT required for project2b*/
 class lawTests extends FunSuite {
 
   import structures._
@@ -27,7 +27,7 @@ class lawTests extends FunSuite {
 //      a map { a => (Plus(a, a): ExprF[A]) }
 //
 //    // TODO figure out how to integrate these checks better with ScalaTest
-//    //      so that the test fails if one of the checks does
+//    //  so that the test fails if one of the checks does
 //    equal.laws[ExprF[Int]].check
 //    functor.laws[ExprF].check
 //  }
