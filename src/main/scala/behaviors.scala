@@ -41,7 +41,7 @@ object behaviors {
       Location(x+b.x, y+b.x, b.shape)
     }
     case Group(s @_*) => {
-      s.reduceLeft((r, e) => { // Map the bounding box for everyone
+      s.reduceLeft((r, e) => {
         val r1 = r.shape
         val r2 = e.shape
         val width = getMax(r.x, r.x+r1.width, e.x, e.x+r2.width) - getMin(r.x, r.x+r1.width, e.x, e.x+r2.width)
