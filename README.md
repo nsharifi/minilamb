@@ -2,10 +2,11 @@
 Upon completion of this project, we compared Projects 2a and 2b. The following is the result of this comparison.
 
 <table>
-<tr>
-<td>Attribute</td><td>Poject2a</td><td>Project2b</td>
-</tr>
+    <tr>
+        <td>Foo</td>
+    </tr>
 </table>
+
 
 |-------------------|----------------------------------|
 | Modifiability     |More stringent approach. Needs rewrite     | The shapeF factory permits such  feacture to build on top of the existing system |
