@@ -31,6 +31,15 @@ class behaviorTests extends FunSuite {
   testBoundingBox("simple group", simpleGroup cata boundingBox, 150, 50, 350, 300)
   testBoundingBox("complex group", complexGroup cata boundingBox, 30, 80, 470, 300)
 
+  /*scale*/
+  def testScale1(desc: String, s : Shape, h: Int) {
+    test(desc){
+      val expectedShape = s.asInstanceOf[Rectangle]
+      //assert(h === expectedShape.height)
+    }
+  }
+  //testScale1("simpleRectangle scale", simpleRectangle cata scale(3),240)
+
   test("size works") {
     simpleEllipse cata size assert_=== 1
     simpleLocation cata size assert_=== 1
@@ -47,15 +56,5 @@ class behaviorTests extends FunSuite {
     complexGroup cata depth assert_=== 6
   }
 
-  test("scale works") {
-    //fixtures.simpleRectangle cata scale(1)  assert_=== Rectangle(80,120)
-  }
-  /* to set up test for scale */
-  def testScale1(description: String, factor: Int) = {
 
-    val expectedShape = Ellipse(150,90)
-    //val actualShape = scale(simpleEllipse, factor).asInstanceOf[Ellipse]
-    //assert(actualShape.a === expectedShape.a)
-    //assert(actualShape.halfHeight === expectedShape.halfHeight)
-  }
 }
