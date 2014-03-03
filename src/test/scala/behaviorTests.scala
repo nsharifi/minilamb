@@ -14,7 +14,6 @@ class behaviorTests extends FunSuite {
   import behaviors._
   import structures._
 
-<<<<<<< local
   def testBoundingBox(desc: String, l: Location[Rectangle], x: Int, y: Int, width: Int, height: Int) {
     test(desc) {
       val r = l.shape
@@ -23,13 +22,7 @@ class behaviorTests extends FunSuite {
       assert(width == r.width)
       assert(height == r.height)
     }
-=======
-  test("boundingBox works") {
-    //fixtures.simpleEllipse cata boundingBox assert_===Location(-50,30,Rectangle(100,60))
-    //fixtures.basicGroup cata boundingBox assert_=== 0
->>>>>>> other
   }
-<<<<<<< local
   import fixtures._
   testBoundingBox("simple ellipse works", simpleEllipse cata boundingBox, -50, -30, 100, 60)
   testBoundingBox("simple rectangle", simpleRectangle cata boundingBox, 0, 0, 80, 120)
@@ -37,9 +30,6 @@ class behaviorTests extends FunSuite {
   testBoundingBox("basic group", basicGroup cata boundingBox, -50, -30, 100, 70)
   testBoundingBox("simple group", simpleGroup cata boundingBox, 150, 50, 350, 300)
   testBoundingBox("complex group", complexGroup cata boundingBox, 30, 80, 470, 300)
-
-=======
->>>>>>> other
 
   test("size works") {
     simpleEllipse cata size assert_=== 1
@@ -58,7 +48,7 @@ class behaviorTests extends FunSuite {
   }
 
   test("scale works") {
-    fixtures.simpleRectangle cata scale(1)  assert_=== Rectangle(80,120)
+    //fixtures.simpleRectangle cata scale(1)  assert_=== Rectangle(80,120)
   }
   /* to set up test for scale */
   def testScale1(description: String, factor: Int) = {
