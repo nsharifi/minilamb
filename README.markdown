@@ -1,14 +1,14 @@
 ## Comparison with Project2a
 Upon completion of this project, we compared Projects 2a and 2b. The following is the result of this comparison.
-|Attribute         |Poject2a             | Project2b |
--------------------------------------------------------
-Modifiability   |More stringent approach. Needs rewrite     |The shapeF factory permits such  feacture to build on top of the existing system |
-Integrability   |   |The cata is an example that it can be easily integrated to the systems |
-Portability     |   |Once the shapeF factory is established user can re-import these functions and use them |
-Performance     |   |With respect to this, the codes have been shorten and certainly enhanced its performance |
-Reliability     |   |Indeed, it took lesser amount of line of codes to once the shapeF factory is established |
-Reusability     |   |Again codes can be re-used for the different roles |
-Scalability     |   |TBD |
+| Attribute         | Poject2a             | Project2b |
+|-------------------|----------------------------------|
+| Modifiability     |More stringent approach. Needs rewrite     | The shapeF factory permits such  feacture to build on top of the existing system |
+| Integrability     |   | The cata is an example that it can be easily integrated to the systems |
+| Portability       |   | Once the shapeF factory is established user can re-import these functions and use them |
+| Performance       |   | With respect to this, the codes have been shorten and certainly enhanced its performance |
+| Reliability       |   | Indeed, it took lesser amount of line of codes to once the shapeF factory is established |
+| Reusability       |   | Again codes can be re-used for the different roles |
+| Scalability       |   | TBD |
 
 ## FoldRight
 
