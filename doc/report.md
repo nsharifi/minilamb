@@ -11,6 +11,8 @@ Upon completion of this project, we compared Projects 2a and 2b. The following i
 | Reusability       |  Here the the shape abstraction are avialable for reuse. We need to implement behaviors explicitly using recursion | Here the nature of our data structure (recursion) is embedded into the ShapeF functor and is available for reuse |
 
 ## FoldRight
-Catamorphism (“cata”) provides a simple route to designing fold-like functions on other algebraic data structures, like various sorts of trees.
+Catamorphism (“cata”) provides a simple route to designing fold-like functions on other algebraic data structures, like various sorts of trees. It takes a simple algebraic function and creates a recursive evaluator for a nested data structure (the fix point of the functor in question). This is a generalization of list folding to arbitrary recursive data structures. As shown in Figure 1.1 catamorphism [1], cata is a generalized foldRight function.
+
+
 ## Conclusion
 As shown from the above table, for a simple project, the method used in Project2a is ample in functionality. However, with regards to a extensive architectured structure, Project 2b has the attributes to go on full scale. The example of cata fully demonstrates the robustness of Project 2b.
