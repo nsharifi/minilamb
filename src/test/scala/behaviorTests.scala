@@ -45,4 +45,8 @@ class behaviorTests extends FunSuite {
     simpleGroup cata depth assert_=== 3
     complexGroup cata depth assert_=== 6
   }
+
+  test("scale works") {
+    fixtures.simpleRectangle cata scale(1)  assert_=== Rectangle(80,120)
+  }
 }
