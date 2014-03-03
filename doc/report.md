@@ -8,10 +8,10 @@ Upon completion of this project, we compared Projects 2a and 2b. The following i
 | Portability       | Doesn't depend on other libraries and can be run with Scala standard library  | Depends on Scalamu and Scalaz. Once the shapeF factory is established user can re-import these functions and use them |
 | Performance       | For complex computations we have to make explicit recursive calls on shape tree hierarchies which is inefficient sometimes.  | Our ShapeF is a functor. The functor composition law makes complex computations more efficient by combining such computations |
 | Reliability       |  It is error-prone since the implementations is not cohesive. For every type of operation and shape we have to implement behaviors recursively. | Once we have a correct implementation of the Algebra in place. More expressive code and hence less error-prone, e.g using the cata |
-| Reusability       |  Here the the shape abstraction are avialable for reuse. We need to implement behaviors explicitly using recursion | Here the nature of our data structure (recursion) is embedded into the ShapeF functor and is available for reuse |
+| Reusability       |  Here the the shape abstraction are available for reuse. We need to implement behaviors explicitly using recursion | Here the nature of our data structure (recursion) is embedded into the ShapeF functor and is available for reuse |
 
 ## FoldRight
-Catamorphism (“cata”) provides a simple route to designing fold-like functions on other algebraic data structures, like various sorts of trees. It takes a simple algebraic function and creates a recursive evaluator for a nested data structure (the fix point of the functor in question). This is a generalization of list folding to arbitrary recursive data structures. As shown in Figure 1.1 catamorphism [1], cata is a generalized foldRight function.
+Catamorphism (“cata”) provides a simple route to designing fold-like functions on other algebraic data structures, like various sorts of trees. It takes a simple algebraic function and creates a recursive evaluator for a nested data structure (the fix point of the functor in question). This is a generalization of list folding to arbitrary recursive data structures. As shown in Figure 1.1 [catamorphism](http://slid.es/davidtan/catamorphism?token=6wSLsqqBZydzxUHp1oa8utkkuUEr) [1], cata is a generalized foldRight function.
 
 
 ## Conclusion
