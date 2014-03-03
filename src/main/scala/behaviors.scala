@@ -33,29 +33,25 @@ object behaviors {
     case Group(s @_*)      => In(Group(s: _*))
   }
 
-  val boundingBox: Algebra[ShapeF, Location[Shape]]  = {
-    case Rectangle(w, h) => Location(0, 0, In(Rectangle(w, h)))
-    case Ellipse(a, b) => Location(-a, -b, In(Rectangle(2*a, 2*b)))
+  val boundingBox: Algebra[ShapeF, Location[Rectangle]]  = {
+    case Rectangle(w, h) => Location(0, 0, Rectangle(w, h))
+    case Ellipse(a, b) => Location(-a, -b, Rectangle(2*a, 2*b))
     case Location(x, y, s) => {
       val b = s
       Location(x+b.x, y+b.x, b.shape)
     }
     case Group(s @_*) => {
-      s.reduceLeft((r, e) => {
-        val r1 = r.shape.asInstanceOf[Rectangle]
-        val r2 = e.shape.asInstanceOf[Rectangle]
+      s.reduceLeft((r, e) => { // Map the bounding box for everyone
+        val r1 = r.shape
+        val r2 = e.shape
         val width = getMax(r.x, r.x+r1.width, e.x, e.x+r2.width) - getMin(r.x, r.x+r1.width, e.x, e.x+r2.width)
         val height = getMax(r.y, r.y+r1.height, e.y, e.y+r2.height) - getMin(r.y, r.y+r1.height, e.y, e.y+r2.height)
-        Location(r.x.min(e.x), r.y.min(e.y), In(Rectangle( width, height)))
+        Location(r.x.min(e.x), r.y.min(e.y), Rectangle(width, height))
       })
     }
   }
 
-  def getMax(nums: Int*): Int = {
-    nums.max
-  }
-  def getMin(nums: Int*): Int = {
-    nums.min
-  }
+  def getMax(nums: Int*): Int = { nums.max }
+  def getMin(nums: Int*): Int = { nums.min }
 
 }
