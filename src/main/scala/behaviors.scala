@@ -25,26 +25,28 @@ object behaviors {
   def scale(fctr: Int): Algebra[ShapeF, Shape] = {
     case Rectangle(w, h)   => In(Rectangle(w*fctr, h*fctr))
     case Ellipse(a, b)     => In(Ellipse(a*fctr, b*fctr))
-    case Location(x, y, s) => In(Location(x*fctr, y*fctr,In(
-      Rectangle(s.asInstanceOf[Rectangle].width*fctr,
-        s.asInstanceOf[Rectangle].height*fctr))))
+    case Location(x, y, s) => {
+      In(Location(x * fctr, y * fctr, s))
+  }
     case Group(s @_*)      => In(Group(s: _*))
   }
 
-  val boundingBox: Algebra[ShapeF, Location[Rectangle]]  = {
-    case Rectangle(w, h) => Location(0, 0, Rectangle(w, h))
-    case Ellipse(a, b) => Location(-a, -b, Rectangle(2*a, 2*b))
+  val boundingBox: Algebra[ShapeF, Shape]  = {
+    case Rectangle(w, h) => In(Location(0, 0, In(Rectangle(w, h))))
+    case Ellipse(a, b) => In(Location(-a, -b, In(Rectangle(2*a, 2*b))))
     case Location(x, y, s) => {
-      val b = s
-      Location(x+b.x, y+b.x, b.shape)
+      val b = s match { case In(Location(x_, y_, s_)) => Location(x_, y_, s_)}
+      In(Location(x+b.x, y+b.x, In(b.shape.out)))
     }
     case Group(s @_*) => {
-      s.reduceLeft((r, e) => { // Map the bounding box for everyone
-      val r1 = r.shape
-        val r2 = e.shape
+      s.reduceLeft((r_, e_) => {
+        val r = r_ match { case In(Location(x_, y_, s_)) => Location(x_, y_, s_) }
+        val e = e_ match { case In(Location(x_, y_, s_)) => Location(x_, y_, s_) }
+        val r1 = r.shape match { case In(Rectangle(w_, h_)) => Rectangle(w_, h_) }
+        val r2 = e.shape match { case In(Rectangle(w_, h_)) => Rectangle(w_, h_) }
         val width = getMax(r.x, r.x+r1.width, e.x, e.x+r2.width) - getMin(r.x, r.x+r1.width, e.x, e.x+r2.width)
         val height = getMax(r.y, r.y+r1.height, e.y, e.y+r2.height) - getMin(r.y, r.y+r1.height, e.y, e.y+r2.height)
-        Location(r.x.min(e.x), r.y.min(e.y), Rectangle(width, height))
+        In(Location(r.x.min(e.x), r.y.min(e.y), In(Rectangle(width, height))))
       })
     }
   }

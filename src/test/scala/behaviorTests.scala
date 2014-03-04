@@ -1,10 +1,8 @@
 package edu.luc.cs.cs372.team2.shapeAlgebraic
 
-import edu.luc.cs.cs372.team2.shapeAlgebraic.structures.Ellipse
 import org.scalatest.FunSuite
 import scalaz.syntax.equal._
 import scalaz.std.anyVal._ // for assert_=== to work on Int
-import fixtures._
 
 
 class behaviorTests extends FunSuite {
@@ -14,31 +12,27 @@ class behaviorTests extends FunSuite {
   import behaviors._
   import structures._
 
-  def testBoundingBox(desc: String, l: Location[Rectangle], x: Int, y: Int, width: Int, height: Int) {
-    test(desc) {
-      val r = l.shape
-      assert(x == l.x)
-      assert(y == l.y)
-      assert(width == r.width)
-      assert(height == r.height)
-    }
-  }
   import fixtures._
-  testBoundingBox("simple ellipse works", simpleEllipse cata boundingBox, -50, -30, 100, 60)
-  testBoundingBox("simple rectangle", simpleRectangle cata boundingBox, 0, 0, 80, 120)
-  testBoundingBox("simple location", simpleLocation cata boundingBox, 70, 30, 80, 120)
-  testBoundingBox("basic group", basicGroup cata boundingBox, -50, -30, 100, 70)
-  testBoundingBox("simple group", simpleGroup cata boundingBox, 150, 50, 350, 300)
-  testBoundingBox("complex group", complexGroup cata boundingBox, 30, 80, 470, 300)
 
-  /*scale*/
-  def testScale1(desc: String, s : Shape, h: Int) {
-    test(desc){
-      val expectedShape = s.asInstanceOf[Rectangle]
-      //assert(h === expectedShape.height)
-    }
+  test("boundingBox works") {
+    simpleEllipse.cata(boundingBox) assert_=== In(Location(-50, -30, In(Rectangle(100, 60))))
+    simpleRectangle cata boundingBox assert_===  In(Location(0, 0, In(Rectangle(80, 120))))
+    simpleLocation cata boundingBox assert_=== In(Location(70, 30, In(Rectangle(80, 120))))
+    basicGroup cata boundingBox assert_=== In(Location(-50, -30, In(Rectangle(100, 70))))
+    simpleGroup cata boundingBox assert_=== In(Location(150, 50, In(Rectangle(350, 300))))
+    complexGroup cata boundingBox assert_=== In(Location(30, 80, In(Rectangle(470, 300))))
   }
-  //testScale1("simpleRectangle scale", simpleRectangle cata scale(3),240)
+
+  test("scale works") {
+    simpleEllipse cata scale(2) assert_=== In(Ellipse(100, 60))
+    simpleRectangle cata scale(2) assert_=== In(Rectangle(160, 240))
+    simpleLocation cata scale(2) assert_=== In(Location(140, 60, In(Rectangle(160, 240))))
+    basicGroup cata scale(2) assert_=== In(Group(In(Ellipse(100, 60)), In(Rectangle(40, 80))))
+    simpleGroup cata scale(2) assert_=== In(Group(
+      In(Location(400, 200, In(Ellipse(100, 60)))),
+      In(Location(800, 600, In(Rectangle(200, 100))))))
+
+  }
 
   test("size works") {
     simpleEllipse cata size assert_=== 1

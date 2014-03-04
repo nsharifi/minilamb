@@ -32,7 +32,7 @@ object structures {
       case Ellipse(a, b) => Ellipse(a, b)
       case Rectangle(w, h)   => Rectangle(w, h)
       case Location(x, y, s)  => Location (x, y, f(s))
-      case Group(s @_*)  => Group(s.map(f(_)): _*) // Group (f(s))
+      case Group(s @_*)  => Group(s.map(f(_)): _*)
     }
   }
   /**
