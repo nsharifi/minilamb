@@ -70,7 +70,25 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="33" selection-start="0" selection-end="3207" vertical-scroll-proportion="0.212828" vertical-offset="17" max-vertical-offset="360">
+            <state line="20" column="0" selection-start="3339" selection-end="3339" vertical-scroll-proportion="0.8746356" vertical-offset="0" max-vertical-offset="390">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="behaviors.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="30" selection-start="316" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="885">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="behaviorTests.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorTests.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="45" selection-start="1036" selection-end="1059" vertical-scroll-proportion="0.0" vertical-offset="157" max-vertical-offset="795">
               <folding />
             </state>
           </provider>
@@ -86,10 +104,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/doc/report.md" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test/scala/lawTests.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/behaviorTests.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/behaviors.scala" />
+        <option value="$PROJECT_DIR$/doc/report.md" />
       </list>
     </option>
   </component>
@@ -516,12 +536,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="30" selection-start="316" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorTests.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="45" selection-start="1036" selection-end="1059" vertical-scroll-proportion="0.0" vertical-offset="157" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/doc/report.md">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="33" selection-start="0" selection-end="3207" vertical-scroll-proportion="0.212828" vertical-offset="17" max-vertical-offset="360">
+        <state line="20" column="0" selection-start="3339" selection-end="3339" vertical-scroll-proportion="0.8746356" vertical-offset="0" max-vertical-offset="390">
           <folding />
         </state>
       </provider>

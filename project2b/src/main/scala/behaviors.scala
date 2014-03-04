@@ -27,7 +27,7 @@ object behaviors {
     case Ellipse(a, b)     => In(Ellipse(a*fctr, b*fctr))
     case Location(x, y, s) => {
       In(Location(x * fctr, y * fctr, s))
-  }
+    }
     case Group(s @_*)      => In(Group(s: _*))
   }
 

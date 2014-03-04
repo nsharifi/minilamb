@@ -11,8 +11,10 @@ Upon completion of this project, we compared Projects 2a and 2b. The following i
 | Reusability       |  Here the the shape abstraction are available for reuse. We need to implement behaviors explicitly using recursion | Here the nature of our data structure (recursion) is embedded into the ShapeF functor and is available for reuse |
 
 ## FoldRight
-Catamorphism (“cata”) provides a simple route to designing fold-like functions on other algebraic data structures, like various sorts of trees. It takes a simple algebraic function and creates a recursive evaluator for a nested data structure (the fix point of the functor in question). This is a generalization of list folding to arbitrary recursive data structures. As shown in Figure 1.1 [catamorphism](http://slid.es/davidtan/catamorphism?token=6wSLsqqBZydzxUHp1oa8utkkuUEr) [1], cata is a generalized foldRight function.
-With regards to our project, as shown in the test size, depth and bounding box, cata can be easily implemented.
+Catamorphism (“cata”) provides a simple route to designing fold-like functions on other algebraic data structures, like various sorts of trees. It takes a simple algebraic function and creates a recursive evaluator for a nested data structure (the fix point of the functor in question). This is a generalization of list folding to arbitrary recursive data structures. As shown in [This figure](http://slid.es/davidtan/catamorphism?token=6wSLsqqBZydzxUHp1oa8utkkuUEr), cata is a generalized foldRight function.
+
+* cata helps achieve the same goal as that by foldRigth.
+* Even though we have not used cata explicitly in our implementation of size, boundingBox, etc. it may possibly be used since it presents an elementwise representation of our tree, as shown in the tests.
 
 ## Conclusion
-As shown from the above table, for a simple project, the method used in Project2a is ample in functionality. However, with regards to a extensive architectured structure, Project 2b has the attributes to go on full scale. The example of cata fully demonstrates the robustness of Project 2b.
+As shown in the above table, for a simple project, the method used in Project2a is ample in functionality. However, with regards to an extensive architectured structure, Project 2b has the attributes to go on full scale. The example of cata fully demonstrates the robustness of Project2b.
