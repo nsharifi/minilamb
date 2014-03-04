@@ -39,17 +39,11 @@ object behaviors {
       In(Location(x+b.x, y+b.x, In(b.shape.out)))
     }
     case Group(s @_*) => {
-<<<<<<< local
       s.reduceLeft((r_, e_) => {
         val r = r_ match { case In(Location(x_, y_, s_)) => Location(x_, y_, s_) }
         val e = e_ match { case In(Location(x_, y_, s_)) => Location(x_, y_, s_) }
         val r1 = r.shape match { case In(Rectangle(w_, h_)) => Rectangle(w_, h_) }
         val r2 = e.shape match { case In(Rectangle(w_, h_)) => Rectangle(w_, h_) }
-=======
-      s.reduceLeft((r, e) => { /* map the bounding box for everyone */
-      val r1 = r.shape
-        val r2 = e.shape
->>>>>>> other
         val width = getMax(r.x, r.x+r1.width, e.x, e.x+r2.width) - getMin(r.x, r.x+r1.width, e.x, e.x+r2.width)
         val height = getMax(r.y, r.y+r1.height, e.y, e.y+r2.height) - getMin(r.y, r.y+r1.height, e.y, e.y+r2.height)
         In(Location(r.x.min(e.x), r.y.min(e.y), In(Rectangle(width, height))))
