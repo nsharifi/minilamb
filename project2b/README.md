@@ -7,5 +7,6 @@ Dr Konstantin Läufer
 
 Project2b, March 3 2014
 
-[The Repository](https://trello.com/c/eLGw4sBD/32-project-2b "The Repository")
+The repository [lives here](https://trello.com/c/eLGw4sBD/32-project-2b "The Repository")
+
 For [the report](doc/report.md "The report") please refer to doc/report.md
