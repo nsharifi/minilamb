@@ -4,7 +4,7 @@
 		module="project2b$sources_javadoc_2.10"
 		revision="0.1"
 		status="integration"
-		publication="20140319192022"
+		publication="20140322202111"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -28,7 +28,7 @@
 			<artifact name="scalamu_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="scalamu_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.10.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)" info.apiURL="http://www.scala-lang.org/api/2.10.3/">
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="scala-library" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="scala-library" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
