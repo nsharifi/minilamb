@@ -6,7 +6,7 @@
 [debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [compile]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->default(compile)]
 [info] Resolving edu.luc.etl#scalamu_2.10;0.2.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@ccd5f9
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@c1ff4d
 [debug] sbt-chain: module revision found in cache: edu.luc.etl#scalamu_2.10;0.2.1
 [debug] 	local: revision in cache: edu.luc.etl#scalamu_2.10;0.2.1
 [debug] 	found edu.luc.etl#scalamu_2.10;0.2.1 in sbt-chain
@@ -15,7 +15,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.10.3 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1cc7be9
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@14b0347
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3
 [debug] 	local: revision in cache: org.scala-lang#scala-library;2.10.3
 [debug] 	found org.scala-lang#scala-library;2.10.3 in sbt-chain
@@ -24,7 +24,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->default(compile)]
 [info] Resolving org.scalaz#scalaz-core_2.10;7.0.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3cfd5
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@16fbc98
 [debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-core_2.10;7.0.5
 [debug] 	local: revision in cache: org.scalaz#scalaz-core_2.10;7.0.5
 [debug] 	found org.scalaz#scalaz-core_2.10;7.0.5 in sbt-chain
@@ -100,7 +100,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->default(compile)]
 [info] Resolving org.scalatest#scalatest_2.10;2.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@d3da05
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1638f3
 [debug] sbt-chain: module revision found in cache: org.scalatest#scalatest_2.10;2.0
 [debug] 	local: revision in cache: org.scalatest#scalatest_2.10;2.0
 [debug] 	found org.scalatest#scalatest_2.10;2.0 in sbt-chain
@@ -109,7 +109,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->default(compile)]
 [info] Resolving org.scala-lang#scala-reflect;2.10.0 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@154e121
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@939c77
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.0
 [debug] 	local: revision in cache: org.scala-lang#scala-reflect;2.10.0
 [debug] 	found org.scala-lang#scala-reflect;2.10.0 in sbt-chain
@@ -118,7 +118,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->default(compile)]
 [info] Resolving org.scalacheck#scalacheck_2.10;1.10.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1e4546b
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@14b1119
 [debug] sbt-chain: module revision found in cache: org.scalacheck#scalacheck_2.10;1.10.1
 [debug] 	local: revision in cache: org.scalacheck#scalacheck_2.10;1.10.1
 [debug] 	found org.scalacheck#scalacheck_2.10;1.10.1 in sbt-chain
@@ -127,7 +127,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->default(compile)]
 [info] Resolving org.scala-lang#scala-actors;2.10.1 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@c5237d
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1d427f8
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-actors;2.10.1
 [debug] 	local: revision in cache: org.scala-lang#scala-actors;2.10.1
 [debug] 	found org.scala-lang#scala-actors;2.10.1 in sbt-chain
@@ -136,7 +136,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->default(compile)]
 [info] Resolving org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@123bdce
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1cc2c
 [debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5
 [debug] 	local: revision in cache: org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5
 [debug] 	found org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 in sbt-chain
@@ -145,7 +145,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->default(compile)]
 [info] Resolving org.scalaz#scalaz-concurrent_2.10;7.0.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@e0dc97
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1588d8
 [debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-concurrent_2.10;7.0.5
 [debug] 	local: revision in cache: org.scalaz#scalaz-concurrent_2.10;7.0.5
 [debug] 	found org.scalaz#scalaz-concurrent_2.10;7.0.5 in sbt-chain
@@ -154,7 +154,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->default(compile)]
 [info] Resolving org.scalaz#scalaz-effect_2.10;7.0.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2ffe86
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@49af7b
 [debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-effect_2.10;7.0.5
 [debug] 	local: revision in cache: org.scalaz#scalaz-effect_2.10;7.0.5
 [debug] 	found org.scalaz#scalaz-effect_2.10;7.0.5 in sbt-chain
@@ -163,7 +163,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->default(compile)]
 [info] Resolving org.scalaz#scalaz-typelevel_2.10;7.0.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@249cc5
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@adc2bb
 [debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-typelevel_2.10;7.0.5
 [debug] 	local: revision in cache: org.scalaz#scalaz-typelevel_2.10;7.0.5
 [debug] 	found org.scalaz#scalaz-typelevel_2.10;7.0.5 in sbt-chain
@@ -172,7 +172,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->default(compile)]
 [info] Resolving org.scalaz#scalaz-xml_2.10;7.0.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@10b10d5
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1aaec88
 [debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-xml_2.10;7.0.5
 [debug] 	local: revision in cache: org.scalaz#scalaz-xml_2.10;7.0.5
 [debug] 	found org.scalaz#scalaz-xml_2.10;7.0.5 in sbt-chain
@@ -181,7 +181,7 @@
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->master]
 [debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->default(compile)]
 [info] Resolving org.scalaz#scalaz-iteratee_2.10;7.0.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@502066
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@8ee063
 [debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-iteratee_2.10;7.0.5
 [debug] 	local: revision in cache: org.scalaz#scalaz-iteratee_2.10;7.0.5
 [debug] 	found org.scalaz#scalaz-iteratee_2.10;7.0.5 in sbt-chain
@@ -503,7 +503,7 @@
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar(src)
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar(src)
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar(doc)
-[debug] :: resolution report :: resolve 550ms :: artifacts dl 307ms
+[debug] :: resolution report :: resolve 893ms :: artifacts dl 193ms
 [debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 compile produced in C:\Users\David\Desktop\CurentProject,Nov-May2014\Comp471-ProgrammingLanguages\IntelliJ\April2014\Project3a\1a\cs372project3\project3a\target\resolution-cache\reports\project2b-project2b$sources_javadoc_2.10-compile.xml
 [debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 runtime produced in C:\Users\David\Desktop\CurentProject,Nov-May2014\Comp471-ProgrammingLanguages\IntelliJ\April2014\Project3a\1a\cs372project3\project3a\target\resolution-cache\reports\project2b-project2b$sources_javadoc_2.10-runtime.xml
 [debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 test produced in C:\Users\David\Desktop\CurentProject,Nov-May2014\Comp471-ProgrammingLanguages\IntelliJ\April2014\Project3a\1a\cs372project3\project3a\target\resolution-cache\reports\project2b-project2b$sources_javadoc_2.10-test.xml
@@ -517,4 +517,4 @@
 [debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 docs produced in C:\Users\David\Desktop\CurentProject,Nov-May2014\Comp471-ProgrammingLanguages\IntelliJ\April2014\Project3a\1a\cs372project3\project3a\target\resolution-cache\reports\project2b-project2b$sources_javadoc_2.10-docs.xml
 [debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 pom produced in C:\Users\David\Desktop\CurentProject,Nov-May2014\Comp471-ProgrammingLanguages\IntelliJ\April2014\Project3a\1a\cs372project3\project3a\target\resolution-cache\reports\project2b-project2b$sources_javadoc_2.10-pom.xml
 [debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 scala-tool produced in C:\Users\David\Desktop\CurentProject,Nov-May2014\Comp471-ProgrammingLanguages\IntelliJ\April2014\Project3a\1a\cs372project3\project3a\target\resolution-cache\reports\project2b-project2b$sources_javadoc_2.10-scala-tool.xml
-[debug] 	resolve done (550ms resolve - 307ms download)
+[debug] 	resolve done (893ms resolve - 193ms download)
