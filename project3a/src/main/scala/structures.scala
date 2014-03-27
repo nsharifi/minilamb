@@ -25,6 +25,7 @@ object structures {
   case class Times[A](left: A, right: A) extends ExprF[A]
   case class Div[A](left: A, right: A) extends ExprF[A]
   case class Mod[A](left: A, right: A) extends ExprF[A]
+  case class VarIdentity[A](x:A) extends ExprF[A]
 
   /**
    * Implicit value for declaring `ExprF` as an instance of
@@ -40,6 +41,13 @@ object structures {
       case Times(l, r) => Times(f(l), f(r))
       case Div(l, r)   => Div (f(l), f(r))
       case Mod(l, r)   => Mod (f(l), f(r))
+      //case a => f(a) //An anonymous function definition evaluates to itself
+      case VarIdentity(x) => VarIdentity(f(x))  // identity itself
+
+      def fun(a: List[Int]) = a match {
+          case List(0, p, q) => p + q
+          case _  => -1
+        }
     }
   }
 
@@ -73,5 +81,7 @@ object structures {
     def times(l: Expr, r: Expr): Expr = In(Times(l, r))
     def div(l: Expr, r: Expr): Expr = In(Div (l, r))
     def mod(l: Expr, r: Expr): Expr = In(Mod (l, r))
+
+    def varIdentity(x: Expr): Expr = In(VarIdentity(x))
   }
 }

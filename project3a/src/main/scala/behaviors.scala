@@ -19,6 +19,10 @@ object behaviors {
     case Times(l, r) => l * r
     case Div(l, r)   => l / r
     case Mod(l, r)   => l % r
+    case VarIdentity(x) => x
+    case (x) => x
+
+
   }
 
   val evaluate: Algebra[ExprF, Int] = {
