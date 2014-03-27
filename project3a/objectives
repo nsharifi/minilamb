@@ -24,43 +24,52 @@ http://www.csse.monash.edu.au/~lloyd/tildeFP/Lambda/Ch/01.Calc.html
 https://bitbucket.org/lucproglangcourse/expressions-algebraic-scala
 
 
-lambda x . e: anonymous function, that is, a designated formal argument x along with a function body in which x
+    -lambda x . e: anonymous function, that is, a designated formal argument x along with a function body in which x
 occurs zero or more times
-x: variable (presumably occurring in an expression with ancestor that is a lambda expression introducing x as a
+    -x: variable (presumably occurring in an expression with ancestor that is a lambda expression introducing x as a
 formal argument)
-e1 e2: function application, that is, an expression (presumably representing a function) followed by another
+    -e1 e2: function application, that is, an expression (presumably representing a function) followed by another
 expression (presumably representing an actual argument)
-if c then e1 else e2: conditional
-We will worry about concrete syntax (strings that would be parsed into an equivalent abstract syntax tree) in a
+    -if c then e1 else e2: conditional
+
+(#-OUT)-We will worry about concrete syntax (strings that would be parsed into an equivalent abstract syntax tree) in a
 later phase of this project.
 
 Semantics
 The semantic domain (values) is a subdomain of the abstract syntactic domain consisting only of
 
-integer constants
-function closures
+    -integer constants
+    -function closures
 Next, you will define a function for evaluating expressions represented using the abstract syntax defined above
 using call-by-name (normal-order evaluation). This function takes an expression that follows the abstract syntax
 defined above and reduces it to a value from the semantic domain.
 
-To evaluate an arithmetic expression, simply port the Scala example.
-An anonymous function definition evaluates to itself.
-A variable evaluates to itself.
+-To evaluate an arithmetic expression, simply port the Scala example.//TODO done
+-An anonymous function definition evaluates to itself. //TODO done
+-A variable evaluates to itself. //TODO done
+
+(Dig deep)
 A function application is evaluated as follows (this is where the evaluation order is decided):
-The first expression is evaluated. (If it the result is not a function closure, lambda x . b, then there is an error.)
-Beta substitution is performed to substitute the second expression (without evaluating it) for every free occurrence
- of x in b.
-The resulting function body (after the substitution) is evaluated.
+    1.The first expression is evaluated. (If it the result is not a function closure, lambda x . b, then there is an error.)
+    2.Beta substitution is performed to substitute the second expression (without evaluating it) for every free occurrence
+    of x in b.
+    3.The resulting function body (after the substitution) is evaluated.
+
+
 A conditional is evaluated as follows. (Note that it is non-strict in e1 and e2, otherwise it would defeat the purpose.)
-The condition is evaluated.
-If the result the integer constant 0, then the result is the result of evaluating e2.
-Otherwise, if the condition is non-0, the result is the result of evaluating e1.
+
+    1.The condition is evaluated.
+    2.If the result the integer constant 0, then the result is the result of evaluating e2.
+    3.Otherwise, if the condition is non-0, the result is the result of evaluating e1.
+
 If an (unbound) variable occurs in the result of an evaluation, then there is an error.
 
 In particular, you should implement a separate auxiliary function for beta substitution. Then use this function
 in the evaluation of function application.
 
 Examples
+
+eval(Const(3)) -> Const(3)
 eval(Var("x")) -> error
 eval(Fun("x", Plus(Const(7), Var("x"))))
   -> Fun("x", Plus(Const(7), Var("x")))
@@ -76,6 +85,8 @@ eval(App(App(Y, Fun("f", Fun("n", If(Var("n"),
   Times(Var("n"), App(Var("f"), Minus(Var("n"), Const(1)))), Const(1))))),
   Const(5)))
   -> Const(120)
+
+
 
 Nonfunctional requirements
 Start with this example.
