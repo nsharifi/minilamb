@@ -24,3 +24,4 @@ val eval: Algebra[ExprF, Int] = {
   case _ => -1 // if left side not equal to ?? zero
 
 }
+
