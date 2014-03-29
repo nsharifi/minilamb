@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b3266c07-482c-45a0-a2a7-71c616d5756c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/behaviors.scala" afterPath="$PROJECT_DIR$/src/main/scala/behaviors.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xplore2.sc" afterPath="$PROJECT_DIR$/xplore2.sc" />
     </list>
     <ignored path="project3a.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xplore2.sc" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="xplore2.sc" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xplore2.sc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="25" selection-start="1318" selection-end="1318" vertical-scroll-proportion="1.7852029" vertical-offset="0" max-vertical-offset="867">
+            <state line="16" column="20" selection-start="583" selection-end="583" vertical-scroll-proportion="-7.5555553" vertical-offset="0" max-vertical-offset="867">
               <folding />
             </state>
           </provider>
@@ -97,7 +96,7 @@
       <file leaf-file-name="objectives" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/objectives">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="17" selection-start="403" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1955">
+            <state line="60" column="27" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
               <folding />
             </state>
           </provider>
@@ -112,10 +111,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readMe" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="readMe" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readMe">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="391">
+            <state line="17" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.57114625" vertical-offset="0" max-vertical-offset="506">
               <folding />
             </state>
           </provider>
@@ -133,7 +132,6 @@
       <list>
         <option value="$PROJECT_DIR$/project/plugins.sbt" />
         <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/objectives" />
         <option value="$PROJECT_DIR$/readMe" />
         <option value="$PROJECT_DIR$/src/main/scala/Xplore.sc" />
         <option value="$PROJECT_DIR$/src/test/scala/behaviorsTests.scala" />
@@ -144,14 +142,15 @@
         <option value="$PROJECT_DIR$/src/main/scala/xplore.sc" />
         <option value="$PROJECT_DIR$/xplore.sc" />
         <option value="$PROJECT_DIR$/xplore2.sc" />
+        <option value="$PROJECT_DIR$/objectives" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="464" />
+    <option name="x" value="521" />
     <option name="y" value="8" />
-    <option name="width" value="869" />
-    <option name="height" value="645" />
+    <option name="width" value="825" />
+    <option name="height" value="696" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -194,42 +193,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="project3a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project2b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project3a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project2b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project3a" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -526,7 +489,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="464" y="8" width="869" height="645" extended-state="0" />
+    <frame x="521" y="8" width="825" height="696" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -545,7 +508,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25463536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24313726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -655,13 +618,6 @@
         <state line="9" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.29142857" vertical-offset="0" max-vertical-offset="525" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readMe">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="33" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1054">
@@ -676,13 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/objectives">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="403" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1955">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xplore.sc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="0" selection-start="604" selection-end="604" vertical-scroll-proportion="-10.694445" vertical-offset="74" max-vertical-offset="561">
@@ -692,7 +641,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xplore2.sc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="25" selection-start="1318" selection-end="1318" vertical-scroll-proportion="1.7852029" vertical-offset="0" max-vertical-offset="867">
+        <state line="16" column="20" selection-start="583" selection-end="583" vertical-scroll-proportion="-7.5555553" vertical-offset="0" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/objectives">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="27" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readMe">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.57114625" vertical-offset="0" max-vertical-offset="506">
           <folding />
         </state>
       </provider>
