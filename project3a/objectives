@@ -1,0 +1,109 @@
+Project 3a in list Projects and Assignments
+Due Date
+Mar 31 at 11:00 AM
+https://trello.com/c/UOPPvXSe/35-project-3a
+
+Description
+Team project
+Learning objectives
+More advanced Scala
+An understanding of
+algebraic data types as initial F-algebras
+representation of programs as recursive data structures (trees)
+program interpretation (evaluation) as a catamorphism
+Functional requirements
+In this project, you will use Scala to implement an interpreter for a simple call-by-name lambda calculus
+(the computational model underlying functional programming languages such as Haskell). This amounts to an almost
+verbatim implementation of the calculus described here (except that we do not yet have a list type).
+
+Abstract Syntax
+Specifically, you will define an endofunctor that includes the variants for arithmetic expressions along with the
+following functional language constructs:
+
+http://www.csse.monash.edu.au/~lloyd/tildeFP/Lambda/Ch/01.Calc.html
+https://bitbucket.org/lucproglangcourse/expressions-algebraic-scala
+
+
+    -lambda x . e: anonymous function, that is, a designated formal argument x along with a function body in which x
+occurs zero or more times
+    -x: variable (presumably occurring in an expression with ancestor that is a lambda expression introducing x as a
+formal argument)
+    -e1 e2: function application, that is, an expression (presumably representing a function) followed by another
+expression (presumably representing an actual argument)
+    -if c then e1 else e2: conditional
+
+(#-OUT)-We will worry about concrete syntax (strings that would be parsed into an equivalent abstract syntax tree) in a
+later phase of this project.
+
+Semantics
+The semantic domain (values) is a subdomain of the abstract syntactic domain consisting only of
+
+    -integer constants
+    -function closures
+Next, you will define a function for evaluating expressions represented using the abstract syntax defined above
+using call-by-name (normal-order evaluation). This function takes an expression that follows the abstract syntax
+defined above and reduces it to a value from the semantic domain.
+
+-To evaluate an arithmetic expression, simply port the Scala example.//TODO done
+-An anonymous function definition evaluates to itself. //TODO done
+-A variable evaluates to itself. //TODO done
+
+(Dig deep)
+A function application is evaluated as follows (this is where the evaluation order is decided):
+    1.The first expression is evaluated. (If it the result is not a function closure, lambda x . b, then there is an error.)
+    2.Beta substitution is performed to substitute the second expression (without evaluating it) for every free occurrence
+    of x in b.
+    3.The resulting function body (after the substitution) is evaluated.
+
+
+A conditional is evaluated as follows. (Note that it is non-strict in e1 and e2, otherwise it would defeat the purpose.)
+
+    1.The condition is evaluated.
+    2.If the result the integer constant 0, then the result is the result of evaluating e2.
+    3.Otherwise, if the condition is non-0, the result is the result of evaluating e1.
+
+If an (unbound) variable occurs in the result of an evaluation, then there is an error.
+
+In particular, you should implement a separate auxiliary function for beta substitution. Then use this function
+in the evaluation of function application.
+
+Examples
+
+eval(Const(3)) -> Const(3)
+eval(Var("x")) -> error
+eval(Fun("x", Plus(Const(7), Var("x"))))
+  -> Fun("x", Plus(Const(7), Var("x")))
+eval(App(Fun("x", Plus(Const(7), Var("x"))), Const(3)))
+  -> Const(10)
+eval(App(Var("x"), Const(3)) -> error
+eval(If(Const(7), Const(3), Const(4))) -> Const(3)
+eval(If(Const(0), Const(3), Const(4))) -> Const(4)
+eval(If(Fun("x", Var("x")), Const(3), Const(4))) -> Const(3)
+eval(If(Fun("x", Var("y")), Const(3), Const(4))) -> Const(3)
+val Y = // you'll define it yourself as in the handout!
+eval(App(App(Y, Fun("f", Fun("n", If(Var("n"),
+  Times(Var("n"), App(Var("f"), Minus(Var("n"), Const(1)))), Const(1))))),
+  Const(5)))
+  -> Const(120)
+
+
+
+Nonfunctional requirements
+Start with this example.
+Add the additional case classes to the endofunctor.
+Define a suitable F-algebra for evaluation.
+Define eval as a catamorphism using this F-algebra.
+Think about a good way to represent evaluation errors.
+Create a test suite that includes at least the examples above.
+Submission
+Please post to the Facebook group or send email when your project is ready to grade.
+
+Grading criteria
+
+TODO
+What's next
+3b: parser
+3c: addition of cons cells
+3d: type checker
+Additional Reading
+John McCarthy et al, LISP 1.5 Reference Manual, MIT Press, 1962, http://www.softwarepreservation.org/projects/LISP/book/LISP%201.5%20Programmers%20Manual.pdf.
