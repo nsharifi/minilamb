@@ -87,7 +87,6 @@ eval(App(App(Y, Fun("f", Fun("n", If(Var("n"),
   -> Const(120)
 
 
-
 Nonfunctional requirements
 Start with this example.
 Add the additional case classes to the endofunctor.
