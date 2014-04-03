@@ -1,0 +1,521 @@
+[debug] :: resolving dependencies :: project2b#project2b$sources_javadoc_2.10;0.1
+[debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
+[debug] 	validate = true
+[debug] 	refresh = false
+[debug] resolving dependencies for configuration 'compile'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->default(compile)]
+[info] Resolving edu.luc.etl#scalamu_2.10;0.2.1 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1e7bc9d7
+[debug] sbt-chain: module revision found in cache: edu.luc.etl#scalamu_2.10;0.2.1
+[debug] 	local: revision in cache: edu.luc.etl#scalamu_2.10;0.2.1
+[debug] 	found edu.luc.etl#scalamu_2.10;0.2.1 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->default(compile)]
+[info] Resolving org.scala-lang#scala-library;2.10.3 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5f09afb8
+[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3
+[debug] 	local: revision in cache: org.scala-lang#scala-library;2.10.3
+[debug] 	found org.scala-lang#scala-library;2.10.3 in sbt-chain
+[debug] 	[2.10.3] org.scala-lang#scala-library;2.10.3
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->default(compile)]
+[info] Resolving org.scalaz#scalaz-core_2.10;7.0.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6461d2bf
+[debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-core_2.10;7.0.5
+[debug] 	local: revision in cache: org.scalaz#scalaz-core_2.10;7.0.5
+[debug] 	found org.scalaz#scalaz-core_2.10;7.0.5 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->master]
+[debug] resolving dependencies for configuration 'runtime'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [runtime]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->master]
+[debug] resolving dependencies for configuration 'test'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [test]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [runtime]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->default(compile)]
+[info] Resolving org.scalatest#scalatest_2.10;2.0 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@35b1df2e
+[debug] sbt-chain: module revision found in cache: org.scalatest#scalatest_2.10;2.0
+[debug] 	local: revision in cache: org.scalatest#scalatest_2.10;2.0
+[debug] 	found org.scalatest#scalatest_2.10;2.0 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->default(compile)]
+[info] Resolving org.scala-lang#scala-reflect;2.10.0 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@774690fe
+[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.0
+[debug] 	local: revision in cache: org.scala-lang#scala-reflect;2.10.0
+[debug] 	found org.scala-lang#scala-reflect;2.10.0 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->default(compile)]
+[info] Resolving org.scalacheck#scalacheck_2.10;1.10.1 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7ba50406
+[debug] sbt-chain: module revision found in cache: org.scalacheck#scalacheck_2.10;1.10.1
+[debug] 	local: revision in cache: org.scalacheck#scalacheck_2.10;1.10.1
+[debug] 	found org.scalacheck#scalacheck_2.10;1.10.1 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->default(compile)]
+[info] Resolving org.scala-lang#scala-actors;2.10.1 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5eb2059e
+[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-actors;2.10.1
+[debug] 	local: revision in cache: org.scala-lang#scala-actors;2.10.1
+[debug] 	found org.scala-lang#scala-actors;2.10.1 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->default(compile)]
+[info] Resolving org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@161c2721
+[debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5
+[debug] 	local: revision in cache: org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5
+[debug] 	found org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->default(compile)]
+[info] Resolving org.scalaz#scalaz-concurrent_2.10;7.0.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@275d0105
+[debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-concurrent_2.10;7.0.5
+[debug] 	local: revision in cache: org.scalaz#scalaz-concurrent_2.10;7.0.5
+[debug] 	found org.scalaz#scalaz-concurrent_2.10;7.0.5 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->default(compile)]
+[info] Resolving org.scalaz#scalaz-effect_2.10;7.0.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@13e2ca1e
+[debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-effect_2.10;7.0.5
+[debug] 	local: revision in cache: org.scalaz#scalaz-effect_2.10;7.0.5
+[debug] 	found org.scalaz#scalaz-effect_2.10;7.0.5 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->default(compile)]
+[info] Resolving org.scalaz#scalaz-typelevel_2.10;7.0.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@69fc49ef
+[debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-typelevel_2.10;7.0.5
+[debug] 	local: revision in cache: org.scalaz#scalaz-typelevel_2.10;7.0.5
+[debug] 	found org.scalaz#scalaz-typelevel_2.10;7.0.5 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->default(compile)]
+[info] Resolving org.scalaz#scalaz-xml_2.10;7.0.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@62d962c
+[debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-xml_2.10;7.0.5
+[debug] 	local: revision in cache: org.scalaz#scalaz-xml_2.10;7.0.5
+[debug] 	found org.scalaz#scalaz-xml_2.10;7.0.5 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->default(compile)]
+[info] Resolving org.scalaz#scalaz-iteratee_2.10;7.0.5 ...
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@7e7ce49c
+[debug] sbt-chain: module revision found in cache: org.scalaz#scalaz-iteratee_2.10;7.0.5
+[debug] 	local: revision in cache: org.scalaz#scalaz-iteratee_2.10;7.0.5
+[debug] 	found org.scalaz#scalaz-iteratee_2.10;7.0.5 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->master]
+[debug] resolving dependencies for configuration 'provided'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [provided]
+[debug] resolving dependencies for configuration 'optional'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [optional]
+[debug] resolving dependencies for configuration 'compile-internal'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [compile-internal]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->master]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [optional]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [provided]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile-internal->master]
+[debug] resolving dependencies for configuration 'runtime-internal'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [runtime-internal]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [runtime]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->master]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [optional]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime-internal->master]
+[debug] resolving dependencies for configuration 'test-internal'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [test-internal]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [test]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [runtime]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [compile->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [runtime->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test->master]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [optional]
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [provided]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->edu.luc.etl#scalamu_2.10;0.2.1 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.3 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-core_2.10;7.0.5 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalatest#scalatest_2.10;2.0 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.0 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalacheck#scalacheck_2.10;1.10.1 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-actors;2.10.1 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-concurrent_2.10;7.0.5 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-effect_2.10;7.0.5 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-typelevel_2.10;7.0.5 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-xml_2.10;7.0.5 [test-internal->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test-internal->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test-internal->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scalaz#scalaz-iteratee_2.10;7.0.5 [test-internal->master]
+[debug] resolving dependencies for configuration 'plugin'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [plugin]
+[debug] resolving dependencies for configuration 'sources'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [sources]
+[debug] resolving dependencies for configuration 'docs'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [docs]
+[debug] resolving dependencies for configuration 'pom'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [pom]
+[debug] resolving dependencies for configuration 'scala-tool'
+[debug] == resolving dependencies for project2b#project2b$sources_javadoc_2.10;0.1 [scala-tool]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-compiler;2.10.2 [scala-tool->default(compile)]
+[info] Resolving org.scala-lang#scala-compiler;2.10.2 ...
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.2 {scala-tool=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.2
+[debug] 	local: revision in cache: org.scala-lang#scala-compiler;2.10.2
+[debug] 	found org.scala-lang#scala-compiler;2.10.2 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-compiler;2.10.2 [scala-tool->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-compiler;2.10.2 [scala-tool->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-compiler;2.10.2 [scala-tool->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.2 [scala-tool->default(compile)]
+[info] Resolving org.scala-lang#scala-library;2.10.2 ...
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.10.2 {scala-tool=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.2
+[debug] 	local: revision in cache: org.scala-lang#scala-library;2.10.2
+[debug] 	found org.scala-lang#scala-library;2.10.2 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.2 [scala-tool->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.2 [scala-tool->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-library;2.10.2 [scala-tool->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.2 [scala-tool->default(compile)]
+[info] Resolving org.scala-lang#scala-reflect;2.10.2 ...
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.2 {scala-tool=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.2
+[debug] 	local: revision in cache: org.scala-lang#scala-reflect;2.10.2
+[debug] 	found org.scala-lang#scala-reflect;2.10.2 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.2 [scala-tool->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.2 [scala-tool->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#scala-reflect;2.10.2 [scala-tool->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#jline;2.10.2 [scala-tool->default(compile)]
+[info] Resolving org.scala-lang#jline;2.10.2 ...
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.2 {scala-tool=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.scala-lang#jline;2.10.2
+[debug] 	local: revision in cache: org.scala-lang#jline;2.10.2
+[debug] 	found org.scala-lang#jline;2.10.2 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#jline;2.10.2 [scala-tool->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#jline;2.10.2 [scala-tool->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.scala-lang#jline;2.10.2 [scala-tool->master]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.fusesource.jansi#jansi;1.4 [scala-tool->default(compile)]
+[info] Resolving org.fusesource.jansi#jansi;1.4 ...
+[debug] sbt-chain: Checking cache for: dependency: org.fusesource.jansi#jansi;1.4 {scala-tool=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.fusesource.jansi#jansi;1.4
+[debug] 	local: revision in cache: org.fusesource.jansi#jansi;1.4
+[debug] 	found org.fusesource.jansi#jansi;1.4 in sbt-chain
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.fusesource.jansi#jansi;1.4 [scala-tool->runtime]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.fusesource.jansi#jansi;1.4 [scala-tool->compile]
+[debug] == resolving dependencies project2b#project2b$sources_javadoc_2.10;0.1->org.fusesource.jansi#jansi;1.4 [scala-tool->master]
+[debug] 	resolved ivy file produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/project2b/project2b$sources_javadoc_2.10/0.1/resolved.xml.xml
+[debug] :: downloading artifacts ::
+[debug] 	[NOT REQUIRED] edu.luc.etl#scalamu_2.10;0.2.1!scalamu_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] edu.luc.etl#scalamu_2.10;0.2.1!scalamu_2.10.jar(src)
+[debug] 	[NOT REQUIRED] edu.luc.etl#scalamu_2.10;0.2.1!scalamu_2.10.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-core_2.10;7.0.5!scalaz-core_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-core_2.10;7.0.5!scalaz-core_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-core_2.10;7.0.5!scalaz-core_2.10.jar
+[debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.10;2.0!scalatest_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.10;2.0!scalatest_2.10.jar
+[debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.10;2.0!scalatest_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.0!scala-reflect.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.0!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.0!scala-reflect.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalacheck#scalacheck_2.10;1.10.1!scalacheck_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scalacheck#scalacheck_2.10;1.10.1!scalacheck_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalacheck#scalacheck_2.10;1.10.1!scalacheck_2.10.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-actors;2.10.1!scala-actors.jar
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-actors;2.10.1!scala-actors.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-actors;2.10.1!scala-actors.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5!scalaz-scalacheck-binding_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5!scalaz-scalacheck-binding_2.10.jar
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-scalacheck-binding_2.10;7.0.5!scalaz-scalacheck-binding_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-concurrent_2.10;7.0.5!scalaz-concurrent_2.10.jar
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-concurrent_2.10;7.0.5!scalaz-concurrent_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-concurrent_2.10;7.0.5!scalaz-concurrent_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-effect_2.10;7.0.5!scalaz-effect_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-effect_2.10;7.0.5!scalaz-effect_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-effect_2.10;7.0.5!scalaz-effect_2.10.jar
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-typelevel_2.10;7.0.5!scalaz-typelevel_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-typelevel_2.10;7.0.5!scalaz-typelevel_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-typelevel_2.10;7.0.5!scalaz-typelevel_2.10.jar
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-xml_2.10;7.0.5!scalaz-xml_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-xml_2.10;7.0.5!scalaz-xml_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-xml_2.10;7.0.5!scalaz-xml_2.10.jar
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-iteratee_2.10;7.0.5!scalaz-iteratee_2.10.jar
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-iteratee_2.10;7.0.5!scalaz-iteratee_2.10.jar(src)
+[debug] 	[NOT REQUIRED] org.scalaz#scalaz-iteratee_2.10;7.0.5!scalaz-iteratee_2.10.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.2!scala-compiler.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.2!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.2!scala-reflect.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.2!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar(doc)
+[debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.2!jline.jar(src)
+[debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar(src)
+[debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar(doc)
+[debug] :: resolution report :: resolve 297ms :: artifacts dl 40ms
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 compile produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-compile.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 runtime produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-runtime.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 test produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-test.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 provided produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-provided.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 optional produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-optional.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 compile-internal produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-compile-internal.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 runtime-internal produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-runtime-internal.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 test-internal produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-test-internal.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 plugin produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-plugin.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 sources produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-sources.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 docs produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-docs.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 pom produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-pom.xml
+[debug] 	report for project2b#project2b$sources_javadoc_2.10;0.1 scala-tool produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_javadoc_2.10-scala-tool.xml
+[debug] 	resolve done (297ms resolve - 40ms download)

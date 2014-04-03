@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="project2b"
+		module="project2b_2.10"
+		revision="0.1"
+		conf="runtime"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20140401173504"/>
+	<dependencies>
+		<module organisation="edu.luc.etl" name="scalamu_2.10">
+			<revision name="0.2.1" status="release" pubdate="20140227134518" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2835" time="0" location="/Users/naser/.ivy2/cache/edu.luc.etl/scalamu_2.10/ivy-0.2.1.xml" searched="false" origin-is-local="false" origin-location="http://jcenter.bintray.com/edu/luc/etl/scalamu_2.10/0.2.1/scalamu_2.10-0.2.1.pom"/>
+				<caller organisation="project2b" name="project2b_2.10" conf="compile, runtime" rev="0.2.1" rev-constraint-default="0.2.1" rev-constraint-dynamic="0.2.1" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="scalamu_2.10" type="jar" ext="jar" status="no" details="" size="26300" time="0" location="/Users/naser/.ivy2/cache/edu.luc.etl/scalamu_2.10/jars/scalamu_2.10-0.2.1.jar">
+						<origin-location is-local="false" location="http://jcenter.bintray.com/edu/luc/etl/scalamu_2.10/0.2.1/scalamu_2.10-0.2.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalaz" name="scalaz-core_2.10">
+			<revision name="7.0.5" status="release" pubdate="20131124110041" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="2">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="2514" time="0" location="/Users/naser/.ivy2/cache/org.scalaz/scalaz-core_2.10/ivy-7.0.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.10/7.0.5/scalaz-core_2.10-7.0.5.pom"/>
+				<caller organisation="edu.luc.etl" name="scalamu_2.10" conf="default, compile, runtime, master" rev="7.0.5" rev-constraint-default="7.0.5" rev-constraint-dynamic="7.0.5" callerrev="0.2.1"/>
+				<artifacts>
+					<artifact name="scalaz-core_2.10" type="bundle" ext="jar" status="no" details="" size="9030731" time="0" location="/Users/naser/.ivy2/cache/org.scalaz/scalaz-core_2.10/bundles/scalaz-core_2.10-7.0.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.10/7.0.5/scalaz-core_2.10-7.0.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.10.3" status="release" pubdate="20130927044454" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.3/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default(compile), default" position="1">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2585" time="0" location="/Users/naser/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.pom"/>
+				<caller organisation="org.scalaz" name="scalaz-core_2.10" conf="compile, runtime" rev="2.10.1" rev-constraint-default="2.10.1" rev-constraint-dynamic="2.10.1" callerrev="7.0.5"/>
+				<caller organisation="project2b" name="project2b_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.1"/>
+				<caller organisation="edu.luc.etl" name="scalamu_2.10" conf="default, compile, runtime, master" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="0.2.1"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7126003" time="0" location="/Users/naser/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.10.2" status="release" pubdate="20130606130543" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="-1">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2487" time="0" location="/Users/naser/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.pom"/>
+				<evicted-by rev="2.10.3"/>
+				<caller organisation="project2b" name="project2b_2.10" conf="compile, runtime" rev="2.10.2" rev-constraint-default="2.10.2" rev-constraint-dynamic="2.10.2" callerrev="0.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="2.10.1" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
+				<evicted-by rev="2.10.3"/>
+				<caller organisation="org.scalaz" name="scalaz-core_2.10" conf="compile, runtime" rev="2.10.1" rev-constraint-default="2.10.1" rev-constraint-dynamic="2.10.1" callerrev="7.0.5"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

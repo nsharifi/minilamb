@@ -10,8 +10,11 @@ object behaviors {
 
   // specific ExprF-algebras: note nonrecursive nature
 
+  def betaSub(expr: Expr): Expr = expr match {
+    case
+  }
 
-  val eval: Algebra[ExprF, Int] = {
+  val eval: Algebra[Expr, Expr] = {
     case Constant(c) => c
     case UMinus(r)   => -r
     case Plus(l, r)  => l + r
@@ -19,8 +22,10 @@ object behaviors {
     case Times(l, r) => l * r
     case Div(l, r)   => l / r
     case Mod(l, r)   => l % r
+    case Lambda(v, b) => eval(betaSub(b))
+    case App(l, r)   => Lambda(l, r)
     case VarIdentity(x) => x
-    case (x) => x
+    //case (x) => x
 
 
   }

@@ -25,7 +25,11 @@ object structures {
   case class Times[A](left: A, right: A) extends ExprF[A]
   case class Div[A](left: A, right: A) extends ExprF[A]
   case class Mod[A](left: A, right: A) extends ExprF[A]
-  case class VarIdentity[A](x:A) extends ExprF[A]
+  case class VarIdentity[A](x:A) extends ExprF[A] // TODO Check this and those that follow
+  case class Var[A](name: A) extends ExprF[A]
+  case class Lambda[A](v: A, body: A) extends ExprF[A]
+  case class App[Expr](left: Expr, right: Expr) extends ExprF[Expr] // A is Expr?
+
 
   /**
    * Implicit value for declaring `ExprF` as an instance of
@@ -44,10 +48,10 @@ object structures {
       //case a => f(a) //An anonymous function definition evaluates to itself
       case VarIdentity(x) => VarIdentity(f(x))  // identity itself
 
-      def fun(a: List[Int]) = a match {
-          case List(0, p, q) => p + q
-          case _  => -1
-        }
+//      def fun(a: List[Int]) = a match {
+//          case List(0, p, q) => p + q
+//          case _  => -1
+//        }
     }
   }
 
