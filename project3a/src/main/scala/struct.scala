@@ -18,6 +18,8 @@ object struct {
 
 object test extends App {
   import struct._
-
+  val id: Lambda = Lambda(Var("x"), Var("x"))
+  val zero = Lambda(Var("s"), Var("z"))
+  val one = Lambda(Var("s"), Var("s")), Lambda(Var("s"), Lambda(Var("z"), Var("z")))
   println(eval(Var("xx")))
 }

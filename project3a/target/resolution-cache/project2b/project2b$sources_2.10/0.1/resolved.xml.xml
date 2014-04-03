@@ -4,7 +4,7 @@
 		module="project2b$sources_2.10"
 		revision="0.1"
 		status="integration"
-		publication="20140402144802"
+		publication="20140403122202"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>

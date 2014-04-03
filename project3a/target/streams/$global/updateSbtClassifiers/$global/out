@@ -973,9 +973,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.0!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.0!apply-macro.jar
-[debug] :: resolution report :: resolve 923ms :: artifacts dl 29ms
+[debug] :: resolution report :: resolve 951ms :: artifacts dl 29ms
 [debug] 	report for project2b#project2b$sbt_2.10;0.1 default produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sbt_2.10-default.xml
-[debug] 	resolve done (923ms resolve - 29ms download)
+[debug] 	resolve done (951ms resolve - 29ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: project2b#project2b$sources_2.10;0.1
 [debug] 	confs: [default]
@@ -1434,6 +1434,6 @@
 [debug] 	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.5.2!paranamer.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scalap;2.10.0!scalap.jar(src)
 [debug] 	[NOT REQUIRED] org.json4s#json4s-native_2.10;3.2.4!json4s-native_2.10.jar(src)
-[debug] :: resolution report :: resolve 178ms :: artifacts dl 25ms
+[debug] :: resolution report :: resolve 182ms :: artifacts dl 69ms
 [debug] 	report for project2b#project2b$sources_2.10;0.1 default produced in /Users/naser/workspace/cs372s14team2/project3a/target/resolution-cache/reports/project2b-project2b$sources_2.10-default.xml
-[debug] 	resolve done (178ms resolve - 25ms download)
+[debug] 	resolve done (182ms resolve - 69ms download)

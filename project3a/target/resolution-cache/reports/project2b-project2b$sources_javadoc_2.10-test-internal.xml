@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140402144802"/>
+		date="20140403122202"/>
 	<dependencies>
 		<module organisation="org.scalaz" name="scalaz-scalacheck-binding_2.10">
 			<revision name="7.0.5" status="release" pubdate="20131124110154" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="7">

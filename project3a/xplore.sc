@@ -25,3 +25,15 @@ val eval: Algebra[ExprF, Int] = {
 
 }
 
+// Testing Either
+val in = "abc"
+val res: Either[String, Int] = try {
+  Right(in.toInt)
+} catch  {
+  case e: Exception =>
+    Left(in)
+}
+res match {
+  case Right(_) => println ("Success: "+res.right.get)
+  case Left(_) => println ("Failed: "+res.left.get)
+}
