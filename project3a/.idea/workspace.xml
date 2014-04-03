@@ -67,25 +67,25 @@
       <file leaf-file-name="structures.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/structures.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="34" selection-start="2847" selection-end="2847" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="1455">
+            <state line="75" column="34" selection-start="2847" selection-end="2847" vertical-scroll-proportion="0.0" vertical-offset="419" max-vertical-offset="1455">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="behaviors.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="behaviors.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1035">
+            <state line="29" column="24" selection-start="736" selection-end="736" vertical-scroll-proportion="0.6393862" vertical-offset="170" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="behaviorsTests.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="behaviorsTests.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="7" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.3094629" vertical-offset="404" max-vertical-offset="900">
+            <state line="35" column="7" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
               <folding>
                 <element signature="e#19#48#0" expanded="true" />
                 <element signature="e#181#203#0" expanded="true" />
@@ -108,8 +108,8 @@
         <option value="$PROJECT_DIR$/src/main/scala/struct.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/fixtures.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/structures.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/behaviors.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/behaviorsTests.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/behaviors.scala" />
       </list>
     </option>
   </component>
@@ -595,7 +595,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="25" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="720">
           <folding>
-            <element signature="e#19#55#0" expanded="true" />
+            <element signature="e#56#87#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -710,7 +710,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="750">
           <folding>
-            <element signature="e#19#55#0" expanded="true" />
+            <element signature="e#56#87#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -719,6 +719,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="4" selection-start="596" selection-end="596" vertical-scroll-proportion="0.6930946" vertical-offset="59" max-vertical-offset="450">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="7" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+          <folding>
+            <element signature="e#19#48#0" expanded="true" />
+            <element signature="e#181#203#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,18 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1035">
+        <state line="29" column="24" selection-start="736" selection-end="736" vertical-scroll-proportion="0.6393862" vertical-offset="170" max-vertical-offset="1035">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="7" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.3094629" vertical-offset="404" max-vertical-offset="900">
-          <folding>
-            <element signature="e#19#48#0" expanded="true" />
-            <element signature="e#181#203#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
