@@ -5,16 +5,11 @@ object behaviors {
   import scalamu.Algebra
   import structures._
 
-  // TODO parsing as unfold (prefix or postfix notation)
-  // TODO unparsing/printing
-
-  // specific ExprF-algebras: note nonrecursive nature
-
   def betaSub(expr: Expr): Expr = expr match {
-    case
+    case _ => ???
   }
 
-  val eval: Algebra[Expr, Expr] = {
+  val eval: Algebra[ExprF, Expr] = {
     case Constant(c) => c
     case UMinus(r)   => -r
     case Plus(l, r)  => l + r
@@ -22,11 +17,9 @@ object behaviors {
     case Times(l, r) => l * r
     case Div(l, r)   => l / r
     case Mod(l, r)   => l % r
-    case Lambda(v, b) => eval(betaSub(b))
-    case App(l, r)   => Lambda(l, r)
-    case VarIdentity(x) => x
-    //case (x) => x
-
+    case Var(n)      => n
+    case Fun(v, b) => eval(betaSub(b))
+    case App(l, r)   => eval(Fun(l, r))
 
   }
 

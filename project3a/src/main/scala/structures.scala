@@ -28,6 +28,7 @@ object structures {
   case class Var(name: String) extends ExprF[Nothing]
   case class Fun[A](v: A, body: A) extends ExprF[A]
   case class App[A](left: A, right: A) extends ExprF[A]
+  case class If[A](cond: A, then: A, elze: A) extends ExprF[A]
 
   /**
    * Implicit value for declaring `ExprF` as an instance of
@@ -46,6 +47,7 @@ object structures {
       case Var(n)      => Var(n)
       case Fun(v, b)   => Fun(f(v), f(b))
       case App(l, r)   => App(f(l), f(r))
+      case If(c, t, e) => If(f(c), f(t), f(e))
     }
   }
 
@@ -82,5 +84,6 @@ object structures {
     def var_(n: String): Expr = In(Var(n))
     def fun(v: Expr, b: Expr) = In(Fun(v, b))
     def app(l: Expr, r: Expr) = In(App(l, r))
+    def if_(c: Expr, t: Expr, e: Expr) = In(If(c, t, e))
   }
 }
