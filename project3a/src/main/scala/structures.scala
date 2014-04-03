@@ -25,7 +25,7 @@ object structures {
   case class Times[A](left: A, right: A) extends ExprF[A]
   case class Div[A](left: A, right: A) extends ExprF[A]
   case class Mod[A](left: A, right: A) extends ExprF[A]
-  case class Var[A](name: A) extends ExprF[A]
+  case class Var(name: String) extends ExprF[Nothing]
   case class Fun[A](v: A, body: A) extends ExprF[A]
   case class App[A](left: A, right: A) extends ExprF[A]
 
@@ -43,7 +43,7 @@ object structures {
       case Times(l, r) => Times(f(l), f(r))
       case Div(l, r)   => Div (f(l), f(r))
       case Mod(l, r)   => Mod (f(l), f(r))
-      case Var(n)      => Var(f(n))
+      case Var(n)      => Var(n)
       case Fun(v, b)   => Fun(f(v), f(b))
       case App(l, r)   => App(f(l), f(r))
     }
