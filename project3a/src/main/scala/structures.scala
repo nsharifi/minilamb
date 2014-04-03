@@ -26,7 +26,7 @@ object structures {
   case class Div[A](left: A, right: A) extends ExprF[A]
   case class Mod[A](left: A, right: A) extends ExprF[A]
   case class Var(name: String) extends ExprF[Nothing]
-  case class Fun[A](v: A, body: A) extends ExprF[A]
+  case class Fun[A](v: String, body: A) extends ExprF[A]
   case class App[A](left: A, right: A) extends ExprF[A]
   case class If[A](cond: A, then: A, elze: A) extends ExprF[A]
 
@@ -45,7 +45,7 @@ object structures {
       case Div(l, r)   => Div (f(l), f(r))
       case Mod(l, r)   => Mod (f(l), f(r))
       case Var(n)      => Var(n)
-      case Fun(v, b)   => Fun(f(v), f(b))
+      case Fun(v, b)   => Fun(v, f(b))
       case App(l, r)   => App(f(l), f(r))
       case If(c, t, e) => If(f(c), f(t), f(e))
     }
@@ -86,7 +86,7 @@ object structures {
     def div(l: Expr, r: Expr): Expr = In(Div (l, r))
     def mod(l: Expr, r: Expr): Expr = In(Mod (l, r))
     def var_(n: String): Expr = In(Var(n))
-    def fun(v: Expr, b: Expr) = In(Fun(v, b))
+    def fun(v: String, b: Expr) = In(Fun(v, b))
     def app(l: Expr, r: Expr) = In(App(l, r))
     def if_(c: Expr, t: Expr, e: Expr) = In(If(c, t, e))
   }

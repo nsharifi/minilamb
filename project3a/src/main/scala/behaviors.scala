@@ -27,7 +27,7 @@ def scale: Algebra[ExprF, Expr] = {
       case (In(Constant(0)), _, _) => e
       case (_, _, _) => t
     }
-    case Fun(v, b)   => 
+    case Fun(v, b)   => In(Fun(v, b))
 //    case App(l, r)   => ??? //eval(Fun(l, r))
     case _ => ???
   }
