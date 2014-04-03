@@ -56,20 +56,24 @@ object structures {
    * typeclass `Equal` in scalaz using `Equal`'s structural equality.
    * This enables `===` and `assert_===` on `ExprF` instances.
    */
-  implicit def ExprFEqual[A]: Equal[ExprF[A]] = Equal.equalA
+  //implicit def ExprFEqual[A]: Equal[ExprF[A]] = Equal.equalA
 
   /**
    * Implicit value for declaring `ExprF` as an instance of
    * typeclass `Show` in scalaz using `Show`'s default method.
    * This is required for `===` and `assert_===` to work on `ExprF` instances.
    */
-  implicit def ExprFShow[A]: Show[ExprF[A]] = Show.showFromToString
+  //implicit def ExprFShow[A]: Show[ExprF[A]] = Show.showFromToString
 
   /**
    * Least fixpoint of `ExprF` as carrier object for the initial algebra.
    */
   type Expr = µ[ExprF]
 
+  implicit def ExprFEqual[A]: Equal[ExprF[A]] = Equal.equalA
+  implicit def ExprFShow[A]: Show[ExprF[A]] = Show.showFromToString
+  implicit val exprEqual: Equal[Expr] = Equal.equalA
+  implicit val exprShow: Show[Expr] = Show.showFromToString
   /**
    * Factory for creating Expr instances.
    */

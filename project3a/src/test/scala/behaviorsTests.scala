@@ -7,10 +7,11 @@ import scalaz.std.anyVal._ // for assert_=== to work on Int
 class behaviorTests extends FunSuite {
 
   import scalamu.ToMuOps
+  import scalamu.In
   import behaviors._
   import structures._
 
-  /*
+  /* Test cases to be built on these
   eval(Const(3)) -> Const(3)
   eval(Var("x")) -> error
   eval(Fun("x", Plus(Const(7), Var("x")))) -> Fun("x", Plus(Const(7), Var("x")))
@@ -26,6 +27,16 @@ class behaviorTests extends FunSuite {
       Const(5)))
   -> Const(120)
 */
+  val const = In(Constant(3))
+  val var_ = In(Var("x"))
+  val if_ = In(If(In(Constant(0)), In(Constant(3)), In(Constant(4)))) cata eval
+  test("eval works") {
+    const cata(eval) assert_=== In(Constant(3))
+    var_ cata eval assert_=== In(Var("x"))
+    if_ cata eval assert_=== In(Constant(4))
+    //val min3 = evaluate(UMinus(evaluate(Constant(3))))
+    //In(Plus(In(Constant(7)), In(Constant(3)))) cata eval assert_=== In(Constant(10))
+  }
 
   test("evaluate works") {
     fixtures.complex1 cata evaluate assert_=== -1

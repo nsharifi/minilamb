@@ -1,26 +1,35 @@
 package project3a
 
+import scalamu.In
+
 object behaviors {
 
   import scalamu.Algebra
   import structures._
 
-  def betaSub(expr: Expr): Expr = expr match {
-    case _ => ???
-  }
+//  def betaSub(v: Expr, b: Expr): Expr = {
+//    case _ => ???
+//  }
+def scale: Algebra[ExprF, Expr] = {
+  case Constant(c)   => In(Constant(c))
+}
 
   val eval: Algebra[ExprF, Expr] = {
-    case Constant(c) => c
-    case UMinus(r)   => -r
-    case Plus(l, r)  => l + r
-    case Minus(l, r) => l - r
-    case Times(l, r) => l * r
-    case Div(l, r)   => l / r
-    case Mod(l, r)   => l % r
-    case Var(n)      => n
-    case Fun(v, b) => eval(betaSub(b))
-    case App(l, r)   => eval(Fun(l, r))
-
+    case Constant(c) => In(Constant(c))
+    case UMinus(r)   => In(UMinus(r))
+    case Plus(l, r)  => In(Plus(l, r))
+    case Minus(l, r) => In(Minus(l, r))
+    case Times(l, r) => In(Times(l, r))
+    case Div(l, r)   => In(Div(l, r))
+    case Mod(l, r)   => In(Mod(l, r))
+    case Var(n)      => In(Var(n))
+    case If(c, t, e) => (c,t,e) match {
+      case (In(Constant(0)), _, _) => e
+      case (_, _, _) => t
+    }
+    case Fun(v, b)   => ??? //eval(betaSub(v, b))
+//    case App(l, r)   => ??? //eval(Fun(l, r))
+    case _ => ???
   }
 
   val evaluate: Algebra[ExprF, Int] = {

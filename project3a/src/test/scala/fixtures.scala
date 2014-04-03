@@ -1,8 +1,11 @@
 package project3a
 
+import project3a.structures.Constant
 import structures.ExprFactory._
 
 object fixtures {
+  val const3 = Constant(3)
+
   val complex1 =
     div(
       minus(

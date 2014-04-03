@@ -67,7 +67,7 @@
       <file leaf-file-name="structures.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/structures.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="54" selection-start="3261" selection-end="3261" vertical-scroll-proportion="0.0" vertical-offset="803" max-vertical-offset="1395">
+            <state line="75" column="34" selection-start="2847" selection-end="2847" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="1455">
               <folding />
             </state>
           </provider>
@@ -76,16 +76,7 @@
       <file leaf-file-name="behaviors.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fixtures.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/fixtures.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="7" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="705">
+            <state line="29" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
@@ -94,28 +85,11 @@
       <file leaf-file-name="behaviorsTests.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="6" selection-start="845" selection-end="845" vertical-scroll-proportion="0.36655405" vertical-offset="113" max-vertical-offset="705">
+            <state line="35" column="7" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.3094629" vertical-offset="404" max-vertical-offset="900">
               <folding>
+                <element signature="e#19#48#0" expanded="true" />
                 <element signature="e#181#203#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="struct.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/struct.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="84" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xplore.sc" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xplore.sc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="675">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -132,9 +106,10 @@
       <list>
         <option value="$PROJECT_DIR$/xplore.sc" />
         <option value="$PROJECT_DIR$/src/main/scala/struct.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/fixtures.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/structures.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/behaviors.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/behaviorsTests.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/structures.scala" />
       </list>
     </option>
   </component>
@@ -169,6 +144,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,7 +262,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,7 +278,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="ScalaTest.behaviorTests">
     <configuration default="false" name="test" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="test" />
       <option name="VM_PARAMETERS" />
@@ -316,6 +291,21 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="project2b" />
       <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="behaviorTests" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="project2b" />
+      <setting name="path" value="project3a.behaviorTests" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -346,14 +336,6 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <module name="" />
       <setting name="path" value="" />
@@ -365,6 +347,27 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -392,19 +395,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -441,19 +431,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -473,12 +450,27 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.test" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.behaviorTests" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.test" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.behaviorTests" />
+        <item index="1" class="java.lang.String" itemvalue="Application.test" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -546,6 +538,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32419354" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -553,13 +546,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32419354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -585,6 +577,53 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/structures.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="35" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="19" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/fixtures.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="25" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="720">
+          <folding>
+            <element signature="e#19#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="41" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="810">
+          <folding>
+            <element signature="e#19#48#0" expanded="true" />
+            <element signature="e#181#203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/struct.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="4" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xplore.sc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/structures.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="27" selection-start="1218" selection-end="1222" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1440">
@@ -667,38 +706,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/struct.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="84" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/fixtures.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="7" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="705">
+        <state line="4" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="750">
+          <folding>
+            <element signature="e#19#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/struct.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="4" selection-start="596" selection-end="596" vertical-scroll-proportion="0.6930946" vertical-offset="59" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/structures.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="54" selection-start="3261" selection-end="3261" vertical-scroll-proportion="0.0" vertical-offset="803" max-vertical-offset="1395">
+        <state line="75" column="34" selection-start="2847" selection-end="2847" vertical-scroll-proportion="0.0" vertical-offset="980" max-vertical-offset="1455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1035">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="6" selection-start="845" selection-end="845" vertical-scroll-proportion="0.36655405" vertical-offset="113" max-vertical-offset="705">
+        <state line="35" column="7" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.3094629" vertical-offset="404" max-vertical-offset="900">
           <folding>
+            <element signature="e#19#48#0" expanded="true" />
             <element signature="e#181#203#0" expanded="true" />
           </folding>
         </state>
