@@ -31,18 +31,28 @@ class behaviorTests extends FunSuite {
       Const(5)))
   -> Const(120)
 */
-import structures.ExprFactory._
+  import structures.ExprFactory._
+
   test("interpret works") {
     assert(interpret(plus(constant(2), constant(3))) == constant(5))
     assert(interpret(constant(3)) == In(Constant(3)))
     assert(interpret(variable("x")) == In(Error("Variable")))
+    assert(interpret(fun("x", plus(constant(7), variable("x")))) == In(Fun("x", In(Plus(In(Constant(7)), In(Var("x")))))))
+    assert(interpret(app(variable("x"), constant(3))) == In(Error("Var Application")))
+    //assert(interpret(app(fun("x", plus(constant(7), variable("x"))), constant(3))) == In(Constant(10)))
+    //B
     assert(interpret( iff(constant(7), constant(3), constant(4)) ) == In(Constant(3)))
     assert(interpret(iff(constant(0), constant(3), constant(4)) ) == In(Constant(4)))
+<<<<<<< local
     assert(interpret(iff(variable("x"), constant(3), constant(4)) ) == In(Error("Var Conditional")))
    // assert(interpret(iff(fun("x", variable("x")), constant(3), constant(4)) ) == In(Constant(4)))
     assert(interpret(fun("x", plus(constant(7), variable("x")))) == In(Fun("x", In(Plus(In(Constant(7)), In(Var("x")))))))
     assert(interpret(app(variable("x"), constant(3))) == In(Error("Var Application")))
     assert(interpret(app(fun("x", plus(constant(7), variable("x"))), constant(3))) == In(Constant(10)))
+=======
+    //assert(interpret(iff(fun("x", variable("x")), constant(3), constant(4)) ) == In(Constant(4))) //LOOP
+
+>>>>>>> other
   }
 
 

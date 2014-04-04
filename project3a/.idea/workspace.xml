@@ -76,9 +76,11 @@
       <file leaf-file-name="behaviors.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="914" max-vertical-offset="1305">
+            <state line="34" column="0" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.0" vertical-offset="1079" max-vertical-offset="1470">
               <folding>
                 <element signature="e#60#82#0" expanded="true" />
+                <marker date="1396655672000" expanded="true" signature="429:574" placeholder="..." />
+                <marker date="1396655672000" expanded="true" signature="437:574" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -87,7 +89,7 @@
       <file leaf-file-name="behaviorsTests.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.6163683" vertical-offset="419" max-vertical-offset="1020">
+            <state line="54" column="0" selection-start="2437" selection-end="2437" vertical-scroll-proportion="1.342711" vertical-offset="285" max-vertical-offset="1170">
               <folding>
                 <element signature="e#19#48#0" expanded="true" />
                 <element signature="e#181#203#0" expanded="true" />
@@ -119,8 +121,8 @@
         <option value="$PROJECT_DIR$/src/main/scala/struct.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/fixtures.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/structures.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/behaviorsTests.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/behaviors.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/behaviorsTests.scala" />
       </list>
     </option>
   </component>
@@ -528,8 +530,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32419354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32419354" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -572,6 +574,8 @@
         <state line="14" column="19" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="930">
           <folding>
             <element signature="e#60#82#0" expanded="true" />
+            <marker date="1396655672000" expanded="true" signature="429:574" placeholder="..." />
+            <marker date="1396655672000" expanded="true" signature="437:574" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -621,6 +625,8 @@
         <state line="15" column="0" selection-start="230" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1020">
           <folding>
             <element signature="e#60#82#0" expanded="true" />
+            <marker date="1396655672000" expanded="true" signature="429:574" placeholder="..." />
+            <marker date="1396655672000" expanded="true" signature="437:574" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -651,6 +657,8 @@
         <state line="15" column="0" selection-start="230" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1005">
           <folding>
             <element signature="e#60#82#0" expanded="true" />
+            <marker date="1396655672000" expanded="true" signature="429:574" placeholder="..." />
+            <marker date="1396655672000" expanded="true" signature="437:574" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -734,16 +742,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="914" max-vertical-offset="1305">
+        <state line="34" column="0" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.0" vertical-offset="1079" max-vertical-offset="1470">
           <folding>
             <element signature="e#60#82#0" expanded="true" />
+            <marker date="1396655672000" expanded="true" signature="429:574" placeholder="..." />
+            <marker date="1396655672000" expanded="true" signature="437:574" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.6163683" vertical-offset="419" max-vertical-offset="1020">
+        <state line="54" column="0" selection-start="2437" selection-end="2437" vertical-scroll-proportion="1.342711" vertical-offset="285" max-vertical-offset="1170">
           <folding>
             <element signature="e#19#48#0" expanded="true" />
             <element signature="e#181#203#0" expanded="true" />
