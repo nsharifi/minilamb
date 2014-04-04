@@ -39,7 +39,8 @@ class behaviorTests extends FunSuite {
     var_ cata eval assert_=== In(Var("x"))
     if_ cata eval assert_=== In(Constant(4))
     fun0 cata eval assert_=== fun0
-    fun1 cata eval assert_=== In(Constant(10))
+
+    //fun1 cata eval assert_=== In(Constant(10))
     //val min3 = evaluate(UMinus(evaluate(Constant(3))))
     //In(Plus(In(Constant(7)), In(Constant(3)))) cata eval assert_=== In(Constant(10))
   }
