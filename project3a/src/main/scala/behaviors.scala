@@ -28,9 +28,8 @@ object behaviors {
     case In(Var(n))      => In(Error("Variable"))
     case In(If(c, t, e)) => (c,t,e) match {
       case (In(Constant(x)), _, _) => x match {  /* Case constant check lhs, rhs*/
-        case _ => interpret(t)/*lhs*/
         case 0 => interpret(e)/*rhs*/
-
+        case _ => interpret(t)/*lhs*/
       }
       case (_, _, _) => interpret(In(If(c, t, e)))/*Other cases*/
     }
