@@ -27,11 +27,12 @@ object behaviors {
     case In(Mod(l, r))   => In(Mod(l, r))
     case In(Var(n))      => In(Error("Variable"))
     case In(If(c, t, e)) => (c,t,e) match {
-      case (In(Constant(x)), _, _) => x match {
-        case 0 => interpret(e)
-        case _ => interpret(t)
+      case (In(Constant(x)), _, _) => x match {  /* Case constant check lhs, rhs*/
+        case _ => interpret(t)/*lhs*/
+        case 0 => interpret(e)/*rhs*/
+
       }
-      case (_, _, _) => interpret(In(If(c, t, e)))
+      case (_, _, _) => interpret(In(If(c, t, e)))/*Other cases*/
     }
     case In(Fun(v, b))   => In(Fun(v, b))
     case In(App(l, r))   => (l, r) match {
