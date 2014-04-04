@@ -36,7 +36,7 @@ object behaviors {
     case In(Fun(v, b))   => In(Fun(v, b))
     case In(App(l, r))   => (l, r) match {
       case (In(Var(_)), _) => In(Error("Var Application"))
-      case (In(Fun(v, b)), _) => 
+      case (In(Fun(v, b)), _) =>
       //case In(Plus(l, r)) => ???
     }
   }
