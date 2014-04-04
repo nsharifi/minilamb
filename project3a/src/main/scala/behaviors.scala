@@ -22,10 +22,6 @@ object behaviors {
       }
     }
   }
-  def err(msg: String): Either[String, Expr] = {
-    Right(msg)
-  }
-  //App(Fun("x", Plus(Const(7), Var("x"))), Const(3)) -> Const(10)
 
   def interpret(expr: Expr): Expr = expr match {
     case In(Constant(c)) => In(Constant(c))
@@ -41,22 +37,13 @@ object behaviors {
         case 0 => interpret(e)/*rhs*/
         case _ => interpret(t)/*lhs*/
       }
-<<<<<<< local
       case (In(Var(x)), _, _) => In(Error("Var Conditional"))
       case (_, _, _) => interpret(In(If(c, t, e)))
-=======
-      case (_, _, _) => interpret(In(If(c, t, e)))/*Other cases*/
->>>>>>> other
     }
     case In(Fun(v, b))   => In(Fun(v, b))
     case In(App(l, r))   => (l, r) match {
       case (In(Var(_)), _) => In(Error("Var Application"))
-<<<<<<< local
       case (In(Fun(v, b)), x) => interpret(reduce(b, x, In(Var(v))))
-=======
-      case (In(Fun(v, b)), _) =>
->>>>>>> other
-      //case In(Plus(l, r)) => ???
     }
   }
 
