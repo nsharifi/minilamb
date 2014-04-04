@@ -8,28 +8,34 @@ object behaviors {
   import structures._
 
   //In(App(In(Fun("x", In(Plus(In(Const(7)), In(Var("x")))))), In(Const(3)))) -> Const(10)
-  def betaSub(v: Expr, b: Expr): Expr = (v, b) match {
-    case (_, _) => In(Constant(10))
-    //case _ => ???
-  }
+//  def betaSub(v: Expr, b: Expr): Expr = (v, b) match {
+//    case (_, _) => In(Constant(10))
+//    //case _ => ???
+//  }
+//  def err(msg: String): Either[String, Expr] = {
+//    Right(msg)
+//  }
 
-  def eval: Algebra[ExprF, Expr] = {
-    case Constant(c) => In(Constant(c))
-    case UMinus(r)   => In(UMinus(r))
-    case Plus(l, r)  => In(Plus(l, r))
-    case Minus(l, r) => In(Minus(l, r))
-    case Times(l, r) => In(Times(l, r))
-    case Div(l, r)   => In(Div(l, r))
-    case Mod(l, r)   => In(Mod(l, r))
-    case Var(n)      => In(Var(n))
-    case If(c, t, e) => (c,t,e) match {
-      case (In(Constant(0)), _, _) => e
-      case (_, _, _) => t
+  def interpret(expr: Expr): Expr = expr match {
+    case In(Constant(c)) => In(Constant(c))
+    case In(UMinus(r))   => In(UMinus(r))
+    case In(Plus(l, r))  => In(Plus(l, r))
+    case In(Minus(l, r)) => In(Minus(l, r))
+    case In(Times(l, r)) => In(Times(l, r))
+    case In(Div(l, r))   => In(Div(l, r))
+    case In(Mod(l, r))   => In(Mod(l, r))
+    case In(Var(n))      => In(Error("Variable"))
+    case In(If(c, t, e)) => (c,t,e) match {
+      case (In(Constant(x)), _, _) => x match {
+        case 0 => interpret(e)
+        case _ => interpret(t)
+      }
+      case (_, _, _) => interpret(In(If(c, t, e)))
     }
-    case Fun(v, b)   => In(Fun(v, b))
-    case App(l, r)   => l match {
-      case In(Plus(l, r)) => ???
-    }
+//    case Fun(v, b)   => In(Fun(v, b))
+//    case App(l, r)   => l match {
+//      case In(Plus(l, r)) => ???
+//    }
   }
 
   val evaluate: Algebra[ExprF, Int] = {

@@ -27,21 +27,14 @@ class behaviorTests extends FunSuite {
       Const(5)))
   -> Const(120)
 */
+import structures.ExprFactory._
 
-  val const = In(Constant(3))
-  val var_ = In(Var("x"))
-  val if_ = In(If(In(Constant(0)), In(Constant(3)), In(Constant(4))))
-  val fun0 = In(Fun("x", In(Plus(In(Constant(7)), In(Var("x"))))))
-  val fun1 = In(App(In(Fun("x", In(Plus(In(Constant(7)), In(Var("x")))))), In(Constant(3))))
-  //println (fun1)
-  test("eval works") {
-    const cata(eval) assert_=== In(Constant(3))
-    var_ cata eval assert_=== In(Var("x"))
-    if_ cata eval assert_=== In(Constant(4))
-    fun0 cata eval assert_=== fun0
-    fun1 cata eval assert_=== In(Constant(10))
-    //val min3 = evaluate(UMinus(evaluate(Constant(3))))
-    //In(Plus(In(Constant(7)), In(Constant(3)))) cata eval assert_=== In(Constant(10))
+  test("interpret works") {
+    assert(interpret(constant(3)) == In(Constant(3)))
+    assert(interpret(variable("x")) == In(Error("Variable")))
+    assert(interpret( iff(constant(7), constant(3), constant(4)) ) == In(Constant(3)))
+    assert(interpret(iff(constant(0), constant(3), constant(4)) ) == In(Constant(4)))
+
   }
 
   test("evaluate works") {
