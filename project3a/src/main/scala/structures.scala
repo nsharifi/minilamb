@@ -29,6 +29,7 @@ object structures {
   case class Fun[A](v: String, body: A) extends ExprF[A]
   case class App[A](left: A, right: A) extends ExprF[A]
   case class If[A](cond: A, then: A, elze: A) extends ExprF[A]
+  case class Error(e: Either[String, Expr]) extends ExprF[Nothing]
 
   /**
    * Implicit value for declaring `ExprF` as an instance of

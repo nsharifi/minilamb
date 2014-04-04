@@ -7,14 +7,13 @@ object behaviors {
   import scalamu.Algebra
   import structures._
 
-//  def betaSub(v: Expr, b: Expr): Expr = {
-//    case _ => ???
-//  }
-def scale: Algebra[ExprF, Expr] = {
-  case Constant(c)   => In(Constant(c))
-}
+  //In(App(In(Fun("x", In(Plus(In(Const(7)), In(Var("x")))))), In(Const(3)))) -> Const(10)
+  def betaSub(v: Expr, b: Expr): Expr = (v, b) match {
+    case (_, _) => In(Constant(10))
+    //case _ => ???
+  }
 
-  val eval: Algebra[ExprF, Expr] = {
+  def eval: Algebra[ExprF, Expr] = {
     case Constant(c) => In(Constant(c))
     case UMinus(r)   => In(UMinus(r))
     case Plus(l, r)  => In(Plus(l, r))
@@ -28,8 +27,9 @@ def scale: Algebra[ExprF, Expr] = {
       case (_, _, _) => t
     }
     case Fun(v, b)   => In(Fun(v, b))
-//    case App(l, r)   => ??? //eval(Fun(l, r))
-    case _ => ???
+    case App(l, r)   => l match {
+      case In(Plus(l, r)) => ???
+    }
   }
 
   val evaluate: Algebra[ExprF, Int] = {
