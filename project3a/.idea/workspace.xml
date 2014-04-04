@@ -76,7 +76,7 @@
       <file leaf-file-name="behaviors.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1138" selection-end="1138" vertical-scroll-proportion="1.2301791" vertical-offset="119" max-vertical-offset="1140">
+            <state line="38" column="33" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.7544757" vertical-offset="275" max-vertical-offset="1185">
               <folding>
                 <element signature="e#60#82#0" expanded="true" />
               </folding>
@@ -87,9 +87,10 @@
       <file leaf-file-name="behaviorsTests.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="17" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="885">
+            <state line="39" column="97" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="930">
               <folding>
                 <element signature="e#19#48#0" expanded="true" />
+                <element signature="e#181#203#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -583,6 +584,7 @@
         <state line="34" column="41" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="810">
           <folding>
             <element signature="e#19#48#0" expanded="true" />
+            <element signature="e#181#203#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -712,16 +714,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="89" max-vertical-offset="885">
+        <state line="39" column="97" selection-start="1763" selection-end="1763" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="930">
           <folding>
             <element signature="e#19#48#0" expanded="true" />
+            <element signature="e#181#203#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1138" selection-end="1138" vertical-scroll-proportion="1.2301791" vertical-offset="119" max-vertical-offset="1140">
+        <state line="38" column="33" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.7544757" vertical-offset="275" max-vertical-offset="1185">
           <folding>
             <element signature="e#60#82#0" expanded="true" />
           </folding>

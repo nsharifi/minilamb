@@ -8,13 +8,14 @@ object behaviors {
   import structures._
 
   //In(App(In(Fun("x", In(Plus(In(Const(7)), In(Var("x")))))), In(Const(3)))) -> Const(10)
-//  def betaSub(v: Expr, b: Expr): Expr = (v, b) match {
-//    case (_, _) => In(Constant(10))
-//    //case _ => ???
-//  }
-//  def err(msg: String): Either[String, Expr] = {
-//    Right(msg)
-//  }
+  def betaSub(v: Expr, b: Expr): Expr = (v, b) match {
+    case (_, _) => In(Constant(10))
+    //case _ => ???
+  }
+  def err(msg: String): Either[String, Expr] = {
+    Right(msg)
+  }
+  //App(Fun("x", Plus(Const(7), Var("x"))), Const(3)) -> Const(10)
 
   def interpret(expr: Expr): Expr = expr match {
     case In(Constant(c)) => In(Constant(c))
@@ -32,10 +33,12 @@ object behaviors {
       }
       case (_, _, _) => interpret(In(If(c, t, e)))
     }
-//    case Fun(v, b)   => In(Fun(v, b))
-//    case App(l, r)   => l match {
-//      case In(Plus(l, r)) => ???
-//    }
+    case In(Fun(v, b))   => In(Fun(v, b))
+    case In(App(l, r))   => (l, r) match {
+      case (In(Var(_)), _) => In(Error("Var Application"))
+      case (In(Fun(v, b)), _) => 
+      //case In(Plus(l, r)) => ???
+    }
   }
 
   val evaluate: Algebra[ExprF, Int] = {
