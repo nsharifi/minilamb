@@ -12,9 +12,6 @@ object behaviors {
     case (_, _) => In(Constant(10))
     //case _ => ???
   }
-  def err(msg: String): Either[String, Expr] = {
-    Right(msg)
-  }
   //App(Fun("x", Plus(Const(7), Var("x"))), Const(3)) -> Const(10)
 
   def interpret(expr: Expr): Expr = expr match {
@@ -36,7 +33,7 @@ object behaviors {
     case In(Fun(v, b))   => In(Fun(v, b))
     case In(App(l, r))   => (l, r) match {
       case (In(Var(_)), _) => In(Error("Var Application"))
-      case (In(Fun(v, b)), _) =>
+      //case (In(Fun(v, b)), _) =>
       //case In(Plus(l, r)) => ???
     }
   }

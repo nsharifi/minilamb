@@ -30,20 +30,8 @@ class behaviorTests extends FunSuite {
       Times(Var("n"), App(Var("f"), Minus(Var("n"), Const(1)))), Const(1))))),
       Const(5)))
   -> Const(120)
-<<<<<<< local
 */
 import structures.ExprFactory._
-=======
-  */
-  /*A*/
-  val a1 = In(Constant(3))
-  val a2 = In(Var("x"))
-  val a3 = In(Fun("x", In(Plus(In(Constant(7)), In(Var("x"))))))
-  val a4 = In(App(In(Fun("x", In(Plus(In(Constant(7)), In(Var("x")))))), In(Constant(3))))/*error*/
-  //val a5=....
->>>>>>> other
-
-<<<<<<< local
   test("interpret works") {
     assert(interpret(constant(3)) == In(Constant(3)))
     assert(interpret(variable("x")) == In(Error("Variable")))
@@ -53,35 +41,6 @@ import structures.ExprFactory._
     assert(interpret(fun("x", plus(constant(7), variable("x")))) == In(Fun("x", In(Plus(In(Constant(7)), In(Var("x")))))))
     assert(interpret(app(variable("x"), constant(3))) == In(Error("Var Application")))
     assert(interpret(app(fun("x", plus(constant(7), variable("x"))), constant(3))) == In(Constant(10)))
-=======
-  /*B*/
-  val b1 = In(If(In(Constant(7)), In(Constant(3)), In(Constant(4))))
-  val b2 = In(If(In(Constant(0)), In(Constant(3)), In(Constant(4))))
-  //val b3 = In(If( In(Fun("x",In(Var("x")), In(Constant(3)), In(Constant(4))))))
-  //val b4 = In(If( In(Fun("x",In(Var("y")), In(Constant(3)), In(Constant(4))))))
-
-  /*C*/
-  //val c1 = In(App.....
-
-
-
-  test("eval works") {
-    a1 cata eval assert_=== In(Constant(3))
-    a2 cata eval assert_=== In(Var("x"))
-    a3 cata eval assert_=== fixtures.a3
-    //a4...
-
-    b1 cata eval assert_=== In(Constant(3))
-    b2 cata eval assert_=== In(Constant(4))
-    //b3 cata eval assert_=== In(Constant(3))
-    //b4 cata eval assert_=== In(Constant(3))
-
-    //c1....
-
-    //fun1 cata eval assert_=== In(Constant(10))
-    //val min3 = evaluate(UMinus(evaluate(Constant(3))))
-    //In(Plus(In(Constant(7)), In(Constant(3)))) cata eval assert_=== In(Constant(10))
->>>>>>> other
   }
 
 
