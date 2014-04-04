@@ -33,10 +33,12 @@ class behaviorTests extends FunSuite {
 */
 import structures.ExprFactory._
   test("interpret works") {
+    assert(interpret(plus(constant(2), constant(3))) == constant(5))
     assert(interpret(constant(3)) == In(Constant(3)))
     assert(interpret(variable("x")) == In(Error("Variable")))
     assert(interpret( iff(constant(7), constant(3), constant(4)) ) == In(Constant(3)))
     assert(interpret(iff(constant(0), constant(3), constant(4)) ) == In(Constant(4)))
+    assert(interpret(iff(variable("x"), constant(3), constant(4)) ) == In(Error("Var Conditional")))
    // assert(interpret(iff(fun("x", variable("x")), constant(3), constant(4)) ) == In(Constant(4)))
     assert(interpret(fun("x", plus(constant(7), variable("x")))) == In(Fun("x", In(Plus(In(Constant(7)), In(Var("x")))))))
     assert(interpret(app(variable("x"), constant(3))) == In(Error("Var Application")))
@@ -44,11 +46,11 @@ import structures.ExprFactory._
   }
 
 
-  test("evaluate works") {
-    fixtures.complex1 cata evaluate assert_=== -1
-    fixtures.complex2 cata evaluate assert_=== 0
-  }
-
+//  test("evaluate works") {
+//    fixtures.complex1 cata evaluate assert_=== -1
+//    fixtures.complex2 cata evaluate assert_=== 0
+//  }
+//
   test("size works") {
     fixtures.complex1 cata size assert_=== 9
     fixtures.complex2 cata size assert_=== 10
