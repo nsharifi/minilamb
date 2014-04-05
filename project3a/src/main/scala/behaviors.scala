@@ -8,7 +8,6 @@ object behaviors {
   import structures._
   import structures.ExprFactory._
 
-  //In(App(In(Fun("x", In(Plus(In(Const(7)), In(Var("x")))))), In(Const(3)))) -> Const(10)
   // substitute a for x in e
   def reduce(e: Expr, a: Expr, x: Expr): Expr = e match {
     case In(Var(_)) => e match {
@@ -16,13 +15,20 @@ object behaviors {
       case _ => e
     }
     case In(Constant(c)) => constant(c)
-    case In(Plus(l, r)) => plus(l, r)
-    case In(Fun(v, b)) => v match {
-      case x => fun(v, b)
-      case _ => {
-        fun(variable("y1"), reduce(reduce(e, variable("y1"), v), a, x))
-      }
-    }
+    case In(UMinus(r)) => uminus(a)
+    case In(Plus(l, r)) if(r == x) => plus(l, a)
+    case In(Plus(l, r)) if(l == x) => plus(a, r)
+    case In(Minus(l, r)) if(r == x) => plus(l, a)
+    case In(Minus(l, r)) if(l == x) => plus(a, r)
+    case In(Times(l, r)) if(r == x) => plus(l, a)
+    case In(Times(l, r)) if(l == x) => plus(a, r)
+    case In(Mod(l, r)) if(r == x) => plus(l, a)
+    case In(Mod(l, r)) if(l == x) => plus(a, r)
+    case In(Div(l, r)) if(r == x) => plus(l, a)
+    case In(Div(l, r)) if(l == x) => plus(a, r)
+
+    case In(Fun(v, b)) if (v == x) => fun(v, b)
+    case In(Fun(v, b)) if (v != x) => fun(variable("z"), reduce(e, variable("z"), v))
   }
 
   def interpret(expr: Expr): Expr = expr match {
@@ -40,7 +46,7 @@ object behaviors {
         case _ => interpret(t)/*lhs*/
       }
       case (In(Var(x)), _, _) => err("Var Conditional")
-      case (_, _, _) => interpret(In(If(c, t, e)))
+      case (In(Fun(_, _)), _, _) => interpret(t)
     }
     case In(Fun(v, b))   => fun(v, b)
     case In(App(l, r))   => (l, r) match {
@@ -49,23 +55,4 @@ object behaviors {
     }
   }
 
-  val size: Algebra[ExprF, Int] = {
-    case Constant(_) => 1
-    case UMinus(r)   => 1 + r
-    case Plus(l, r)  => 1 + l + r
-    case Minus(l, r) => 1 + l + r
-    case Times(l, r) => 1 + l + r
-    case Div(l, r)   => 1 + l + r
-    case Mod(l, r)   => 1 + l + r
-  }
-
-  val depth: Algebra[ExprF, Int] = {
-    case Constant(_) => 1
-    case UMinus(r)   => 1 + r
-    case Plus(l, r)  => 1 + math.max(l, r)
-    case Minus(l, r) => 1 + math.max(l, r)
-    case Times(l, r) => 1 + math.max(l, r)
-    case Div(l, r)   => 1 + math.max(l, r)
-    case Mod(l, r)   => 1 + math.max(l, r)
-  }
 }

@@ -1,8 +1,6 @@
 package project3a
 
 import org.scalatest.FunSuite
-import scalaz.syntax.equal._
-import scalaz.std.anyVal._ // for assert_=== to work on Int
 
 class behaviorTests extends FunSuite {
 
@@ -40,16 +38,16 @@ class behaviorTests extends FunSuite {
     assert(interpret(fun(variable("x"), plus(constant(7), variable("x")))) ==
       fun(variable("x"), plus(constant(7), variable("x"))))
     assert(interpret(app(variable("x"), constant(3))) == err("Var Application"))
-    //assert(interpret(app(fun("x", plus(constant(7), variable("x"))), constant(3))) == In(Constant(10)))
+    assert(interpret(app(fun(variable("x"), plus(constant(7), variable("x"))), constant(3))) == constant(10))
     //B
     assert(interpret( iff(constant(7), constant(3), constant(4)) ) == constant(3))
     assert(interpret(iff(constant(0), constant(3), constant(4)) ) == constant(4))
     assert(interpret(iff(variable("x"), constant(3), constant(4)) ) == err("Var Conditional"))
-   // assert(interpret(iff(fun("x", variable("x")), constant(3), constant(4)) ) == In(Constant(4)))
+    assert(interpret(iff(fun(variable("x"), variable("x")), constant(3), constant(4))) == constant(3))
+    assert(interpret(iff(fun(variable("x"), variable("y")), constant(3), constant(4))) == constant(3))
     assert(interpret(fun(variable("x"), plus(constant(7), variable("x")))) ==
       fun(variable("x"), plus(constant(7), variable("x"))))
     assert(interpret(app(variable("x"), constant(3))) == err("Var Application"))
-//    assert(interpret(app(fun("x", plus(constant(7), variable("x"))), constant(3))) == constant(10))
   }
   test("reduce works") {
     assert (reduce(variable("x"), plus(constant(3), constant(4)), variable("x")) == plus(constant(3), constant(4)))
@@ -60,20 +58,6 @@ class behaviorTests extends FunSuite {
     assert (reduce(fun(variable("y"), constant(3)), constant(5), variable("y")) == fun(variable("y"), constant(3)))
     assert (reduce(fun(variable("y"), constant(3)), constant(5), variable("x")) != fun(variable("y"), constant(3)))
 
-  }
-
-//  test("evaluate works") {
-//    fixtures.complex1 cata evaluate assert_=== -1
-//    fixtures.complex2 cata evaluate assert_=== 0
-//  }
-//
-  test("size works") {
-    fixtures.complex1 cata size assert_=== 9
-    fixtures.complex2 cata size assert_=== 10
-  }
-
-  test("depth works") {
-    fixtures.complex1 cata depth assert_=== 4
-    fixtures.complex2 cata depth assert_=== 5
+//println(reduce(fun(variable("y"), constant(3)), constant(5), variable("x")))
   }
 }
