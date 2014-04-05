@@ -2,17 +2,4 @@
 (Home)
 https://bitbucket.org/davidtanloyola/cs372project3
 
-CLUE:
-Konstantin Läufer
-Regarding project 3, please make as much progress as you can without having had a classroom discussion of the
-lambda calculus. In particular, you should aim to do the following over the next few days:
-
-- start with ExprF
-- add the required additional branches to your abstract syntax
-- extend the functor implementation accordingly
-- check the functor laws
-
-Then start to work on substitution as an ExprF-algebra. Please raise questions or share insights here.
-Like ·  · March 20 at 3:16pm
-(LocalHome)
-~\April2014\Project3a\1a\cs372project3
+https://trello.com/c/UOPPvXSe/35-project-3a
