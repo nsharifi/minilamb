@@ -4,7 +4,6 @@ import scalamu.In
 
 object behaviors {
 
-  import scalamu.Algebra
   import structures._
   import structures.ExprFactory._
 

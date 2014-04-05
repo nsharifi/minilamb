@@ -58,6 +58,5 @@ class behaviorTests extends FunSuite {
     assert (reduce(fun(variable("y"), constant(3)), constant(5), variable("y")) == fun(variable("y"), constant(3)))
     assert (reduce(fun(variable("y"), constant(3)), constant(5), variable("x")) != fun(variable("y"), constant(3)))
 
-//println(reduce(fun(variable("y"), constant(3)), constant(5), variable("x")))
   }
 }
