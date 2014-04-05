@@ -67,7 +67,7 @@
       <file leaf-file-name="structures.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/structures.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="11" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.0" vertical-offset="1109" max-vertical-offset="1500">
+            <state line="90" column="19" selection-start="3472" selection-end="3472" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
               <folding />
             </state>
           </provider>
@@ -76,21 +76,9 @@
       <file leaf-file-name="behaviors.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="579" selection-end="579" vertical-scroll-proportion="0.33248082" vertical-offset="230" max-vertical-offset="1275">
+            <state line="50" column="0" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.3836317" vertical-offset="600" max-vertical-offset="1140">
               <folding>
                 <element signature="e#60#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="behaviorsTests.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="2307" selection-end="2307" vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="1095">
-              <folding>
-                <element signature="e#19#48#0" expanded="true" />
-                <element signature="e#181#203#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,6 +89,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="39" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="-7.361111" vertical-offset="320" max-vertical-offset="675">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="behaviorsTests.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="0" selection-start="3051" selection-end="3051" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1260">
+              <folding>
+                <element signature="e#19#48#0" expanded="true" />
+                <element signature="e#181#203#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -233,6 +233,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -697,16 +705,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/struct.scala">
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.10/jars/scalatest_2.10-2.0.jar!/org/scalatest/tools/Runner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="4" selection-start="596" selection-end="596" vertical-scroll-proportion="0.6930946" vertical-offset="59" max-vertical-offset="450">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xplore.sc">
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.10/srcs/scalatest_2.10-2.0-sources.jar!/org/scalatest/tools/Runner.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="-7.361111" vertical-offset="320" max-vertical-offset="675">
+        <state line="859" column="0" selection-start="56754" selection-end="56754" vertical-scroll-proportion="0.33116883" vertical-offset="12228" max-vertical-offset="40710">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.10/srcs/scalatest_2.10-2.0-sources.jar!/org/scalatest/tools/SuiteRunner.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="2008" selection-end="2008" vertical-scroll-proportion="0.33116883" vertical-offset="393" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.10/srcs/scalatest_2.10-2.0-sources.jar!/org/scalatest/FunSuite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1558" column="0" selection-start="64532" selection-end="64532" vertical-scroll-proportion="0.3081571" vertical-offset="23043" max-vertical-offset="23475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.10/srcs/scalatest_2.10-2.0-sources.jar!/org/scalatest/Suite.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1422" column="0" selection-start="69096" selection-end="69096" vertical-scroll-proportion="0.3081571" vertical-offset="20208" max-vertical-offset="37980">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.10/srcs/scalatest_2.10-2.0-sources.jar!/org/scalatest/Engine.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="544" column="0" selection-start="23861" selection-end="23861" vertical-scroll-proportion="0.3081571" vertical-offset="7653" max-vertical-offset="17385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalatest/scalatest_2.10/srcs/scalatest_2.10-2.0-sources.jar!/org/scalatest/FunSuiteLike.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="202" column="0" selection-start="10844" selection-end="10844" vertical-scroll-proportion="0.3081571" vertical-offset="2703" max-vertical-offset="3375">
           <folding />
         </state>
       </provider>
@@ -725,16 +768,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/xplore.sc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="-7.361111" vertical-offset="320" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/struct.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="7" selection-start="76" selection-end="76" vertical-scroll-proportion="0.21802326" vertical-offset="0" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/structures.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="11" selection-start="3560" selection-end="3560" vertical-scroll-proportion="0.0" vertical-offset="1109" max-vertical-offset="1500">
+        <state line="90" column="19" selection-start="3472" selection-end="3472" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/behaviorsTests.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="2307" selection-end="2307" vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="1095">
+        <state line="61" column="0" selection-start="3051" selection-end="3051" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1260">
           <folding>
             <element signature="e#19#48#0" expanded="true" />
             <element signature="e#181#203#0" expanded="true" />
@@ -744,7 +801,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/behaviors.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="579" selection-end="579" vertical-scroll-proportion="0.33248082" vertical-offset="230" max-vertical-offset="1275">
+        <state line="50" column="0" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.3836317" vertical-offset="600" max-vertical-offset="1140">
           <folding>
             <element signature="e#60#82#0" expanded="true" />
           </folding>
