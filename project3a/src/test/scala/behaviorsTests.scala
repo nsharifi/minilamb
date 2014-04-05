@@ -45,7 +45,11 @@ class behaviorTests extends FunSuite {
 
   }
 
-  test("interpret plus works") {assert(interpret( fixtures.twoPlusthree ) == constant(5))}
+  test("interpret arithmetic works") {
+    assert(interpret( fixtures.twoPlusthree ) == constant(5))
+    assert(interpret(fixtures.threeMinusone ) == constant(2))
+    assert(interpret( fixtures.threeTimestwo ) == constant(6))
+  }
 
   test("interpret part A works") {
     assert(interpret(constant(3)) == constant(3))
