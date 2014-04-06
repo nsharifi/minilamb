@@ -15,10 +15,6 @@ object behaviors {
     "y" + counter
   }
 
-  // The Y-Combinator
-  val Y = app(fun(variable("G"), fun(variable("g"), app(variable("G"), app(variable("g"), variable("g"))))),
-    fun(variable("g"), app(variable("G"), app(variable("g"), variable("g")))))
-
   // substitute a for x in e
   def reduce(e: Expr, a: Expr, x: Expr): Expr = e match {
     case In(Var(_)) => e match {
