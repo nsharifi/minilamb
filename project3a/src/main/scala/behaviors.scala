@@ -7,6 +7,18 @@ object behaviors {
   import structures._
   import structures.ExprFactory._
 
+
+  // Variable generating code
+  var counter = 0
+  def nextVar: String = {
+    counter += 1
+    "y" + counter
+  }
+
+  // The Y-Combinator
+  val Y = app(fun(variable("G"), fun(variable("g"), app(variable("G"), app(variable("g"), variable("g"))))),
+    fun(variable("g"), app(variable("G"), app(variable("g"), variable("g")))))
+
   // substitute a for x in e
   def reduce(e: Expr, a: Expr, x: Expr): Expr = e match {
     case In(Var(_)) => e match {
@@ -26,8 +38,11 @@ object behaviors {
     case In(Div(l, r)) if(r == x) => plus(l, a)
     case In(Div(l, r)) if(l == x) => plus(a, r)
 
-    case In(Fun(v, b)) if (v == x) => fun(v, b)
-    case In(Fun(v, b)) if (v != x) => fun(variable("z"), reduce(e, variable("z"), v))
+    case In(Fun(y, b)) if (y == x) => fun(y, b)
+    case In(Fun(y, b)) if (y != x) => {
+      val curVar = nextVar
+      fun(variable(curVar), reduce(reduce(b, variable(curVar), y), a, x))
+    }
   }
 
   def interpret(expr: Expr): Expr = expr match {
@@ -49,8 +64,8 @@ object behaviors {
     }
     case In(Fun(v, b))   => fun(v, b)
     case In(App(l, r))   => (l, r) match {
-      case (In(Var(_)), _) => err("Var Application")
       case (In(Fun(v, b)), x) => interpret(reduce(b, x, v))
+      case (_, _) => err("Application of Non-Function")
     }
   }
 
