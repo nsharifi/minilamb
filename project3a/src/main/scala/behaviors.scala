@@ -35,7 +35,7 @@ object behaviors {
     case In(Div(l, r)) if(l == x) => plus(a, r)
 
     case In(Fun(y, b)) if (y == x) => fun(y, b)
-    case In(Fun(y, b)) if (y != x) => {
+    case In(Fun(y, b)) if (y != x) => {/* Iterator for bound variable re-naming. if y!=x, x free in e, y free in a, new y'*/
       val curVar = nextVar
       fun(variable(curVar), reduce(reduce(b, variable(curVar), y), a, x))
     }
