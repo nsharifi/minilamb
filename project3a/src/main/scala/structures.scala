@@ -30,7 +30,7 @@ object structures {
   case class App[A](left: A, right: A) extends ExprF[A]
   case class If[A](cond: A, then: A, elze: A) extends ExprF[A]
   case class Error(e: String) extends ExprF[Nothing]
-  case class Y() extends ExprF[Nothing]
+
 
   /**
    * Implicit value for declaring `ExprF` as an instance of
@@ -93,6 +93,6 @@ object structures {
     def app(l: Expr, r: Expr) = In(App(l, r))
     def iff(c: Expr, t: Expr, e: Expr) = In(If(c, t, e))
     def err(e: String) = In(Error(e))
-    def y()=In(Y())
+
   }
 }

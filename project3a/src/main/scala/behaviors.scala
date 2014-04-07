@@ -63,11 +63,6 @@ object behaviors {
       case (In(Fun(v, b)), x) => interpret(reduce(b, x, v))
       case (_, _) => err("Application of Non-Function")
     }
-    //Y = λ G. (λ g. G(g g)) (λ g. G(g g))
-    case In(Y())   =>fun(variable("G"),app(fun(variable("g"), app(variable("G"), app(variable("g"), variable("g")))),
-      fun(variable("g"), app(variable("G"), app(variable("g"), variable("g"))))))
-
-    case In(_)  => err("Exception ")
 
   }
 
