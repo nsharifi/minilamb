@@ -41,7 +41,7 @@ object behaviors {
     }
   }
 
-  def interpret(expr: Expr): Expr = expr match {
+  def eval(expr: Expr): Expr = expr match {
     case In(Constant(c))                             => constant(c)
     case In(UMinus(In(Constant(r))))                 => constant(-r)
     case In(Plus(In(Constant(l)), In(Constant(r))))  => constant(l + r)
@@ -52,18 +52,18 @@ object behaviors {
     case In(Var(n))                                  => err("Variable")
     case In(If(c, t, e)) => (c,t,e) match {
       case (In(Constant(x)), _, _) => x match {  /* Case constant check lhs, rhs*/
-        case 0 => interpret(e)/*rhs*/
-        case _ => interpret(t)/*lhs*/
+        case 0 => eval(e)/*rhs*/
+        case _ => eval(t)/*lhs*/
       }
       case (In(Var(x)), _, _) => err("Var Conditional")
-      case (In(Fun(_, _)), _, _) => interpret(t)
+      case (In(Fun(_, _)), _, _) => eval(t)
     }
     case In(Fun(v, b))   => fun(v, b)
+
     case In(App(l, r))   => (l, r) match {
-      case (In(Fun(v, b)), x) => interpret(reduce(b, x, v))
+      case (In(Fun(v, b)), x) => eval(reduce(b, x, v))
       case (_, _) => err("Application of Non-Function")
     }
-
   }
 
 }
