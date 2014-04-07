@@ -43,11 +43,14 @@ class behaviorTests extends FunSuite {
 
   }
 
-  test("interpret part C Y works") {
+  test("interpret part C works") {
     assert(interpret(fun(variable("x"), plus(constant(7), variable("x")))) ==
       fun(variable("x"), plus(constant(7), variable("x"))))
     assert(interpret(app(variable("x"), constant(3))) == err("Application of Non-Function"))
-    assert(interpret(app(app(fixtures.Y, fun(variable("f"), fun(variable("n"), iff(variable("n"),times(variable("n"),
+  }
+
+    test("interpret Y works") {
+    assert(interpret(app(app(y(), fun(variable("f"), fun(variable("n"), iff(variable("n"),times(variable("n"),
       app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))), constant(5))) == err("Application of Non-Function"))  //constant(120))
   }
 
