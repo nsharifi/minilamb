@@ -25,18 +25,19 @@ object behaviors {
     case In(UMinus(r)) => uminus(a)
     case In(Plus(l, r)) if(r == x) => plus(l, a)
     case In(Plus(l, r)) if(l == x) => plus(a, r)
-    case In(Minus(l, r)) if(r == x) => plus(l, a)
-    case In(Minus(l, r)) if(l == x) => plus(a, r)
-    case In(Times(l, r)) if(r == x) => plus(l, a)
-    case In(Times(l, r)) if(l == x) => plus(a, r)
-    case In(Mod(l, r)) if(r == x) => plus(l, a)
-    case In(Mod(l, r)) if(l == x) => plus(a, r)
-    case In(Div(l, r)) if(r == x) => plus(l, a)
-    case In(Div(l, r)) if(l == x) => plus(a, r)
+    case In(Minus(l, r)) if(r == x) => minus(l, a)
+    case In(Minus(l, r)) if(l == x) => minus(a, r)
+    case In(Times(l, r)) if(r == x) => times(l, a)
+    case In(Times(l, r)) if(l == x) => times(a, r)
+    case In(Mod(l, r)) if(r == x) => mod(l, a)
+    case In(Mod(l, r)) if(l == x) => mod(a, r)
+    case In(Div(l, r)) if(r == x) => div(l, a)
+    case In(Div(l, r)) if(l == x) => div(a, r)
 
     case In(Fun(y, b)) if (y == x) => fun(y, b)
     case In(Fun(y, b)) if (y != x) => {/* Iterator for bound variable re-naming. if y!=x, x free in e, y free in a, new y'*/
       val curVar = nextVar
+//      fun(variable(curVar), app(reduce(b, variable(curVar), y), reduce(variable(curVar), a, x)))
       fun(variable(curVar), reduce(reduce(b, variable(curVar), y), a, x))
     }
   }

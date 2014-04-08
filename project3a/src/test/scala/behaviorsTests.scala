@@ -7,6 +7,9 @@ class behaviorTests extends FunSuite {
   import behaviors._
   import structures.ExprFactory._
 
+  test("misc tests") {
+//    assert (eval(plus(variable("x"))))
+  }
 
   test("reduce works") {
     assert(reduce(variable("x"), plus(constant(3), constant(4)), variable("x")) == plus(constant(3), constant(4)))
@@ -48,7 +51,7 @@ class behaviorTests extends FunSuite {
 
   test("eval Y works") {
     assert(eval(app(app(fixtures.Y, fun(variable("f"), fun(variable("n"), iff(variable("n"),times(variable("n"),
-    app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))), constant(5))) == err("Application of Non-Function"))
+      app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))), constant(5))) == constant(120)) //err("Application of Non-Function"))
   }
 
   test("variable generator works") {assert (nextVar != nextVar) }/* Two calls to nextVar generate different values*/
