@@ -16,7 +16,7 @@ object behaviors {
   }
 
   // substitute a for x in e
-  def reduce(e: Expr, a: Expr, x: Expr): Expr = e match {
+  def reduce(e: Expr, x: Expr, a: Expr): Expr = e match {
     case In(Var(_)) => e match {
       case x => a
       case _ => e
@@ -33,11 +33,12 @@ object behaviors {
     case In(Mod(l, r)) if(l == x) => mod(a, r)
     case In(Div(l, r)) if(r == x) => div(l, a)
     case In(Div(l, r)) if(l == x) => div(a, r)
+    case In(Var(v)) => 
 
     case In(Fun(y, b)) if (y == x) => fun(y, b)
     case In(Fun(y, b)) if (y != x) => {/* Iterator for bound variable re-naming. if y!=x, x free in e, y free in a, new y'*/
       val curVar = nextVar
-//      fun(variable(curVar), app(reduce(b, variable(curVar), y), reduce(variable(curVar), a, x)))
+//      fun(variable(curVar), app(reduce(b, variable(curVar), y), reduce(variable(curVar), x, a)))
       fun(variable(curVar), reduce(reduce(b, variable(curVar), y), a, x))
     }
   }
@@ -62,7 +63,8 @@ object behaviors {
     case In(Fun(v, b))   => fun(v, b)
 
     case In(App(l, r))   => (l, r) match {
-      case (In(Fun(v, b)), x) => eval(reduce(b, x, v))
+      case (In(Fun(v, b)), x) => eval(reduce(b, v, x))
+//      case (In(App(_, _)), _)
       case (_, _) => err("Application of Non-Function")
     }
   }

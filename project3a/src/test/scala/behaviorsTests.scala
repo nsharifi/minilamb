@@ -12,14 +12,16 @@ class behaviorTests extends FunSuite {
   }
 
   test("reduce works") {
-    assert(reduce(variable("x"), plus(constant(3), constant(4)), variable("x")) == plus(constant(3), constant(4)))
-    assert(reduce(variable("y"), plus(constant(1), constant(2)), variable("x")) == plus(constant(1), constant(2)))
-    assert(reduce(variable("y"), fun(variable("z"), plus(constant(1), constant(2))), variable("x")) ==
+    assert(reduce(variable("x"), variable("x"), plus(constant(3), constant(4))) == plus(constant(3), constant(4)))
+    assert(reduce(variable("y"), variable("x"), plus(constant(1), constant(2))) == plus(constant(1), constant(2)))
+    assert(reduce(variable("y"), variable("x"), fun(variable("z"), plus(constant(1), constant(2)))) ==
       fun(variable("z"), plus(constant(1), constant(2))))
-    assert(reduce(constant(10), plus(constant(1), constant(2)), variable("x")) == constant(10))
-    assert(reduce(fun(variable("y"), constant(3)), constant(5), variable("y")) == fun(variable("y"), constant(3)))
-    assert(reduce(fun(variable("y"), constant(3)), constant(5), variable("x")) != fun(variable("y"), constant(3)))
-    assert(reduce(plus(variable("x"), constant(2)), constant(3), variable("x")) == plus(constant(3), constant(2)))
+    assert(reduce(constant(10), variable("x"), plus(constant(1), constant(2))) == constant(10))
+    assert(reduce(fun(variable("y"), constant(3)), variable("y"), constant(5)) == fun(variable("y"), constant(3)))
+//    assert(reduce(fun(variable("y"), constant(3)), variable("x"), constant(5)) == fun(variable("y"), constant(3)))
+    assert(reduce(plus(variable("x"), constant(2)), variable("x"), constant(3)) == plus(constant(3), constant(2)))
+
+//    assert (reduce(fun(variable("x"), plus(variable("x"), constant(5))), variable("x"), constant(5)) == plus(constant(5), constant(5)))
   }
 
   test("eval arithmetic works") {
