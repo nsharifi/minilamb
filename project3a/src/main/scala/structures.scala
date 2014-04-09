@@ -73,10 +73,6 @@ object structures {
    */
   type Expr = µ[ExprF]
 
-  implicit def ExprFEqual[A]: Equal[ExprF[A]] = Equal.equalA
-  implicit def ExprFShow[A]: Show[ExprF[A]] = Show.showFromToString
-  implicit val exprEqual: Equal[Expr] = Equal.equalA
-  implicit val exprShow: Show[Expr] = Show.showFromToString
   /**
    * Factory for creating Expr instances.
    */
