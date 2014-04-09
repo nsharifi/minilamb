@@ -16,7 +16,7 @@ object behaviors {
   }
 
   // substitute a for x in e
-  def reduce(e: Expr, x: Expr, a: Expr): Expr = e match {
+  def reduce(e: Expr, x: String, a: Expr): Expr = e match {
     case In(Var(_)) => e match {
       case x => a
       case _ => e
@@ -34,8 +34,8 @@ object behaviors {
     case In(Fun(y, b)) => {
       if(y == x) fun(y, b)
       else {
-        val newVar = variable(nextVar)
-        fun(newVar, reduce(b, y, newVar))
+        val newVar = nextVar
+        fun(newVar, reduce(b, y, variable(newVar))) // ???
       }
     }
     case In(App(l, r)) => app(reduce(l, x, a), reduce(r, x, a))

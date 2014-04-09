@@ -24,8 +24,8 @@ object fixtures {
   val threeTimestwostring = "3*2"
 
   // The Y-Combinator
-  val Y = app(fun(variable("G"), fun(variable("g"), app(variable("G"), app(variable("g"), variable("g"))))),
-    fun(variable("g"), app(variable("G"), app(variable("g"), variable("g")))))
+  val Y = app(fun("G", fun("g", app(variable("G"), app(variable("g"), variable("g"))))),
+    fun("g", app(variable("G"), app(variable("g"), variable("g")))))
 
 
 
