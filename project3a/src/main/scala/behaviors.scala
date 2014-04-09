@@ -22,50 +22,65 @@ object behaviors {
       case _ => e
     }
     case In(Constant(c)) => constant(c)
-    case In(UMinus(r)) => uminus(a)
-    case In(Plus(l, r)) if(r == x) => plus(l, a)
-    case In(Plus(l, r)) if(l == x) => plus(a, r)
-    case In(Minus(l, r)) if(r == x) => minus(l, a)
-    case In(Minus(l, r)) if(l == x) => minus(a, r)
-    case In(Times(l, r)) if(r == x) => times(l, a)
-    case In(Times(l, r)) if(l == x) => times(a, r)
-    case In(Mod(l, r)) if(r == x) => mod(l, a)
-    case In(Mod(l, r)) if(l == x) => mod(a, r)
-    case In(Div(l, r)) if(r == x) => div(l, a)
-    case In(Div(l, r)) if(l == x) => div(a, r)
-    case In(Var(v)) => 
+    case In(Var(v)) => if(e == x) a else e
+    case In(UMinus(r)) => uminus(a) // TODO recursion on a?
+    case In(Plus(l, r)) => plus(reduce(l, x, a), reduce(r, x, a))
+    case In(Minus(l, r)) => minus(reduce(l, x, a), reduce(r, x, a))
+    case In(Times(l, r)) => times(reduce(l, x, a), reduce(r, x, a))
+    case In(Mod(l, r)) => mod(reduce(l, x, a), reduce(r, x, a))
+    case In(Div(l, r)) => div(reduce(l, x, a), reduce(r, x, a))
+    case In(If(cond, then, elze)) => iff(reduce(cond, x, a), reduce(then, x, a), reduce(elze, x, a))
 
-    case In(Fun(y, b)) if (y == x) => fun(y, b)
-    case In(Fun(y, b)) if (y != x) => {/* Iterator for bound variable re-naming. if y!=x, x free in e, y free in a, new y'*/
-      val curVar = nextVar
-//      fun(variable(curVar), app(reduce(b, variable(curVar), y), reduce(variable(curVar), x, a)))
-      fun(variable(curVar), reduce(reduce(b, variable(curVar), y), a, x))
+    case In(Fun(y, b)) => {
+      if(y == x) fun(y, b)
+      else {
+        val newVar = variable(nextVar)
+        fun(newVar, reduce(b, y, newVar))
+      }
     }
+    case In(App(l, r)) => app(reduce(l, x, a), reduce(r, x, a))
   }
 
   def eval(expr: Expr): Expr = expr match {
     case In(Constant(c))                             => constant(c)
-    case In(UMinus(In(Constant(r))))                 => constant(-r)
-    case In(Plus(In(Constant(l)), In(Constant(r))))  => constant(l + r)
-    case In(Minus(In(Constant(l)), In(Constant(r)))) => constant(l - r)
-    case In(Times(In(Constant(l)), In(Constant(r)))) => constant(l * r)
-    case In(Div(In(Constant(l)), In(Constant(r))))   => constant(l / r)
-    case In(Mod(In(Constant(l)), In(Constant(r))))   => constant(l % r)
-    case In(Var(n))                                  => err("Variable")
+    case In(UMinus(r)) => r match {
+      case In(Constant(r)) => constant(-r)
+      case _ => uminus(eval(r))
+    }
+    case In(Plus(l, r))  => (l, r) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l + r)
+    }
+    case In(Minus(l, r)) => (l, r) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l - r)
+      case (_, _) => minus(eval(l), eval(r))
+    }
+    case In(Times(l, r)) => (l,r) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l * r)
+      case (_, _) => times(eval(l), eval(r))
+    }
+    case In(Div(l, r))   => (l, r) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l / r)
+      case (_, _) => div(eval(l), eval(r))
+    }
+    case In(Mod(l, r))   => (l, r) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l % r)
+      case (_, _) => mod(eval(l), eval(r))
+    }
+    case In(Var(v)) => err("Var")
     case In(If(c, t, e)) => (c,t,e) match {
       case (In(Constant(x)), _, _) => x match {  /* Case constant check lhs, rhs*/
         case 0 => eval(e)/*rhs*/
         case _ => eval(t)/*lhs*/
       }
       case (In(Var(x)), _, _) => err("Var Conditional")
-      case (In(Fun(_, _)), _, _) => eval(t)
+      case (In(Fun(_, _)), _, _) => eval(t) // TODO check this
+      case _ => iff(eval(c), eval(t), eval(e))
     }
     case In(Fun(v, b))   => fun(v, b)
 
-    case In(App(l, r))   => (l, r) match {
-      case (In(Fun(v, b)), x) => eval(reduce(b, v, x))
-//      case (In(App(_, _)), _)
-      case (_, _) => err("Application of Non-Function")
+    case In(App(l, r))   => eval(l) match {
+      case In(Fun(v1, b1)) => eval(reduce(b1, v1, r))
+      case _ => err("Application of Non-Function")
     }
   }
 
