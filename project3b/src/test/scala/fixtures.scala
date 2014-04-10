@@ -28,16 +28,18 @@ object fixtures {
                       )
   val threeTimestwostring = "3*2"
 
-  // The Y-Combinator
+  /* The Y-Combinator*/
   val Y = app(fun("G", fun("g", app(variable("G"), app(variable("g"), variable("g"))))),
     fun("g", app(variable("G"), app(variable("g"), variable("g")))))
+
 //=========================PROJECT 3B
-//val PreLength = fun(variable("f"), fun(variable("c"), iff(variable("c"),
-//  plus(constant(1), app(variable("f"), tl (variable("c")))), constant(0))))
-  //  def preLength[B](g: List[B] => Int)(xs: List[B]) = xs match {
-  //    case Nil => 0
-  //    case _ :: ys => 1 + g(ys)
 
+val preLength = fun("f", fun("c", iff(variable("c"), plus(constant(1),
+                        app(variable("f"), tl(variable("c")))), constant(0)))) //TODO 6 please check??
 
+    def preLengthA[B](g: List[B] => Int)(xs: List[B]) = xs match {
+      case Nil => 0
+      case _ :: ys => 1 + g(ys)
+    }
 
 }
