@@ -1,7 +1,12 @@
 package project3a
 
+import project3a.structures._
 import project3a.structures.Constant
+import project3a.structures.Fun
+import project3a.structures.Iff
+import project3a.structures.Var
 import structures.ExprFactory._
+import scalamu.In
 
 object fixtures {
 
@@ -26,6 +31,12 @@ object fixtures {
   // The Y-Combinator
   val Y = app(fun("G", fun("g", app(variable("G"), app(variable("g"), variable("g"))))),
     fun("g", app(variable("G"), app(variable("g"), variable("g")))))
+//=========================PROJECT 3B
+//val PreLength = fun(variable("f"), fun(variable("c"), iff(variable("c"),
+//  plus(constant(1), app(variable("f"), tl (variable("c")))), constant(0))))
+  //  def preLength[B](g: List[B] => Int)(xs: List[B]) = xs match {
+  //    case Nil => 0
+  //    case _ :: ys => 1 + g(ys)
 
 
 
