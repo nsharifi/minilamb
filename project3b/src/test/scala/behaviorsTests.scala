@@ -51,12 +51,12 @@ class behaviorTests extends FunSuite {
     assert(eval(app(variable("x"), constant(3))) == err("Application of Non-Function"))
   }
 
-
-
+ // App(App(Y, Fun("f",Fun("n",If(Var "n",
+ // Times(Var "n",App(Var("f"),Minus(Var "n",Const 1))),Const 1)))), Const 5)
   test("eval Y works") {
-//    assert(eval(app(app(fixtures.Y, fun("f", fun("n", iff(variable("n"),
-//      times(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))),
-//      constant(5))) == constant(120)) //err("Application of Non-Function"))
+    assert(eval(app(app(fixtures.Y, fun("f", fun("n", iff(variable("n"),
+      times(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))),
+      constant(5))) == err("Application of Non-Function"))//constant(120))
   }
 
   test("variable generator works") {assert (nextVar != nextVar) }/* Two calls to nextVar generate different values*/
@@ -77,5 +77,18 @@ class behaviorTests extends FunSuite {
   test("eval part Cell A works") {
     //    assert(eval( cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) ) ==
     //      cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))))
+//    assert(eval( hd(cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) )) ==  constant(10))
+//    assert(eval( tl(cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) )) ==  constant(3))
+
+  }
+  test("eval part Cell B works") {
+
+//    assert(eval( hd(constant(0))) ==  err("Application of Non-Function"))
+//    assert(eval( tl(constant(0))) ==  err("Application of Non-Function"))
+
+  }
+  test("eval part preLength works") {
+
+
   }
 }
