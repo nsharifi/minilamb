@@ -86,17 +86,17 @@ object behaviors {
       case _ => err("Application of Non-Function")
     }
     //3b
-    case In(Cell(e1,e2))  => expr match{
-      case e11 => eval(e1)
-      case e21 => eval(e2)
-        In(Cell(e1,e21)) //e11 TODO 5 - NOT SURE
+    case In(Cell(e,a))  => e match{
+      case In(e) => eval(In(e))
+      case a1 => eval(a)
+        In(Cell(e,a1)) //e11 TODO 5 - NOT SURE
     }
-    case In(Hd(e1)) => e1 match {
-      case In(Cell(e11,e2))=>eval(e11)
+    case In(Hd(e)) => e match {
+      case In(Cell(e11,a11))=>eval(e11)
       case _ => err("Application of Non-Function")
     }
-    case In(Tl(e1)) => e1 match {
-      case In(Cell(e11,e2))=>eval(e2)
+    case In(Tl(e)) => e match {
+      case In(Cell(e11,a))=>eval(a)
       case _ => err("Application of Non-Function")
     }
 
