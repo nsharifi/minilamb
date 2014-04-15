@@ -1,7 +1,13 @@
 package project3a
 
+import project3a.behaviors._
+import project3a.structures._
 import project3a.structures.Constant
+import project3a.structures.Fun
+import project3a.structures.Iff
+import project3a.structures.Var
 import structures.ExprFactory._
+import scalamu.In
 
 object fixtures {
 
@@ -23,9 +29,21 @@ object fixtures {
                       )
   val threeTimestwostring = "3*2"
 
-  // The Y-Combinator
+  /* The Y-Combinator*/
   val Y = app(fun("G", fun("g", app(variable("G"), app(variable("g"), variable("g"))))),
-    fun("g", app(variable("G"), app(variable("g"), variable("g")))))
+                                fun("g", app(variable("G"), app(variable("g"), variable("g")))))
+  val Ystring = "λG.(λg.G(gg)(λg.G(gg) "
+
+  //def preFac(g: Int => Int)(n: Int): Int = if (n <= 0) 1 else n * g(n - 1)
+  eval(app(app(fixtures.Y, fun("f", fun("n", iff(variable("n"),
+    times(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))),
+    constant(5)))
+  val evalpreFacstring = "if (n <= 0) 1 else n * f(n - 1) "
+  val YpreFacstring = " Y(preFac)(5) "
+
+  //#3b
+  val preLength = fun("f", fun("c", iff(variable("c"), plus(constant(1),
+                           app(variable("f"), tl(variable("c")))), constant(0)))) //TODO 6 please check??
 
 
 

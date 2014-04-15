@@ -28,9 +28,12 @@ object structures {
   case class Var(name: String) extends ExprF[Nothing]
   case class Fun[A](v: String, body: A) extends ExprF[A]
   case class App[A](left: A, right: A) extends ExprF[A]
-  case class If[A](cond: A, then: A, elze: A) extends ExprF[A]
+  case class Iff[A](cond: A, t_hen: A, elze: A) extends ExprF[A]
   case class Error(e: String) extends ExprF[Nothing]
-
+  //3b
+  case class Cell[A](left: A, right: A) extends ExprF[A]
+  case class Hd[A](expr: A) extends ExprF[A]
+  case class Tl[A](expr: A) extends ExprF[A]
 
   /**
    * Implicit value for declaring `ExprF` as an instance of
@@ -49,8 +52,13 @@ object structures {
       case Var(n)      => Var(n)
       case Fun(v, b)   => Fun(v, f(b))
       case App(l, r)   => App(f(l), f(r))
-      case If(c, t, e) => If(f(c), f(t), f(e))
+      case Iff(c, t, e) => Iff(f(c), f(t), f(e))
       case Error(e)    => Error(e)
+
+      //3b
+      case Cell(l, r)   => Cell(f(l), f(r))
+      case Hd(r)   => Hd(f(r))
+      case Tl(r)   => Tl(f(r))
     }
   }
 
@@ -87,8 +95,13 @@ object structures {
     def variable(n: String): Expr = In(Var(n))
     def fun(v: String, b: Expr) = In(Fun(v, b))
     def app(l: Expr, r: Expr) = In(App(l, r))
-    def iff(c: Expr, t: Expr, e: Expr) = In(If(c, t, e))
+    def iff(c: Expr, t: Expr, e: Expr) = In(Iff(c, t, e))
     def err(e: String) = In(Error(e))
+
+    //3B
+    def cell(l: Expr, r: Expr) = In(Cell(l, r))
+    def hd(r: Expr): Expr = In(Hd(r))
+    def tl(r: Expr): Expr = In(Tl(r))
 
   }
 }

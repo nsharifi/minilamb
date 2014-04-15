@@ -1,0 +1,73 @@
+Project 3b
+Due Date
+Apr 14 at 11:59 PM
+https://trello.com/c/cBLiyitt/39-project-3b
+
+
+Description
+Team project
+Learning objectives
+More advanced Scala
+An understanding of
+        algebraic data types as initial F-algebras
+        representation of programs as recursive data structures (trees)
+        program interpretation (evaluation) as recursive functions on programs
+        representation and evaluation of (linear and nonlinear) data structures such as lists and trees
+
+Functional requirements
+In this project, you will extend your Scala-based interpreter for the simple untyped lambda calculus to include cell
+(node) values for building linear (and nonlinear) data structures.
+
+Abstract Syntax
+To implement this capability, you will add the following three language constructs also found in this handout to
+your endofunctor:
+
+        Cell (called :: in the handout): this constructor takes two arguments, both of which are arbitrary expressions.
+Thus, Cell allows you to build not only lists but, by using another Cell value as the first argument, arbitrarily
+nested tree structures. Note that we will not add a separate Nil value because we can already express Nil using
+existing constructs. (In LISP, these cells are known as "cons" cells, but we call this construct Cell for easier
+distinction from Const.)
+        Hd and Tl: each of these destructors (accessors) takes one argument, which is an arbitrary expression.
+
+Semantics
+Next you will extend your evaluation function to support the additional syntax as follows:
+
+        A Cell expression evaluates to itself. That is, the children are evaluated on demand following normal-order evaluation.
+        Hd evaluates its argument, expecting a Cell, and then evaluates the first child of the Cell.
+        Tl evaluates its argument, expecting a Cell, and then evaluates the second child of the Cell.
+
+https://bitbucket.org/davidtanloyola/cs471-test0-revision/src/b6de4bdd3c08c0a03a336f8e869f507cedb53a72/src/main/scala/FunctionalProgChiusano/ch03/List.scala?at=default
+
+Examples
+eval(Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2))) -> Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2))
+eval(Hd(Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2)))) -> Const 10
+eval(Tl(Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2)))) -> Const 3
+eval(If(Cell(...), Const 3, Const 4)) -> Const 3
+eval(Hd(Const 0)) -> error
+eval(Tl(Const 0)) -> error
+eval(Tl(Fun("x", Var("x")))) -> error
+eval(Tl(Cell(Const 10, Fun("x", Var("x"))))) -> Fun("x", Var("x"))
+
+
+
+Nonfunctional requirements
+    Start with a copy (or new branch) of your project 3a solution.
+    Add the additional case classes to the endofunctor.
+    Add the corresponding branches to your algebras and eval.
+    Create an expression preLength whose fixpoint (i.e., result of applying the Y combinator to it) computes the
+length of a linear list represented as Cells. Hint: start with the Scala example based on explicit recursion.
+    Create an expression preSize whose fixpoint computes the size of an arbitrary structure represented as Cells,
+where size is defined as the total number of Cell nodes. Hint: start with the Scala example from project 2a.
+
+Extend your test suite from the previous project to include at least
+the examples above
+
+            two distinct cases for preLength (empty and, say, three nodes)
+            two distinct cases for preSize (empty and, say, a binary tree with five nodes)
+
+
+Submission
+Please post to the Facebook group or send email when your project is ready to grade.
+
+Grading criteria
+TODO
