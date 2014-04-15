@@ -17,13 +17,12 @@ object behaviors {
 
   // substitute a for x in e
   def reduce(e: Expr, x: String, a: Expr): Expr = e match {
-    case In(Var(_)) => e match {
-      case x => a
-      case _ => e
+    case In(Var(v1)) =>  {
+      if (v1 == x) a
+      else e
     }
     case In(Constant(c)) => constant(c)
-    case In(Var(v)) => if(e == x) a else e
-    case In(UMinus(r)) => uminus(a) // TODO recursion on a?
+    case In(UMinus(r)) => uminus(r) // TODO recursion on a?
     case In(Plus(l, r)) => plus(reduce(l, x, a), reduce(r, x, a))
     case In(Minus(l, r)) => minus(reduce(l, x, a), reduce(r, x, a))
     case In(Times(l, r)) => times(reduce(l, x, a), reduce(r, x, a))
@@ -34,12 +33,23 @@ object behaviors {
     case In(Fun(y, b)) => {
       if(y == x) fun(y, b)
       else {
-        val newVar = nextVar
-        fun(newVar, reduce(b, y, variable(newVar))) // ???
+        // Do  α-reduction
+        val newVar = "y1"
+        val alphaReduced = reduce(b, y, variable(newVar))
+//        println(alphaReduced)
+//        alphaReduced
+        // Do β-reduction
+        fun(newVar, reduce(alphaReduced, x, a))
+//        fun(newVar, reduce(b, y, variable(newVar))) // ???
       }
+//      else {
+//        fun(y, reduce(b, x, a))
+//      }
     }
     case In(App(l, r)) => app(reduce(l, x, a), reduce(r, x, a))
+//    case _ => reduce(e, x, a)
   }
+//  (λy. y + ((λx.x) 3) + x)   [5/x]
 
   def eval(expr: Expr): Expr = expr match {
     case In(Constant(c))                             => constant(c)

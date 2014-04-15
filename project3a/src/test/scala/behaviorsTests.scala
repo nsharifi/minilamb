@@ -18,11 +18,21 @@ class behaviorTests extends FunSuite {
       fun("z", plus(constant(1), constant(2))))
     assert(reduce(constant(10), "x", plus(constant(1), constant(2))) == constant(10))
     assert(reduce(fun("y", constant(3)), "y", constant(5)) == fun("y", constant(3)))
-//    assert(reduce(fun(variable("y"), constant(3)), variable("x"), constant(5)) == fun(variable("y"), constant(3)))
+    assert(reduce(fun("y", constant(3)), "x", constant(5)) == fun("y1", constant(3)))
     assert(reduce(plus(variable("x"), constant(2)), "x", constant(3)) == plus(constant(3), constant(2)))
 
-//    assert (reduce(fun(variable("x"), plus(variable("x"), constant(5))), variable("x"), constant(5)) == plus(constant(5), constant(5)))
+    assert(reduce(fun("y", plus(plus(variable("y"), app(fun("x", variable("x")), constant(3))), variable("x"))), "x", variable("y")) ==
+      fun("y1", plus(plus(variable("y1"), app(fun("x", variable("x")), constant(3))), variable("y"))))
   }
+
+  test("Alpha substitution") {
+    assert (reduce(fun("y", app(variable("x"), fun("x", plus(variable("x"), variable("y"))))), "x", variable("y")) ==
+      fun("y1", app(variable("y"), fun("x", plus(variable("x"), variable("y1"))))))
+//    assert (reduce(fun("x", fun("y", app(variable("x"), fun("x", plus(variable("x"), variable("y")))))), "x", variable("y")) ==
+//      fun("y1", app(variable("y"), fun("x", plus(variable("x"), variable("y1"))))))
+  }
+
+
 
   test("eval arithmetic works") {
     assert(eval(fixtures.twoPlusthree) == constant(5))
