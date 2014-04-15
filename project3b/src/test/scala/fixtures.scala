@@ -30,8 +30,8 @@ object fixtures {
   val threeTimestwostring = "3*2"
 
   /* The Y-Combinator*/
-  val Y = app(fun("G", fun("g", app(variable("G"), app(variable("g"), variable("g"))))),
-                                fun("g", app(variable("G"), app(variable("g"), variable("g")))))
+  val Y = fun("G", app(fun("g", app(variable("G"), app(variable("g"), variable("g")))),
+                                fun("g", app(variable("G"), app(variable("g"), variable("g"))))))
   val Ystring = "λG.(λg.G(gg)(λg.G(gg) "
 
   //def preFac(g: Int => Int)(n: Int): Int = if (n <= 0) 1 else n * g(n - 1)

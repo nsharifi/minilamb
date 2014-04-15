@@ -34,6 +34,7 @@ object structures {
   case class Cell[A](left: A, right: A) extends ExprF[A]
   case class Hd[A](expr: A) extends ExprF[A]
   case class Tl[A](expr: A) extends ExprF[A]
+  case class Nill() extends ExprF[Nothing]
 
   /**
    * Implicit value for declaring `ExprF` as an instance of
@@ -59,6 +60,7 @@ object structures {
       case Cell(l, r)   => Cell(f(l), f(r))
       case Hd(r)   => Hd(f(r))
       case Tl(r)   => Tl(f(r))
+      case Nill()  => Nill()
     }
   }
 
@@ -102,6 +104,6 @@ object structures {
     def cell(l: Expr, r: Expr) = In(Cell(l, r))
     def hd(r: Expr): Expr = In(Hd(r))
     def tl(r: Expr): Expr = In(Tl(r))
-
+    def nill(): Expr = In(Nill())
   }
 }

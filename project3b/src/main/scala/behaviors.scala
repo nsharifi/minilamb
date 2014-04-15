@@ -17,13 +17,10 @@ object behaviors {
 
   // substitute a for x in e
   def reduce(e: Expr, x: String, a: Expr): Expr = e match {
-    case In(Var(_)) => e match {
-      case x => a
-      case _ => e
-    }/*Var*/
     case In(Constant(c)) => constant(c)
-    case In(Var(v)) => if(e == x) a else e
-    case In(UMinus(r)) => uminus(a) // TODO 1 recursion on a? Uminus is not use for this project dt
+    case In(Var(`x`)) => a
+    case In(Var(_)) => e
+    case In(UMinus(r)) => uminus(a)
     case In(Plus(l, r)) => plus(reduce(l, x, a), reduce(r, x, a))
     case In(Minus(l, r)) => minus(reduce(l, x, a), reduce(r, x, a))
     case In(Times(l, r)) => times(reduce(l, x, a), reduce(r, x, a))
@@ -31,12 +28,14 @@ object behaviors {
     case In(Div(l, r)) => div(reduce(l, x, a), reduce(r, x, a))
     case In(Iff(cond, t_hen, elze)) => iff(reduce(cond, x, a), reduce(t_hen, x, a), reduce(elze, x, a))
 
+    case In(Fun(`x`, b)) => fun(x, b)
     case In(Fun(y, b)) => {
-      if(y == x) fun(y, b)
-      else {
-        val newVar = nextVar
-        fun(newVar, reduce(b, y, variable(newVar))) // TODO 2 ???
-      }
+      val newVar = nextVar
+      val alphaReduced = reduce(b, y, variable(newVar))
+      //        println(alphaReduced)
+      //        alphaReduced
+      // Do β-reduction
+      fun(newVar, reduce(alphaReduced, x, a))
     }
     case In(App(l, r)) => app(reduce(l, x, a), reduce(r, x, a))
   }/* reduce*/
@@ -86,18 +85,18 @@ object behaviors {
       case _ => err("Application of Non-Function")
     }
     //3b
-    case In(Cell(e,a))  => e match{
-      case In(e) => eval(In(e))
-      case a1 => eval(a)
-        In(Cell(e,a1)) //e11 TODO 5 - NOT SURE
+    case In(Cell(l, r))  => (l, r) match{
+      case (h, In(Nill())) => eval(h) // TODO Alternative to Nill implementation???
+      case (_, _) => cell(l, r)
+//        In(Cell(e,a1)) //e11 TODO 5 - NOT SURE
     }
     case In(Hd(e)) => e match {
-      case In(Cell(e11,a11))=>eval(e11)
-      case _ => err("Application of Non-Function")
+      case In(Cell(e11, a11)) => eval(e11)
+      case _ => err("Non-cell Head")
     }
     case In(Tl(e)) => e match {
-      case In(Cell(e11,a))=>eval(a)
-      case _ => err("Application of Non-Function")
+      case In(Cell(e11,a)) => eval(a)
+      case _ => err("Non-cell Tail")
     }
 
 
