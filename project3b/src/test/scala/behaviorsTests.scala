@@ -20,8 +20,11 @@ class behaviorTests extends FunSuite {
 //    assert(reduce(fun(variable("y"), constant(3)), variable("x"), constant(5)) == fun(variable("y"), constant(3)))
     assert(reduce(plus(variable("x"), constant(2)), "x", constant(3)) == plus(constant(3), constant(2)))
     assert(reduce(fun("y", variable("y")), "x", constant(5)) == fun("y1", variable("y1")))
+    assert (reduce(fun("y", plus(variable("y"), plus(app(fun("x", variable("x")), constant(3)), variable("x")))), "x", constant(5)) ==
+      fun("y2", plus(variable("y2"), plus(app(fun("y4", variable("y4")), constant(3)), constant(5))) ))
 
-//    assert (reduce(fun(variable("x"), plus(variable("x"), constant(5))), variable("x"), constant(5)) == plus(constant(5), constant(5)))
+
+    //    assert (reduce(fun(variable("x"), plus(variable("x"), constant(5))), variable("x"), constant(5)) == plus(constant(5), constant(5)))
   }
 
   //  test("eval arithmetic works") {
@@ -46,20 +49,21 @@ class behaviorTests extends FunSuite {
     assert(eval(iff(fun("x", variable("y")), constant(3), constant(4))) == constant(3))
   }
 //
-//  test("eval part C  works") {
-//    assert(eval(fun("x", plus(constant(7), variable("x")))) == fun("x", plus(constant(7), variable("x"))))
-//    assert(eval(app(variable("x"), constant(3))) == err("Application of Non-Function"))
-//  }
-//
+  test("eval part C  works") {
+    assert(eval(fun("x", plus(constant(7), variable("x")))) == fun("x", plus(constant(7), variable("x"))))
+    assert(eval(app(variable("x"), constant(3))) == err("Application of Non-Function"))
+  }
+
 // // App(App(Y, Fun("f",Fun("n",If(Var "n",
 // // Times(Var "n",App(Var("f"),Minus(Var "n",Const 1))),Const 1)))), Const 5)
 
-//  test("eval Y works") {
+  test("eval Y works") {
 //    assert(eval(app(app(fixtures.Y, fun("f", fun("n", iff(variable("n"),
 //      times(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))),
 //      constant(5))) == constant(120))
-//  }
-//
+  }
+
+  //
 //  test("variable generator works") {assert (nextVar != nextVar) }/* Two calls to nextVar generate different values*/
 ////====================================================
 //  //project3b

@@ -20,7 +20,7 @@ object behaviors {
     case In(Constant(c)) => constant(c)
     case In(Var(`x`)) => a
     case In(Var(_)) => e
-    case In(UMinus(r)) => uminus(eval(a))
+    case In(UMinus(r)) => eval(uminus(a))
     case In(Plus(l, r)) => plus(reduce(l, x, a), reduce(r, x, a))
     case In(Minus(l, r)) => minus(reduce(l, x, a), reduce(r, x, a))
     case In(Times(l, r)) => times(reduce(l, x, a), reduce(r, x, a))
