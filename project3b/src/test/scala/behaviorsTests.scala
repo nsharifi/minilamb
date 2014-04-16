@@ -20,8 +20,6 @@ class behaviorTests extends FunSuite {
 //    assert(reduce(fun(variable("y"), constant(3)), variable("x"), constant(5)) == fun(variable("y"), constant(3)))
     assert(reduce(plus(variable("x"), constant(2)), "x", constant(3)) == plus(constant(3), constant(2)))
     assert(reduce(fun("y", variable("y")), "x", constant(5)) == fun("y1", variable("y1")))
-//    assert (reduce(fun("y", app(variable("x"), fun("x", plus(variable("x"), variable("y"))))), "x", variable("y")) ==
-//      fun("y1", app(variable("y"), fun("x", plus(variable("x"), variable("y1"))))))
 
 //    assert (reduce(fun(variable("x"), plus(variable("x"), constant(5))), variable("x"), constant(5)) == plus(constant(5), constant(5)))
   }

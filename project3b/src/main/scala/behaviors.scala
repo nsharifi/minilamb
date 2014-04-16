@@ -31,9 +31,8 @@ object behaviors {
     case In(Fun(`x`, b)) => fun(x, b)
     case In(Fun(y, b)) => {
       val newVar = nextVar
+      // Do α-reduction
       val alphaReduced = reduce(b, y, variable(newVar))
-      //        println(alphaReduced)
-      //        alphaReduced
       // Do β-reduction
       fun(newVar, reduce(alphaReduced, x, a))
     }
@@ -41,31 +40,26 @@ object behaviors {
   }/* reduce*/
 
   def eval(expr: Expr): Expr = expr match {
-    case In(Constant(c))                             => constant(c)
-    case In(UMinus(r)) => r match {
-      case In(Constant(r)) => constant(-r)
-      case _ => uminus(eval(r))
+    case In(Constant(c))  => constant(c)
+    case In(UMinus(l)) => eval(l) match {
+      case In(Constant(l)) => constant(-l)
     }
-    case In(Plus(l, r))  => (l, r) match {
+    case In(Plus(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l + r)
-      case (_, _) => plus(eval(l), eval(r)) //TODO 3 pls check added by dt
     }
-    case In(Minus(l, r)) => (l, r) match {
+    case In(Minus(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l - r)
-      case (_, _) => minus(eval(l), eval(r))
     }
-    case In(Times(l, r)) => (l,r) match {
+    case In(Times(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l * r)
-      case (_, _) => times(eval(l), eval(r))
     }
-    case In(Div(l, r))   => (l, r) match {
+    case In(Div(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l / r)
-      case (_, _) => div(eval(l), eval(r))
     }
-    case In(Mod(l, r))   => (l, r) match {
+    case In(Mod(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l % r)
-      case (_, _) => mod(eval(l), eval(r))
     }
+
     case In(Var(v)) => err("Var")
 
     case In(Iff(c, t, e)) => (c,t,e) match {
@@ -98,10 +92,6 @@ object behaviors {
       case In(Cell(e11,a)) => eval(a)
       case _ => err("Non-cell Tail")
     }
-
-
-
-
 
   }/*eval*/
 
