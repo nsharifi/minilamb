@@ -66,7 +66,6 @@ class behaviorTests extends FunSuite {
   //
   test("variable generator works") {assert (nextVar != nextVar) }/* pass!!Two calls to nextVar generate different values*/
 ////====================================================
-//  //project3b
 //  //3b
 //  //#A
 //  //  eval(Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2))) -> Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2))
