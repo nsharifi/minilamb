@@ -26,7 +26,7 @@ object behaviors {
     case In(Times(l, r)) => times(reduce(l, x, a), reduce(r, x, a))
     case In(Mod(l, r)) => mod(reduce(l, x, a), reduce(r, x, a))
     case In(Div(l, r)) => div(reduce(l, x, a), reduce(r, x, a))
-    case In(Iff(cond, then, elze)) => iff(reduce(cond, x, a), reduce(then, x, a), reduce(elze, x, a))
+    case In(Iff(cond, t_hen, elze)) => iff(reduce(cond, x, a), reduce(t_hen, x, a), reduce(elze, x, a))
 
     case In(Fun(`x`, b)) => fun(x, b)
     case In(Fun(y, b)) => {

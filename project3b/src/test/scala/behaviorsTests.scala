@@ -27,15 +27,15 @@ class behaviorTests extends FunSuite {
     //    assert (reduce(fun(variable("x"), plus(variable("x"), constant(5))), variable("x"), constant(5)) == plus(constant(5), constant(5)))
   }
 
-  //  test("eval arithmetic works") {
+//    test("eval arithmetic works") {
 //    assert(eval(fixtures.twoPlusthree) == constant(5))
 //    assert(eval(fixtures.threeMinusone) == constant(2))
 //    assert(eval(fixtures.threeTimestwo) == constant(6))
 //  }
-//
+
   test("eval part A works") {
     assert(eval(constant(3)) == constant(3))
-//    assert(eval(variable("x")) == err("Variable"))
+   // assert(eval(variable("x")) == err("Variable"))
     assert(eval(fun("x", plus(constant(7), variable("x")))) == fun("x", plus(constant(7), variable("x"))))
     assert(eval(app(variable("x"), constant(3))) == err("Application of Non-Function"))
     assert(eval(app(fun("x", plus(constant(7), variable("x"))), constant(3))) == constant(10))
@@ -47,12 +47,12 @@ class behaviorTests extends FunSuite {
     assert(eval(iff(variable("x"), constant(3), constant(4)) ) == err("Var Conditional"))
     assert(eval(iff(fun("x", variable("x")), constant(3), constant(4))) == constant(3))
     assert(eval(iff(fun("x", variable("y")), constant(3), constant(4))) == constant(3))
-  }
-//
+  }/*pass*/
+
   test("eval part C  works") {
     assert(eval(fun("x", plus(constant(7), variable("x")))) == fun("x", plus(constant(7), variable("x"))))
     assert(eval(app(variable("x"), constant(3))) == err("Application of Non-Function"))
-  }
+  }/*pass*/
 
 // // App(App(Y, Fun("f",Fun("n",If(Var "n",
 // // Times(Var "n",App(Var("f"),Minus(Var "n",Const 1))),Const 1)))), Const 5)
@@ -64,7 +64,7 @@ class behaviorTests extends FunSuite {
   }
 
   //
-//  test("variable generator works") {assert (nextVar != nextVar) }/* Two calls to nextVar generate different values*/
+  test("variable generator works") {assert (nextVar != nextVar) }/* pass!!Two calls to nextVar generate different values*/
 ////====================================================
 //  //project3b
 //  //3b
@@ -79,24 +79,32 @@ class behaviorTests extends FunSuite {
 //  //    eval(Tl(Fun("x", Var("x")))) -> error
 //  //  eval(Tl(Cell(Const 10, Fun("x", Var("x"))))) -> Fun("x", Var("x"))
 //
-//  test("eval part Cell A works") {
-//        assert(eval( cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) ) ==
-//          cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))))
-//    assert(eval( hd(cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) )) ==  constant(10))
-//    assert(eval( tl(cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) )) ==  constant(3))
-//
-//  }
-//  test("eval part Cell B works") {
-//
-//    assert(eval( hd(constant(0))) ==  err("Non-cell Head"))
-//    assert(eval( tl(constant(0))) ==  err("Non-cell Tail"))
-//    assert(eval(tl(fun("x", variable("x")))) == err("Non-cell Tail"))
-//    assert( eval(tl(cell(constant(10), fun("x", variable("x"))))) == fun("x", variable("x")))
-//
-//
-//  }
-//  test("eval part preLength works") {
-//
-//
-//  }
-}
+  test("eval part Cell A works") {
+        assert(eval( cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) ) ==
+          cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))))
+    assert(eval( hd(cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) )) ==  constant(10))
+    assert(eval( tl(cell(plus(constant(3), constant(7)), minus(constant(5),constant(2))) )) ==  constant(3))
+
+  }/*pass*/
+  test("eval part Cell B works") {
+    //eval(If(Cell(...), Const 3, Const 4)) -> Const 3
+    assert(eval( hd(constant(0))) ==  err("Non-cell Head"))
+    assert(eval( tl(constant(0))) ==  err("Non-cell Tail"))
+    assert(eval(tl(fun("x", variable("x")))) == err("Non-cell Tail"))
+    assert( eval(tl(cell(constant(10), fun("x", variable("x"))))) == fun("x", variable("x")))
+
+  }/*pass*/
+
+  //cell(10, cell(20, cell(30, 0))) has size and length 3
+//  test("eval part preLength1 works") {
+//    assert(eval(app(app(fixtures.Y,(fun("f", fun("c", iff(variable("c"), plus(constant(1),
+//      app(variable("f"), tl(variable("c")))), constant(0))))))
+//      ,cell(constant(0),cell(constant(20),cell(constant(30),constant(0)))))) == constant(3))
+// }
+
+  //cell(cell(10, 11), cell(cell(20, 21), cell(cell(30,31), 0))) //TODO preLength and preSize test for this
+
+
+
+
+}/*behaviourTest*/

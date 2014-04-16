@@ -16,7 +16,9 @@ val t1= eval(app(app(fixtures.Y, fun("f", fun("n", iff(variable("n"), times(vari
 val t1y1= eval(app(app(fixtures.Y, fun("f",fun("n",iff(variable("n"),times(variable("n"),
      app(variable("f"),minus(variable("n"),constant(1)))),constant(1))))), constant(5)))
 
-
+val t3= eval(app(app(fixtures.Y,fun("f", fun("c", iff(variable("c"), plus(constant(1),
+  app(variable("f"), tl(variable("c")))), constant(0)))))
+  ,cell(constant(10), cell(constant(20), cell(constant(30),constant( 0))))))
 
 
 
