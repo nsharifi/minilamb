@@ -49,6 +49,7 @@ object behaviors {
     }
     case In(Minus(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l - r)
+      case _ => minus(eval(l), eval(r))
     }
     case In(Times(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l * r)

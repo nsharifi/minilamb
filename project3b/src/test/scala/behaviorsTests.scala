@@ -58,9 +58,9 @@ class behaviorTests extends FunSuite {
 // // Times(Var "n",App(Var("f"),Minus(Var "n",Const 1))),Const 1)))), Const 5)
 
   test("eval Y works") {
-//    assert(eval(app(app(fixtures.Y, fun("f", fun("n", iff(variable("n"),
-//      times(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))),
-//      constant(5))) == constant(120))
+    assert(eval(app(app(fixtures.Y, fun("f", fun("n", iff(variable("n"),
+      times(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))),
+      constant(2))) == constant(2))
   }
 
   //
