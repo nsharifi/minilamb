@@ -4,90 +4,109 @@ import scalamu.In
 
 object behaviors {
 
-  import scalamu.Algebra
   import structures._
+  import structures.ExprFactory._
 
-  //In(App(In(Fun("x", In(Plus(In(Const(7)), In(Var("x")))))), In(Const(3)))) -> Const(10)
-  // substitute a for x in e
-  def reduce(e: Expr, a: Expr, x: Expr): Expr = e match {
-    case In(Var(_)) => e match {
-      case x => a
-      case _ => e
-    }
-    case In(Constant(c)) => In(Constant(c))
-    case In(Fun(v, b)) => v match {
-      case x => In(Fun(v, b))
-      case _ => {
-        In(Fun("y1", reduce(reduce(e, In(Var("y1")), In(Var(v))), a, x)))
-      }
-    }
-  }
-  def err(msg: String): Either[String, Expr] = {
-    Right(msg)
-  }
-  //App(Fun("x", Plus(Const(7), Var("x"))), Const(3)) -> Const(10)
 
-  def interpret(expr: Expr): Expr = expr match {
-    case In(Constant(c)) => In(Constant(c))
-    case In(UMinus(In(Constant(r))))   => In(Constant(-r))
-    case In(Plus(In(Constant(l)), In(Constant(r))))  => In(Constant(l + r))
-    case In(Minus(In(Constant(l)), In(Constant(r)))) => In(Constant(l - r))
-    case In(Times(In(Constant(l)), In(Constant(r)))) => In(Constant(l * r))
-    case In(Div(In(Constant(l)), In(Constant(r))))   => In(Constant(l / r))
-    case In(Mod(In(Constant(l)), In(Constant(r))))   => In(Constant(l % r))
-    case In(Var(n))      => In(Error("Variable"))
-    case In(If(c, t, e)) => (c,t,e) match {
-      case (In(Constant(x)), _, _) => x match {  /* Case constant check lhs, rhs*/
-        case 0 => interpret(e)/*rhs*/
-        case _ => interpret(t)/*lhs*/
-      }
+
+  var counter = 0
+  def nextVar: String = {/*Variable generating code*/
+    counter += 1
+    "y" + counter
+  }
+
 <<<<<<< local
-      case (In(Var(x)), _, _) => In(Error("Var Conditional"))
-      case (_, _, _) => interpret(In(If(c, t, e)))
+  // substitute x with a in e
+  def reduce(e: Expr, x: String, a: Expr): Expr = e match {
 =======
-      case (_, _, _) => interpret(In(If(c, t, e)))/*Other cases*/
+  def reduce(e: Expr, x: String, a: Expr): Expr = e match {/* substitute a for x in e*/
+>>>>>>> other
+    case In(Constant(c)) => constant(c)
+    case In(Var(`x`)) => a
+    case In(Var(_)) => e
+    case In(UMinus(r)) => eval(uminus(a))
+    case In(Plus(l, r)) => plus(reduce(l, x, a), reduce(r, x, a))
+    case In(Minus(l, r)) => minus(reduce(l, x, a), reduce(r, x, a))
+    case In(Times(l, r)) => times(reduce(l, x, a), reduce(r, x, a))
+    case In(Mod(l, r)) => mod(reduce(l, x, a), reduce(r, x, a))
+    case In(Div(l, r)) => div(reduce(l, x, a), reduce(r, x, a))
+    case In(Iff(cond, t_hen, e_lse)) => iff(reduce(cond, x, a), reduce(t_hen, x, a), reduce(e_lse, x, a))
+
+    case In(Fun(`x`, b)) => fun(x, b)
+    case In(Fun(y, b)) => {
+      val newVar = nextVar
+<<<<<<< local
+      // α-reduction
+      val alphaReduced = reduce(b, y, variable(newVar))
+      // β-reduction
+      fun(newVar, reduce(alphaReduced, x, a))
+=======
+      val alphaReduced = reduce(b, y, variable(newVar)) /*Do α-reduction*/
+      fun(newVar, reduce(alphaReduced, x, a))/*Do β-reduction*/
 >>>>>>> other
     }
-    case In(Fun(v, b))   => In(Fun(v, b))
-    case In(App(l, r))   => (l, r) match {
-      case (In(Var(_)), _) => In(Error("Var Application"))
-<<<<<<< local
-      case (In(Fun(v, b)), x) => interpret(reduce(b, x, In(Var(v))))
-=======
-      case (In(Fun(v, b)), _) =>
->>>>>>> other
-      //case In(Plus(l, r)) => ???
+    case In(App(l, r)) => app(reduce(l, x, a), reduce(r, x, a))
+
+  }/* reduce*/
+
+  def eval(expr: Expr): Expr = expr match {
+    case In(Constant(c))  => constant(c)
+    case In(UMinus(v)) => eval(v) match {
+      case In(Constant(l)) => constant(-l)
     }
-  }
+    case In(Plus(l, r)) => (eval(l), eval(r)) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l + r)
+      case In(_) => plus(eval(l), eval(r))
+    }
+    case In(Minus(l, r)) => (eval(l), eval(r)) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l - r)
+      case In(_) => minus(eval(l), eval(r))
+    }
+    case In(Times(l, r)) => (eval(l), eval(r)) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l * r)
+      case In(_) => times(eval(l), eval(r))
+    }
+    case In(Div(l, r)) => (eval(l), eval(r)) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l / r)
+      case In(_) => div(eval(l), eval(r))
+    }
+    case In(Mod(l, r)) => (eval(l), eval(r)) match {
+      case (In(Constant(l)), In(Constant(r))) => constant(l % r)
+      case In(_) => mod(eval(l), eval(r))
+    }
 
-//  def evaluate: Algebra[ExprF, Int] = {
-//    case Constant(c) => c
-//    case UMinus(Constant(r))   => In(Constant(-r))
-//    case Plus(Constant(l), Constant(r))  => l + r
-//    case Minus(Constant(l), Constant(r)) => l - r
-//    case Times(Constant(l), Constant(r)) => l * r
-//    case Div(Constant(l), Constant(r))   => l / r
-//    case Mod(Constant(l), Constant(r))   => l % r
-//  }
-//
-//
-  val size: Algebra[ExprF, Int] = {
-    case Constant(_) => 1
-    case UMinus(r)   => 1 + r
-    case Plus(l, r)  => 1 + l + r
-    case Minus(l, r) => 1 + l + r
-    case Times(l, r) => 1 + l + r
-    case Div(l, r)   => 1 + l + r
-    case Mod(l, r)   => 1 + l + r
-  }
+    case In(Iff(c, t, e)) => eval(c) match {
+      case In(Error(_)) => err("Conditional Error")
+      case In(Constant(0)) => eval(e)
+      case _ => eval(t)
+    }
+    case In(Var(_)) => err("Variable")
 
-  val depth: Algebra[ExprF, Int] = {
-    case Constant(_) => 1
-    case UMinus(r)   => 1 + r
-    case Plus(l, r)  => 1 + math.max(l, r)
-    case Minus(l, r) => 1 + math.max(l, r)
-    case Times(l, r) => 1 + math.max(l, r)
-    case Div(l, r)   => 1 + math.max(l, r)
-    case Mod(l, r)   => 1 + math.max(l, r)
-  }
+    case In(Fun(v, b))   => fun(v, b)
+
+    case In(App(l, r))   => eval(l) match {
+      case In(Fun(v1, b1)) => eval(reduce(b1, v1, r))
+      case In(Var(_)) => l
+      case _ => err("Application of Non-Function")
+    }
+    //3b
+    case In(Cell(l, r))  => (l, r) match{
+      case (h, In(Nill())) => eval(h)
+      case (_, _) => cell(l, r)
+<<<<<<< local
+=======
+
+>>>>>>> other
+    }
+    case In(Hd(e)) => e match {
+      case In(Cell(e11, a11)) => eval(e11)
+      case _ => err("Non-cell Head")
+    }
+    case In(Tl(e)) => e match {
+      case In(Cell(e11,a)) => eval(a)
+      case _ => err("Non-cell Tail")
+    }
+
+  }/*eval*/
+
 }

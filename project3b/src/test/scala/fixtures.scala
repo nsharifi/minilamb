@@ -42,9 +42,10 @@ object fixtures {
   val YpreFacstring = " Y(preFac)(5) "
 
   //#3b
+  val preLengthstring = "if (var 'c') 0 else 1+ f(c)"
   val preLength = fun("f", fun("c", iff(variable("c"), plus(constant(1),
-                           app(variable("f"), tl(variable("c")))), constant(0)))) //TODO 6 please check??
+                           app(variable("f"), tl(variable("c")))), constant(0)))) //TODO  please check??
 
-
+  val preSize = 1 //TODO
 
 }

@@ -8,9 +8,9 @@ object behaviors {
   import structures.ExprFactory._
 
 
-  // Variable generating code
+
   var counter = 0
-  def nextVar: String = {
+  def nextVar: String = {/*Variable generating code*/
     counter += 1
     "y" + counter
   }
@@ -26,7 +26,7 @@ object behaviors {
     case In(Times(l, r)) => times(reduce(l, x, a), reduce(r, x, a))
     case In(Mod(l, r)) => mod(reduce(l, x, a), reduce(r, x, a))
     case In(Div(l, r)) => div(reduce(l, x, a), reduce(r, x, a))
-    case In(Iff(cond, then, elze)) => iff(reduce(cond, x, a), reduce(then, x, a), reduce(elze, x, a))
+    case In(Iff(cond, t_hen, e_lse)) => iff(reduce(cond, x, a), reduce(t_hen, x, a), reduce(e_lse, x, a))
 
     case In(Fun(`x`, b)) => fun(x, b)
     case In(Fun(y, b)) => {
@@ -37,6 +37,7 @@ object behaviors {
       fun(newVar, reduce(alphaReduced, x, a))
     }
     case In(App(l, r)) => app(reduce(l, x, a), reduce(r, x, a))
+
   }/* reduce*/
 
   def eval(expr: Expr): Expr = expr match {
@@ -81,7 +82,7 @@ object behaviors {
     }
     //3b
     case In(Cell(l, r))  => (l, r) match{
-      case (h, In(Nill())) => eval(h) // TODO Alternative to Nill implementation???
+      case (h, In(Nill())) => eval(h)
       case (_, _) => cell(l, r)
     }
     case In(Hd(e)) => e match {
@@ -93,6 +94,6 @@ object behaviors {
       case _ => err("Non-cell Tail")
     }
 
-  }/*eval*/
+  }
 
 }
