@@ -71,15 +71,6 @@ object behaviors {
       case _ => eval(t)
     }
     case In(Var(_)) => err("Variable")
-//    case In(Iff(c, t, e)) => (c,t,e) match {
-//      case (In(Constant(x)), _, _) => x match {  /* Case constant check lhs, rhs*/
-//        case 0 => eval(e)/*rhs*/
-//        case _ => eval(t)/*lhs*/
-//      }
-//      case (In(Var(x)), _, _) => err("Var Conditional")
-//      case (In(Fun(_, _)), _, _) => eval(t)
-//      case _ => iff(eval(c), eval(t), eval(e))
-//    }
 
     case In(Fun(v, b))   => fun(v, b)
 
