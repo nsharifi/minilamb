@@ -15,7 +15,7 @@ object behaviors {
     "y" + counter
   }
 
-  // substitute a for x in e
+  // substitute x with a in e
   def reduce(e: Expr, x: String, a: Expr): Expr = e match {
     case In(Constant(c)) => constant(c)
     case In(Var(`x`)) => a
@@ -31,9 +31,9 @@ object behaviors {
     case In(Fun(`x`, b)) => fun(x, b)
     case In(Fun(y, b)) => {
       val newVar = nextVar
-      // Do α-reduction
+      // α-reduction
       val alphaReduced = reduce(b, y, variable(newVar))
-      // Do β-reduction
+      // β-reduction
       fun(newVar, reduce(alphaReduced, x, a))
     }
     case In(App(l, r)) => app(reduce(l, x, a), reduce(r, x, a))
@@ -41,49 +41,57 @@ object behaviors {
 
   def eval(expr: Expr): Expr = expr match {
     case In(Constant(c))  => constant(c)
-    case In(UMinus(l)) => eval(l) match {
+    case In(UMinus(v)) => eval(v) match {
       case In(Constant(l)) => constant(-l)
     }
     case In(Plus(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l + r)
+      case In(_) => plus(eval(l), eval(r))
     }
     case In(Minus(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l - r)
-      case _ => minus(eval(l), eval(r))
+      case In(_) => minus(eval(l), eval(r))
     }
     case In(Times(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l * r)
+      case In(_) => times(eval(l), eval(r))
     }
     case In(Div(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l / r)
+      case In(_) => div(eval(l), eval(r))
     }
     case In(Mod(l, r)) => (eval(l), eval(r)) match {
       case (In(Constant(l)), In(Constant(r))) => constant(l % r)
+      case In(_) => mod(eval(l), eval(r))
     }
 
-    case In(Var(v)) => err("Var")
-
-    case In(Iff(c, t, e)) => (c,t,e) match {
-      case (In(Constant(x)), _, _) => x match {  /* Case constant check lhs, rhs*/
-        case 0 => eval(e)/*rhs*/
-        case _ => eval(t)/*lhs*/
-      }
-      case (In(Var(x)), _, _) => err("Var Conditional")
-      case (In(Fun(_, _)), _, _) => eval(t) // TODO 4 check this
-      case _ => iff(eval(c), eval(t), eval(e))
-    }/*Iff*/
+    case In(Iff(c, t, e)) => eval(c) match {
+      case In(Error(_)) => err("Conditional Error")
+      case In(Constant(0)) => eval(e)
+      case _ => eval(t)
+    }
+    case In(Var(_)) => err("Variable")
+//    case In(Iff(c, t, e)) => (c,t,e) match {
+//      case (In(Constant(x)), _, _) => x match {  /* Case constant check lhs, rhs*/
+//        case 0 => eval(e)/*rhs*/
+//        case _ => eval(t)/*lhs*/
+//      }
+//      case (In(Var(x)), _, _) => err("Var Conditional")
+//      case (In(Fun(_, _)), _, _) => eval(t)
+//      case _ => iff(eval(c), eval(t), eval(e))
+//    }
 
     case In(Fun(v, b))   => fun(v, b)
 
     case In(App(l, r))   => eval(l) match {
       case In(Fun(v1, b1)) => eval(reduce(b1, v1, r))
+      case In(Var(_)) => l
       case _ => err("Application of Non-Function")
     }
     //3b
     case In(Cell(l, r))  => (l, r) match{
       case (h, In(Nill())) => eval(h) // TODO Alternative to Nill implementation???
       case (_, _) => cell(l, r)
-//        In(Cell(e,a1)) //e11 TODO 5 - NOT SURE
     }
     case In(Hd(e)) => e match {
       case In(Cell(e11, a11)) => eval(e11)
