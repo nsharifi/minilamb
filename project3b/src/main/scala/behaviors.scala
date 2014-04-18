@@ -93,6 +93,10 @@ object behaviors {
       case In(Cell(e11,a)) => eval(a)
       case _ => err("Non-cell Tail")
     }
+    case In(IsCell(c)) => c match {
+      case In(Cell(_, _)) => constant(1)
+      case _ => constant(0)
+    }
 
   }
 

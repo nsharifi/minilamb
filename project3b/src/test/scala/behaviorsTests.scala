@@ -47,5 +47,10 @@ class behaviorTests extends FunSuite {
   /*Two calls to nextVar generate different values*/
   test("variable generator works") {assert (nextVar != nextVar) }/* pass!!*/
 
+  test("iscell works") {
+    assert (eval(iscell(cell(constant(0), constant(1)))) == constant(1))
+    assert (eval(iscell(constant(10))) == constant(0))
+    assert (eval(iscell(fun("x", plus(variable("x"), constant(5))))) == constant(0))
+  }
 
 }/*behaviourTest*/
