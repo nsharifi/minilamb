@@ -27,7 +27,7 @@ class cellTests extends FunSuite {
   val preAdd = fun("f", fun("n", iff(variable("n"),
       plus(variable("n"), app(variable("f"), hd(variable("n")))), constant(0))))
   test("preAdd") {
-    assert (iff(cell(constant(5), constant(0)), plus()))
+//    assert (iff(cell(constant(5), constant(0)), plus()))
     assert (eval(app(app(Y, preAdd), cell(constant(10), cell(constant(20), constant(0))))) == constant(30))
   }
   test("eval part preLength works") {
