@@ -1,5 +1,5 @@
 import org.scalatest.FunSuite
-import project3a.{fixtures, structures, behaviors}
+import project3c.{fixtures, structures, behaviors}
 
 class simpleArithmeticTests  extends FunSuite {
 

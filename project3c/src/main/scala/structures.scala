@@ -1,4 +1,4 @@
-package project3a
+package project3c
 import scalaz.{ Equal, Functor, Show }
 import scalamu._ // algebra types and injected cata method
 

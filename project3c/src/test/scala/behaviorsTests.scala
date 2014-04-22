@@ -1,4 +1,4 @@
-package project3a
+package project3c
 
 import org.scalatest.FunSuite
 
