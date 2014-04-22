@@ -69,7 +69,7 @@ object behaviors {
     }
 
     case In(Iff(c, t, e))  => eval(c) match {
-      case In(Error(_))    => err("Conditional Error")
+      case In(Error(_))    => err("Conditional Error")//non cell tail
       case In(Constant(0)) => eval(e)
       case _               => eval(t)
     }
@@ -84,6 +84,7 @@ object behaviors {
     }
     //3b
     case In(Cell(l, r))    => cell(l, r)
+
     case In(Hd(c))         => c match {
       case In(Cell(h, t)) => eval(h)
       case _                  => err("Non-cell Head")
@@ -96,6 +97,7 @@ object behaviors {
       case In(Cell(_, _))  => constant(1)
       case _               => constant(0)
     }
+
   }
 
 }

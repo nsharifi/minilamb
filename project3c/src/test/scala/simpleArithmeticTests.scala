@@ -8,6 +8,7 @@ class simpleArithmeticTests  extends FunSuite {
   import fixtures._
 
   test("eval arithmetic works") {
+
     assert(eval(twoPlusthree) == five)
     assert(eval(threeMinusone) == two)
     assert(eval(threeTimestwo) == six)

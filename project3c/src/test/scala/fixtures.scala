@@ -1,11 +1,11 @@
 package project3c
 
-import project3a.behaviors._
-import project3a.structures._
-import project3a.structures.Constant
-import project3a.structures.Fun
-import project3a.structures.Iff
-import project3a.structures.Var
+import project3c.behaviors._
+import project3c.structures._
+import project3c.structures.Constant
+import project3c.structures.Fun
+import project3c.structures.Iff
+import project3c.structures.Var
 import structures.ExprFactory._
 import scalamu.In
 
@@ -52,20 +52,17 @@ object fixtures {
   val YpreFacstring = " Y(preFac)(5) "
 
   //#3b
-  val preLengthstring = "if (c) 0 else 1 + f(c)"
-
-  val preLength = fun("f", fun("c", iff(variable("c"),
-    plus(constant(1), app(variable("f"), tl(variable("c")))), constant(0))))
-//  val preLength = fun("f", fun("c", iff(variable("c"),
-//      plus(constant(1),app(variable("f"), tl(variable("c")))), constant(0)))) //TODO  please check??
+  val preLength = fun("f", fun("c", iff(tl(variable("c")),
+                      plus(constant(1), app(variable("f"), variable("c"))), constant(0))))
 
 //  cell(10, cell(20, cell(30, 0))) has size and length 3
 //  example: cell(cell(10, 11), cell(cell(20, 21), cell(cell(30,31), 0))) has size 6 but length 3
+
   val cellComplex1 = cell(constant(10), cell(constant(20), cell(constant(30), constant(0))))
 
   val cellComplex2 =cell(cell(constant(10),constant(11)), cell(cell(constant(20),constant(21)),
                                         cell(cell(constant(30),constant(31)),constant(0))))
 
-  val preSize = 1 //TODO
+  val preSize = 1 //TODO ???
 
 }
