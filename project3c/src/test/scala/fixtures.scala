@@ -52,8 +52,8 @@ object fixtures {
   val YpreFacstring = " Y(preFac)(5) "
 
   //#3b
-  val preLength = fun("f", fun("c", iff(tl(variable("c")),
-                      plus(constant(1), app(variable("f"), variable("c"))), constant(0))))
+  val preLength = fun("f", fun("c", iff(variable("c"),
+                      plus(constant(1), app(variable("f"), tl(variable("c")))), constant(0))))
 
 //  cell(10, cell(20, cell(30, 0))) has size and length 3
 //  example: cell(cell(10, 11), cell(cell(20, 21), cell(cell(30,31), 0))) has size 6 but length 3

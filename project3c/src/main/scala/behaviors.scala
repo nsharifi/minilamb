@@ -85,15 +85,15 @@ object behaviors {
     //3b
     case In(Cell(l, r))    => cell(l, r)
 
-    case In(Hd(c))         => c match {
+    case In(Hd(c))         => eval(c) match {
       case In(Cell(h, t)) => eval(h)
       case _                  => err("Non-cell Head")
     }
-    case In(Tl(c))        => c match {
+    case In(Tl(c))        => eval(c) match {
       case In(Cell(h, t)) => eval(t)
       case _                => err("Non-cell Tail")
     }
-    case In(IsCell(c))   => c match {
+    case In(IsCell(c))   => eval(c) match {
       case In(Cell(_, _))  => constant(1)
       case _               => constant(0)
     }
