@@ -24,9 +24,7 @@ class cellTests extends FunSuite {
     assert( eval(tl(cellComplex1)) == cell(constant(20), cell(constant(30), constant(0))))
 
   }/*pass*/
-  test("eval Y works") {
-    assert(eval(app(app(Y, preFact), five)) == onetwenty)/*pass*/
-  }
+
 
   //3b
   test("preAdd") {

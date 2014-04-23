@@ -42,7 +42,7 @@ class behaviorTests extends FunSuite {
   }/*pass*/
 
   test("eval Y works") {
-    assert(eval(app(app(Y, preFact), five)) == onetwenty)
+    assert(eval(app(app(Y, preFact), five)) == onetwenty)/*pass*/
   }
   /*Two calls to nextVar generate different values*/
   test("variable generator works") {assert (nextVar != nextVar) }/* pass!!*/
