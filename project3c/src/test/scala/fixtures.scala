@@ -45,23 +45,25 @@ object fixtures {
   val preFact = fun("f", fun("n", iff(variable("n"),
     times(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))/* pass*/
 
-  val preSum = fun("f", fun("n", iff(variable("n"),
-    plus(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(0))))
+
 
   val evalpreFacstring = "if (n <= 0) 1 else n * f(n - 1) "
   val YpreFacstring = " Y(preFac)(5) "
 
   //#3b
+  val preAdd = fun("f", fun("n", iff(variable("n"),
+    plus(variable("n"), app(variable("f"), hd(variable("n")))), constant(0))))
+
+  val preSum = fun("f", fun("n", iff(variable("n"),
+    plus(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(0))))/*pass*/
+
   val preLength = fun("f", fun("c", iff(variable("c"),
-                      plus(constant(1), app(variable("f"), tl(variable("c")))), constant(0))))
+                      plus(constant(1), app(variable("f"), tl(variable("c")))), constant(0))))/*pass*/
 
-//  cell(10, cell(20, cell(30, 0))) has size and length 3
-//  example: cell(cell(10, 11), cell(cell(20, 21), cell(cell(30,31), 0))) has size 6 but length 3
-
-  val cellComplex1 = cell(constant(10), cell(constant(20), cell(constant(30), constant(0))))
+  val cellComplex1 = cell(constant(10), cell(constant(20), cell(constant(30), constant(0))))/*pass*/
 
   val cellComplex2 =cell(cell(constant(10),constant(11)), cell(cell(constant(20),constant(21)),
-                                        cell(cell(constant(30),constant(31)),constant(0))))
+                                        cell(cell(constant(30),constant(31)),constant(0))))/*pass*/
 
   val preSize = 1 //TODO ???
 
