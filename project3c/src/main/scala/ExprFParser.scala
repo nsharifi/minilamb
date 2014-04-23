@@ -9,30 +9,30 @@ class ExprFParser extends StandardTokenParsers {
 
   lexical.delimiters += ("(", ")", "+", "-", "*", "/")
 
-//  def expr: Parser[ExprF] =
-//      term ~! opt(("+" | "-") ~ expr) ^^ {
-//      case l ~ None => l
-//      case l ~ Some("+" ~ r) => Plus(l, r)
-//      case l ~ Some("-" ~ r) => Minus(l, r)
-//    }
-//
-//  /** term ::= factor { { "*" | "/" } factor }%* */
-//  def term: Parser[ExprF] =
-//    factor ~! opt(("*" | "/") ~ term) ^^ {
-//      case l ~ None => l
-//      case l ~ Some("*" ~ r) => Times(l, r)
-//      case l ~ Some("/" ~ r) => Div(l, r)
-//      case l ~ Some("%" ~ r) => Mod(l, r)
-//    }
-//
-//  /** factor ::= numericLit | "+" factor | "-" factor | "(" expr ")" */
-//  def factor: Parser[ExprF] = (
-//    numericLit ^^ { case s => Constant(s.toInt) }
-//      | "+" ~> factor ^^ { case e => e }
-//      | "-" ~> factor ^^ { case e => UMinus(e) }
-//      | "(" ~ expr ~ ")" ^^ { case _ ~ e ~ _ => e }
-//    // | "(" ~ expr ~ ")" ^^ { case _ ~ e ~ _ => e }
-//    )
+  def expr: Parser[Expr] =
+      term ~! opt(("+" | "-") ~ expr) ^^ {
+      case l ~ None => l
+      case l ~ Some("+" ~ r) => In(Plus(l, r))
+      case l ~ Some("-" ~ r) => In(Minus(l, r))
+    }
+
+  /** term ::= factor { { "*" | "/" } factor }%* */
+  def term: Parser[Expr] =
+    factor ~! opt(("*" | "/") ~ term) ^^ {
+      case l ~ None => l
+      case l ~ Some("*" ~ r) => In(Times(l, r))
+      case l ~ Some("/" ~ r) => In(Div(l, r))
+      case l ~ Some("%" ~ r) => In(Mod(l, r))
+    }
+
+  /** factor ::= numericLit | "+" factor | "-" factor | "(" expr ")" */
+  def factor: Parser[Expr] = (
+    numericLit ^^ { case s => In(Constant(s.toInt)) }
+      | "+" ~> factor ^^ { case e => e }
+      | "-" ~> factor ^^ { case e => In(UMinus(e)) }
+      | "(" ~ expr ~ ")" ^^ { case _ ~ e ~ _ => e }
+    // | "(" ~ expr ~ ")" ^^ { case _ ~ e ~ _ => e }
+    )
 
   def parseAll[T](p: Parser[T], in: String): ParseResult[T] =
     phrase(p)(new lexical.Scanner(in))
