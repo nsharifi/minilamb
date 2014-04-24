@@ -25,14 +25,13 @@ class cellTests extends FunSuite {
 
   }/*pass*/
   test("eval part preLength works") {
-//    assert(eval(app(app(Y, preLength), cell(constant(1), constant(0)))) == constant(1))
      assert(eval(app(app(Y, preLength), cellComplex1)) == three)
-//     assert(eval(app(app(Y, preLength),cellComplex2)) == three)
+     assert(eval(app(app(Y, preLength), cellComplex2)) == three)
   }
 
   test("eval part preSize works") {
-//     assert(eval(app(app(Y, preSize),cellComplex1)) == 3)
-//     assert(eval(app(app(Y, preSize),cellComplex2)) == 6)
+     assert(eval(app(app(Y, preSize), cellComplex1)) == constant(3))
+     assert(eval(app(app(Y, preSize), cellComplex2)) == constant(6))
   }
 
 }/*endcellTests*/
