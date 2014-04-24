@@ -23,30 +23,17 @@ class cellTests extends FunSuite {
     assert( eval(tl(cell(constant(10), fun("x", variable("x"))))) == fun("x", variable("x")))
     assert( eval(tl(cellComplex1)) == cell(constant(20), cell(constant(30), constant(0))))
 
-  }/*pass*/
+  }
+  /*pass*/
   test("eval part preLength works") {
      assert(eval(app(app(Y, preLength), cellComplex1)) == three)
      assert(eval(app(app(Y, preLength), cellComplex2)) == three)
   }
-
+  /*pass*/
   test("eval part preSize works") {
-     assert(eval(app(app(Y, preSize), cellComplex1)) == constant(3))
-     assert(eval(app(app(Y, preSize), cellComplex2)) == constant(6))
+     assert(eval(app(app(Y, preSize), cellComplex1)) == three)
+     assert(eval(app(app(Y, preSize), cellComplex2)) == six)
   }
 
-}/*endcellTests*/
+}/* cellTests*/
 
-/*
-  3b
-  #A
-    eval(Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2))) -> Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2))
-    eval(Hd(Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2)))) -> Const 10
-    eval(Tl(Cell(Plus(Const 3, Const 7), Minus(Const 5, Const 2)))) -> Const 3
-  #B
-    eval(If(Cell(...), Const 3, Const 4)) -> Const 3
-    eval(Hd(Const 0)) -> error
-      eval(Tl(Const 0)) -> error
-      eval(Tl(Fun("x", Var("x")))) -> error
-    eval(Tl(Cell(Const 10, Fun("x", Var("x"))))) -> Fun("x", Var("x"))
-
-    */

@@ -55,7 +55,7 @@ object fixtures {
     plus(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(0))))
 
   val evalpreFacstring = "if (n <= 0) 1 else n * f(n - 1) "
-  val YpreFacstring = " Y(preFac)(5) "
+  val YpreFacstring = " Y(preFac)(5)"
 
   //#3b
   val preLengthstring = "if (c) 0 else 1 + f(c)"

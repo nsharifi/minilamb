@@ -7,7 +7,7 @@ import scalamu.In
 
 class ExprFParser extends StandardTokenParsers {
 
-  lexical.delimiters += ("(", ")", "+", "-", "*", "/")
+  lexical.delimiters += ("(", ")", "+", "-", "*", "/","%")
 
   def expr: Parser[Expr] =
       term ~! opt(("+" | "-") ~ expr) ^^ {
