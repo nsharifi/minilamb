@@ -24,8 +24,6 @@ class cellTests extends FunSuite {
     assert( eval(tl(cellComplex1)) == cell(constant(20), cell(constant(30), constant(0))))
 
   }/*pass*/
-
-
   //3b
   test("preAdd") {
 //    assert (iff(cell(constant(5), constant(0)), plus()))
@@ -34,12 +32,12 @@ class cellTests extends FunSuite {
 
   test("eval part preLength works") {
      assert(eval(app(app(Y, preLength), cellComplex1)) == three)
-     assert(eval(app(app(Y, preLength),cellComplex2)) == three)
+     assert(eval(app(app(Y, preLength), cellComplex2)) == three)
   }
 
   test("eval part preSize works") {
-//     assert(eval(app(app(Y, preSize),cellComplex1)) == 3)
-//     assert(eval(app(app(Y, preSize),cellComplex2)) == 6)
+     assert(eval(app(app(Y, preSize), cellComplex1)) == constant(3))
+     assert(eval(app(app(Y, preSize), cellComplex2)) == constant(6))
   }
 
 }/* endcellTests */

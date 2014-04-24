@@ -37,8 +37,10 @@ object behaviors {
       fun(newVar, reduce(alphaReduced, x, a))
     }
     case In(App(l, r))   => app(reduce(l, x, a), reduce(r, x, a))
+    case In(Hd(c)) => hd(reduce(c, x, a))
     case In(Tl(c)) => tl(reduce(c, x, a))
-//    case _               => { err("Unpredicted case: ") }
+    case In(IsCell(c)) => iscell(reduce(c, x, a))
+    case _               => { err("Unpredicted case") }
 
   }/* reduce*/
 
@@ -69,7 +71,7 @@ object behaviors {
     }
 
     case In(Iff(c, t, e))  => eval(c) match {
-      case In(Error(_))    => err("Conditional Error")//non cell tail
+      case In(Error(_))    => err("Conditional Error")
       case In(Constant(0)) => eval(e)
       case _               => eval(t)
     }
@@ -84,7 +86,6 @@ object behaviors {
     }
     //3b
     case In(Cell(l, r))    => cell(l, r)
-
     case In(Hd(c))         => eval(c) match {
       case In(Cell(h, t)) => eval(h)
       case _                  => err("Non-cell Head")
@@ -97,7 +98,6 @@ object behaviors {
       case In(Cell(_, _))  => constant(1)
       case _               => constant(0)
     }
-
   }
 
 }

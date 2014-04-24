@@ -30,6 +30,12 @@ object fixtures {
                       )
   val threeTimestwostring = "3*2"
 
+  val cellComplex1 = cell(constant(10), cell(constant(20), cell(constant(30), constant(0))))
+
+  val cellComplex2 = cell(cell(constant(10), constant(11)), cell(cell(constant(20),constant(21)),
+    cell(cell(constant(30),constant(31)),constant(0))))
+
+
   /*numbers*/
   val two = constant(2)
   val three = constant(3)
@@ -45,8 +51,6 @@ object fixtures {
   val preFact = fun("f", fun("n", iff(variable("n"),
     times(variable("n"), app(variable("f"), minus(variable("n"), constant(1)))), constant(1))))/* pass*/
 
-
-
   val evalpreFacstring = "if (n <= 0) 1 else n * f(n - 1) "
   val YpreFacstring = " Y(preFac)(5) "
 
@@ -60,11 +64,7 @@ object fixtures {
   val preLength = fun("f", fun("c", iff(variable("c"),
                       plus(constant(1), app(variable("f"), tl(variable("c")))), constant(0))))/*pass*/
 
-  val cellComplex1 = cell(constant(10), cell(constant(20), cell(constant(30), constant(0))))/*pass*/
-
-  val cellComplex2 =cell(cell(constant(10),constant(11)), cell(cell(constant(20),constant(21)),
-                                        cell(cell(constant(30),constant(31)),constant(0))))/*pass*/
-
-  val preSize = 1 //TODO ???
+  val preSize = fun("f", fun("c", iff(iscell(variable("c")), plus(plus(constant(1), app(variable("f"),
+    tl(variable("c")))), app(variable("f"), hd(variable("c")))), constant(0))))
 
 }

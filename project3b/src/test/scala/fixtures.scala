@@ -30,6 +30,12 @@ object fixtures {
                       )
   val threeTimestwostring = "3*2"
 
+  val cellComplex1 = cell(constant(10), cell(constant(20), cell(constant(30), constant(0))))
+
+  val cellComplex2 = cell(cell(constant(10), constant(11)), cell(cell(constant(20),constant(21)),
+    cell(cell(constant(30),constant(31)),constant(0))))
+
+
   /*numbers*/
   val two = constant(2)
   val three = constant(3)
@@ -56,16 +62,8 @@ object fixtures {
 
   val preLength = fun("f", fun("c", iff(variable("c"),
     plus(constant(1), app(variable("f"), tl(variable("c")))), constant(0))))
-//  val preLength = fun("f", fun("c", iff(variable("c"),
-//      plus(constant(1),app(variable("f"), tl(variable("c")))), constant(0)))) //TODO  please check??
 
-//  cell(10, cell(20, cell(30, 0))) has size and length 3
-//  example: cell(cell(10, 11), cell(cell(20, 21), cell(cell(30,31), 0))) has size 6 but length 3
-  val cellComplex1 = cell(constant(10), cell(constant(20), cell(constant(30), constant(0))))
-
-  val cellComplex2 =cell(cell(constant(10),constant(11)), cell(cell(constant(20),constant(21)),
-                                        cell(cell(constant(30),constant(31)),constant(0))))
-
-  val preSize = 1 //TODO
+  val preSize = fun("f", fun("c", iff(iscell(variable("c")), plus(plus(constant(1), app(variable("f"),
+    tl(variable("c")))), app(variable("f"), hd(variable("c")))), constant(0))))
 
 }
