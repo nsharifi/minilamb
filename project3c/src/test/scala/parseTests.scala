@@ -11,13 +11,15 @@ import project3c.structures.ExprFactory._
 
 class parseTests extends FunSuite {
 
+  //    parser.parse("x").get assert_=== variable("x")
+  //    parser.parse("lambda x . x").get assert_=== fun("x", variable("x"))
+  //    parser.parse("lambda x . x y z").get assert_=== fun("x", app(app(variable("x"), variable("y")), variable("z")))
+  //    parser.parse("λ x . x").get assert_=== fun("x", variable("x"))
+  //    parser.parse("λ x . x y z").get assert_=== fun("x", app(app(variable("x"), variable("y")), variable("z")))
+  //    parser.parse("(x y z)").get assert_=== app(app(variable("x"), variable("y")), variable("z"))
   test("parsing correct expressions succeeds") {
-    val parsedExpr = ExprFParser.parseAll(ExprFParser.expr, "3");
+    assert (ExprFParser.parseAll(ExprFParser.expr, "3").get == constant(3))
 
-//    import scalamu._
-
-    assert (parsedExpr.get == constant(3))
-//    parser.parseAll("3").get assert_=== constant(3)
   }
 
 }
