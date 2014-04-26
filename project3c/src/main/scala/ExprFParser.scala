@@ -5,12 +5,13 @@ import scalaz.syntax.show._
 import scalamu.In
 
 
-class ExprFParser extends StandardTokenParsers {
+object ExprFParser extends StandardTokenParsers {
 
-  lexical.delimiters += ("(", ")", "+", "-", "*", "/","%")
+  lexical.delimiters += ("(", ")", "+", "-", "*", "/", "%")
 
   def expr: Parser[Expr] =
       term ~! opt(("+" | "-") ~ expr) ^^ {
+
       case l ~ None => l
       case l ~ Some("+" ~ r) => In(Plus(l, r))
       case l ~ Some("-" ~ r) => In(Minus(l, r))
