@@ -2,23 +2,24 @@ package project3c
 import scalaz.syntax.show._
 import scalaz.syntax.equal._
 import scalaz.std.anyVal._
-//import scalaz.std.util.parsing.combinator.parser
+import scalaz.std.util.parsing.combinator.parser
 
-// for assert_=== to work on Int
 import org.scalatest.FunSuite
 
 import project3c.structures.ExprFactory._
 
 class parseTests extends FunSuite {
 
-  //    parser.parse("x").get assert_=== variable("x")
-  //    parser.parse("lambda x . x").get assert_=== fun("x", variable("x"))
-  //    parser.parse("lambda x . x y z").get assert_=== fun("x", app(app(variable("x"), variable("y")), variable("z")))
-  //    parser.parse("λ x . x").get assert_=== fun("x", variable("x"))
-  //    parser.parse("λ x . x y z").get assert_=== fun("x", app(app(variable("x"), variable("y")), variable("z")))
-  //    parser.parse("(x y z)").get assert_=== app(app(variable("x"), variable("y")), variable("z"))
   test("parsing correct expressions succeeds") {
     assert (ExprFParser.parseAll(ExprFParser.expr, "3").get == constant(3))
+    assert (ExprFParser.parseAll(ExprFParser.expr, "x").get == variable("x"))
+    assert (ExprFParser.parseAll(ExprFParser.expr, "lambda x . x").get == fun("x", variable("x")))
+    assert (ExprFParser.parseAll(ExprFParser.expr, "λ x . x").get == fun("x", variable("x")))
+    assert (ExprFParser.parseAll(ExprFParser.expr, "(1::nil)").get == cell(constant(1), constant(0)))
+//    assert (ExprFParser.parseAll(ExprFParser.expr, "(1::2::nil)").get == cell(constant(1), cell(constant(2), constant(0))))
+//    assert (ExprFParser.parseAll(ExprFParser.expr, "lambda x . x y z").get ==
+//      fun("x", app(app(variable("x"), variable("y")), variable("z"))))
+//    assert (ExprFParser.parseAll(ExprFParser.expr, "x y").get == app(variable("x"), variable("y")))
 
   }
 
