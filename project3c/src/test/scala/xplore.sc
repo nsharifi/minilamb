@@ -27,6 +27,12 @@ class ExprParser extends RegexParsers {
 
 val parser = new ExprParser
 val res = parser.parseAll(parser.expr, "(2+4)*3")
+
+/*
+> res: parser.ParseResult[Expr] = [1.8] parsed: Operator(*,Operator(+,Number(2),Nu
+  mber(4)),Number(3))
+ */
+
 println("•")
 println(res.get)
 println("•")
