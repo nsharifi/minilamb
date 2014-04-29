@@ -68,4 +68,3 @@ object ExprFParser extends StandardTokenParsers {
 
   def parse(in: String) = parseAll(expr, in)
 }
-

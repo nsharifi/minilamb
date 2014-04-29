@@ -1,5 +1,5 @@
 import project3c.ExprFParser
-
+import project3c.behaviors._
 
 object Interpreter extends App {
   println("Minimal Lambda Calculus Interpreter")
@@ -17,6 +17,9 @@ object Interpreter extends App {
   while (read()) {
     val result = ExprFParser.parseAll(ExprFParser.expr, line)
     if (result.isEmpty) println ("This expression cannot be parsed!")
-    if (result.successful) println(result.get)
+    if (result.successful) {
+      println("The result is: " + result.get)
+      println("It evaluates to: " + eval(result.get))
+    }
   }
 }
