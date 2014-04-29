@@ -27,10 +27,8 @@ class parseTests extends FunSuite {
     assert (ExprFParser.parseAll(ExprFParser.expr, "λ x . x y z").get ==
       fun("x", app(app(variable("x"), variable("y")), variable("z"))))
 
-    assert (ExprFParser.parseAll(ExprFParser.expr, "x y z").get ==
-      app(app(variable("x"), variable("y")), variable("z")))
-
-
+    assert (ExprFParser.parseAll(ExprFParser.expr, "(x y z)").get ==
+      app(app(variable("x"), variable("y")), variable("z")))/*pass*/
   }
 
   test("parsing incorrect expressions fails") {
