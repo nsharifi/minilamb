@@ -5,20 +5,8 @@ import scalaz.syntax.show._
 import scalamu.In
 
 import structures.ExprFactory._
-import scala.util.matching.Regex
 
 object ExprFParser extends StandardTokenParsers {
-
-  def regex(r: Regex): Parser[String] = new Parser[String] {
-    def apply(in: Input) = r.findPrefixMatchOf(
-      in.source.subSequence(in.offset, in.source.length)) match {
-      case Some(matched) =>
-        Success(in.source.subSequence(in.offset,
-          in.offset + matched.end).toString, in.drop(matched.end))
-      case None => Failure("string matching regex `" + r +
-        "' expected but " + in.first + " found", in)
-    }
-  }
 
   lexical.delimiters += ("(", ")", "+", "-", "*", "/", "%", ".", "::")
   lexical.reserved += ("if", "then", "else", "λ", "lambda", "nil", ";;")

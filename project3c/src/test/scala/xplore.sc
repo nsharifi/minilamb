@@ -1,6 +1,26 @@
+import scala.util.matching.Regex
+import scala.util.parsing.combinator.Parsers.Failure
+import scala.util.parsing.combinator.Parsers.Parser
+import scala.util.parsing.combinator.Parsers.Success
 import scala.util.parsing.combinator.RegexParsers
 import scala.util.parsing.combinator.syntactical.StandardTokenParsers
 import scalaz.syntax.show._
+import scala.util.matching.Regex
+import scala.util.parsing.combinator.syntactical.StandardTokenParsers
+
+object tempCode extends StandardTokenParsers {
+  def regex(r: Regex): Parser[String] = new Parser[String] {
+    def apply(in: Input) = r.findPrefixMatchOf(
+      in.source.subSequence(in.offset, in.source.length)) match {
+      case Some(matched) =>
+        Success(in.source.subSequence(in.offset,
+          in.offset + matched.end).toString, in.drop(matched.end))
+      case None => Failure("string matching regex `" + r +
+        "' expected but " + in.first + " found", in)
+    }
+  }
+
+}
 
 class Expr
 case class Number(value: String) extends Expr

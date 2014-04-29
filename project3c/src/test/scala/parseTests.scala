@@ -53,14 +53,5 @@ object Calculator extends App {
     val result = ExprFParser.parseAll(ExprFParser.expr, line)
     if (result.successful) println(result.get)
   }
-/*
-hello
-3
-= Cofree((),Constant(3))
-x
-= Cofree((),Var(x))
-lambda x.xyz
-= Cofree((),Fun(x,Cofree((),Var(xyz))))
- */
 
 }
