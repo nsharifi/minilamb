@@ -38,3 +38,22 @@ class parseTests extends FunSuite {
 
 }/*parseTests*/
 
+object Calculator extends App {
+
+  println("To print Abstract Syntax Tree, AST")
+
+  var line: String = _
+
+  def read() = {
+    print("miniLamb> ")
+    line = readLine
+    !line.isEmpty
+  }
+
+  while (read()) {
+    val result = ExprFParser.parseAll(ExprFParser.expr, line)
+    if (result.successful) println(result.get)
+  }
+
+
+}
