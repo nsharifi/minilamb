@@ -60,7 +60,8 @@ object ExprFParser extends StandardTokenParsers {
       case h~t => t.foldLeft (cell(constant(h.toInt), constant(0))) ( (v, l) => {
         (v, l) match {
           case (In(Cell(head, tail)), "nil") => cell(head, constant(0))
-          case (In(Cell(head, tail)), _) => cell(cell(head, tail), constant(l.toInt))
+          case (In(Cell(head, In(Constant(0)))), _) => cell(head, constant(l.toInt))
+          case (In(Cell(head, tail)), _)     => cell(cell(head, tail), constant(l.toInt))
         }
 
       })
