@@ -36,11 +36,12 @@ class parseTests extends FunSuite {
     assert (parse("x y z").isEmpty)
   }
 
-}//funsuite
+}/*parseTests*/
 
 object Calculator extends App {
-  println("hello")
-  println("(3+2)")
+
+  println("To print Abstract Syntax Tree, AST")
+
   var line: String = _
 
   def read() = {
@@ -53,5 +54,4 @@ object Calculator extends App {
     val result = ExprFParser.parseAll(ExprFParser.expr, line)
     if (result.successful) println(result.get)
   }
-
 }
