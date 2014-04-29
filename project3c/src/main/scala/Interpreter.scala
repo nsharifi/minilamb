@@ -3,7 +3,7 @@ import project3c.ExprFParser
 
 object Interpreter extends App {
   println("Minimal Lambda Calculus Interpreter")
-  println("enter quit to exit")
+  println("Type quit to exit")
 
   var line: String = _
 
