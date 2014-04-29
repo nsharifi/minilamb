@@ -21,11 +21,12 @@ object ExprFParser extends StandardTokenParsers {
   }
 
   lexical.delimiters += ("(", ")", "+", "-", "*", "/", "%", ".", "::")
-  lexical.reserved += ("if", "then", "else", "λ", "lambda", "nil")
+  lexical.reserved += ("if", "then", "else", "λ", "lambda", "nil", ";;")
+  val vari = "[a-zA-Z_]+[a-zA-Z_0-9]*".r
+  val txt = ".*".r
 
   def expr: Parser[Expr] =
-      term ~! opt(("+" | "-") ~ term) ^^ {
-
+    term ~! opt(("+" | "-") ~ term) ^^ {
       case l ~ None => l
       case l ~ Some("+" ~ r) => plus(l, r)
       case l ~ Some("-" ~ r) => minus(l, r)
@@ -40,7 +41,6 @@ object ExprFParser extends StandardTokenParsers {
       case l ~ Some("%" ~ r) => mod(l, r)
     }
 
-  val vari = "[a-zA-Z_]+[a-zA-Z_0-9]*".r
   /** factor ::= numericLit | "+" factor | "-" factor | "(" expr ")" */
   def factor: Parser[Expr] = (
     numericLit ^^ { case s => constant(s.toInt) }
@@ -78,5 +78,6 @@ object ExprFParser extends StandardTokenParsers {
   def parseAll[T](p: Parser[T], in: String): ParseResult[T] =
     phrase(p)(new lexical.Scanner(in))
 
+  def parse(in: String) = parseAll(expr, in)
 }
 
