@@ -36,11 +36,12 @@ class parseTests extends FunSuite {
     assert (parse("x y z").isEmpty)
   }
 
-}//funsuite
+}/*parseTests*/
 
 object Calculator extends App {
-  println("hello")
-  println("(3+2)")
+
+  println("Calculator to print Abstract Syntax Tree, AST")
+
   var line: String = _
 
   def read() = {
@@ -53,14 +54,6 @@ object Calculator extends App {
     val result = ExprFParser.parseAll(ExprFParser.expr, line)
     if (result.successful) println(result.get)
   }
-/*
-hello
-3
-= Cofree((),Constant(3))
-x
-= Cofree((),Var(x))
-lambda x.xyz
-= Cofree((),Fun(x,Cofree((),Var(xyz))))
- */
 
-}
+
+}/*Calculator*/
