@@ -21,11 +21,20 @@ class parseTests extends FunSuite {
     assert (ExprFParser.parseAll(ExprFParser.expr, "(1::2::3)").get == cell(cell(constant(1), constant(2)), constant(3)))
     assert (ExprFParser.parseAll(ExprFParser.expr, "(1::2::3::4)").get ==
       cell(cell(cell(constant(1), constant(2)), constant(3)), constant(4)))
-    
-//    assert (ExprFParser.parseAll(ExprFParser.expr, "lambda x . x y z").get ==
-//      fun("x", app(app(variable("x"), variable("y")), variable("z"))))
-//    assert (ExprFParser.parseAll(ExprFParser.expr, "x y").get == app(variable("x"), variable("y")))
 
+    assert (ExprFParser.parseAll(ExprFParser.expr, "lambda x . x y z").get ==
+      fun("x", app(app(variable("x"), variable("y")), variable("z"))))
+    assert (ExprFParser.parseAll(ExprFParser.expr, "λ x . x y z").get ==
+      fun("x", app(app(variable("x"), variable("y")), variable("z"))))
+
+    assert (ExprFParser.parseAll(ExprFParser.expr, "x y z").get ==
+      app(app(variable("x"), variable("y")), variable("z")))
+
+
+  }
+
+  test("parsing incorrect expressions fails") {
+    assert (ExprFParser.parseAll(ExprFParser.expr, "x y z").isEmpty)
   }
 
 }

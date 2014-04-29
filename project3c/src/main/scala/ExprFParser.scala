@@ -24,21 +24,16 @@ object ExprFParser extends StandardTokenParsers {
   lexical.reserved += ("if", "then", "else", "λ", "lambda", "nil")
 
   def expr: Parser[Expr] =
-      term ~! opt(("+" | "-") ~ expr) ^^ {
+      term ~! opt(("+" | "-") ~ term) ^^ {
 
       case l ~ None => l
       case l ~ Some("+" ~ r) => plus(l, r)
       case l ~ Some("-" ~ r) => minus(l, r)
     }
 
-  def exprs: Parser[Expr] =
-      expr ~! expr ^^ {
-        case e1 ~ e2 => app(e1, e2 )
-      }
-
   /** term ::= factor { { "*" | "/" } factor }%* */
   def term: Parser[Expr] =
-    factor ~! opt(("*" | "/") ~ term) ^^ {
+    factor ~! opt(("*" | "/" | "%") ~ factor) ^^ {
       case l ~ None => l
       case l ~ Some("*" ~ r) => times(l, r)
       case l ~ Some("/" ~ r) => div(l, r)
@@ -49,13 +44,13 @@ object ExprFParser extends StandardTokenParsers {
   /** factor ::= numericLit | "+" factor | "-" factor | "(" expr ")" */
   def factor: Parser[Expr] = (
     numericLit ^^ { case s => constant(s.toInt) }
-    | "(" ~> expr <~ ")" ^^ { case e => e }
+    | "(" ~> exprs <~ ")" ^^ { case e => e }
     | "+" ~> factor ^^ { case e => e }
     | "-" ~> factor ^^ { case e => uminus(e) }
     | ident ^^ { case v => variable(v)}
-    | ("lambda" | "λ") ~> ident ~ "." ~ expr ^^ { case v~_~e => fun(v, e) }
+    | ("lambda" | "λ") ~> ident ~ "." ~ exprs ^^ { case v~_~e => fun(v, e) }
     | ("lambda" | "λ") ~> ident ~ "." ~ ident ^^ { case v1~_~v2 => fun(v1, variable(v2)) }
-    |  "if" ~ expr ~ "then" ~ expr ~ "else" ~ expr ^^ { case _~c~_~t~_~e => iff(c, t, e) }
+    |  "if" ~ exprs ~ "then" ~ exprs ~ "else" ~ exprs ^^ { case _~c~_~t~_~e => iff(c, t, e) }
     | "(" ~> numericLit ~ rep1("::" ~> (numericLit|"nil")) <~ ")" ^^ {
       case h~t => t.foldLeft (cell(constant(h.toInt), constant(0))) ( (v, l) => {
         (v, l) match {
@@ -67,7 +62,18 @@ object ExprFParser extends StandardTokenParsers {
       })
     }
 
-  )
+    )
+
+  def exprs: Parser[Expr] =
+    expr ~ rep(expr) ^^ {
+      case e1 ~ List() => e1
+      case e1 ~ e2 => e2.foldLeft (app(e1, e1)) ( (res, nxt) => {
+        (res, nxt) match {
+          case (In(App(`e1`, `e1`)), _) => app(e1, nxt)
+          case (In(App(elem1, elem2)), _) => app(app(elem1, elem2), nxt)
+        }
+      })
+    }
 
   def parseAll[T](p: Parser[T], in: String): ParseResult[T] =
     phrase(p)(new lexical.Scanner(in))
