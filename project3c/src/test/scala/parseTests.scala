@@ -35,4 +35,30 @@ class parseTests extends FunSuite {
     assert (ExprFParser.parseAll(ExprFParser.expr, "x y z").isEmpty)
   }
 
+}//funsuite
+
+object Calculator extends App {
+  println("hello")
+  println("(3+2)")
+  var line: String = _
+
+  def read() = {
+    line = readLine
+    !line.isEmpty
+  }
+
+  while (read()) {
+    val result = ExprFParser.parseAll(ExprFParser.expr, line)
+    if (result.successful) println("= " + result.get)
+  }
+/*
+hello
+3
+= Cofree((),Constant(3))
+x
+= Cofree((),Var(x))
+lambda x.xyz
+= Cofree((),Fun(x,Cofree((),Var(xyz))))
+ */
+
 }

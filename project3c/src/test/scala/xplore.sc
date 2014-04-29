@@ -1,5 +1,6 @@
 import scala.util.parsing.combinator.RegexParsers
 import scala.util.parsing.combinator.syntactical.StandardTokenParsers
+import scalaz.syntax.show._
 
 class Expr
 case class Number(value: String) extends Expr
@@ -26,18 +27,22 @@ class ExprParser extends RegexParsers {
 }
 
 val parser = new ExprParser
-val res = parser.parseAll(parser.expr, "(2+4)*3")
+val res = parser.parseAll(parser.expr, "(2+4)*3")/*[1.8] parsed: Operator(*,Operator(+,Number(2),Nu
 
-/*
-> res: parser.ParseResult[Expr] = [1.8] parsed: Operator(*,Operator(+,Number(2),Nu
-  mber(4)),Number(3))
- */
+  mber(4)),Number(3))*/
+
+
+val res2 = parser.parseAll(parser.expr, "(3+4*5)")
+
+println(res2)/*> [1.8] parsed: Operator(+,Number(3),Operator(*,Number(4),Number(5)))*/
+
+
+
+
 
 println("•")
 println(res.get)
 println("•")
-
-
 
 
 //    case t ~ None => t
