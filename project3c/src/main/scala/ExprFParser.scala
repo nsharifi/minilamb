@@ -35,8 +35,16 @@ object ExprFParser extends StandardTokenParsers {
     | "+" ~> factor ^^ { case e => e }
     | "-" ~> factor ^^ { case e => uminus(e) }
     | ident ^^ { case v => variable(v)}
-    | ("lambda" | "λ") ~> ident ~ "." ~ exprs ^^ { case v~_~e => fun(v, e) }
-    | ("lambda" | "λ") ~> ident ~ "." ~ ident ^^ { case v1~_~v2 => fun(v1, variable(v2)) }
+//    | ("lambda" | "λ") ~> ident ~ "." ~ exprs ^^ { case v~_~e => fun(v, e) }
+//    | ("lambda" | "λ") ~> ident ~ "." ~ ident ^^ { case v1~_~v2 => fun(v1, variable(v2)) }
+    | ("lambda" | "λ") ~> rep1(ident) ~ "." ~ exprs ^^ {
+      case vs ~ _ ~ e => vs.reverse.foldLeft (fun("temp", constant(0))) ((res, nxt) => {
+        (res, nxt) match {
+          case (In(Fun("temp", _)), _) => fun(nxt, e)
+          case (In(Fun(v, e_)), nxt) => fun(nxt, fun(v, e_))
+        }
+      })
+    }
     |  "if" ~ exprs ~ "then" ~ exprs ~ "else" ~ exprs ^^ { case _~c~_~t~_~e => iff(c, t, e) }
     | "(" ~> numericLit ~ rep1("::" ~> (numericLit|"nil")) <~ ")" ^^ {
       case h~t => t.foldLeft (cell(constant(h.toInt), constant(0))) ( (v, l) => {

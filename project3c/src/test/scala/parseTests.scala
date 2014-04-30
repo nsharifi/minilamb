@@ -26,6 +26,10 @@ class parseTests extends FunSuite {
 
     assert (parse("(x y z)").get ==
       app(app(variable("x"), variable("y")), variable("z")))/*pass*/
+
+    // Function currying
+    assert (parse("λ x1 x2 x3 . (x1+x2)").get ==
+      fun("x1", fun("x2", fun("x3", plus(variable("x1"), variable("x2"))))) )
   }
 
   test("parsing incorrect expressions fails") {
