@@ -16,10 +16,10 @@ object Interpreter extends App {
 
   while (read()) {
     val result = ExprFParser.parseAll(ExprFParser.expr, line)
-    if (result.isEmpty) println ("This expression cannot be parsed!")
+    if (result.isEmpty) println ("This line cannot be parsed!")
     if (result.successful) {
-      println("The result is: " + result.get)
-      println("It evaluates to: " + eval(result.get))
+      println("The syntax tree is: " + result.get)
+      println("It evaluates to   : " + eval(result.get))
     }
   }
 }

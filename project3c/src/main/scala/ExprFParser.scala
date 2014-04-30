@@ -1,7 +1,6 @@
 package project3c
 import scala.util.parsing.combinator.syntactical.StandardTokenParsers
 import project3c.structures._
-import scalaz.syntax.show._
 import scalamu.In
 
 import structures.ExprFactory._

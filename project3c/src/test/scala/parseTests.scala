@@ -1,8 +1,4 @@
 package project3c
-import scalaz.syntax.show._
-import scalaz.syntax.equal._
-import scalaz.std.anyVal._
-import scalaz.std.util.parsing.combinator.parser
 
 import org.scalatest.FunSuite
 
@@ -34,6 +30,7 @@ class parseTests extends FunSuite {
 
   test("parsing incorrect expressions fails") {
     assert (parse("x y z").isEmpty)
+    assert (parse("x λ z").isEmpty)
   }
 
 }/*parseTests*/
