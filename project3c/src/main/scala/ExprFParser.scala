@@ -7,8 +7,8 @@ import structures.ExprFactory._
 
 object ExprFParser extends StandardTokenParsers {
 
-  lexical.delimiters += ("(", ")", "+", "-", "*", "/", "%", ".", "::")
-  lexical.reserved += ("if", "then", "else", "λ", "lambda", "nil", ";;")
+  lexical.delimiters += ("(", ")", "+", "-", "*", "/", "%", ".", "::", "=")
+  lexical.reserved += ("if", "then", "else", "λ", "lambda", "nil", "let", "in")
   val vari = "[a-zA-Z_]+[a-zA-Z_0-9]*".r
   val txt = ".*".r
 
@@ -35,13 +35,25 @@ object ExprFParser extends StandardTokenParsers {
     | "+" ~> factor ^^ { case e => e }
     | "-" ~> factor ^^ { case e => uminus(e) }
     | ident ^^ { case v => variable(v)}
-//    | ("lambda" | "λ") ~> ident ~ "." ~ exprs ^^ { case v~_~e => fun(v, e) }
-//    | ("lambda" | "λ") ~> ident ~ "." ~ ident ^^ { case v1~_~v2 => fun(v1, variable(v2)) }
     | ("lambda" | "λ") ~> rep1(ident) ~ "." ~ exprs ^^ {
       case vs ~ _ ~ e => vs.reverse.foldLeft (fun("temp", constant(0))) ((res, nxt) => {
         (res, nxt) match {
           case (In(Fun("temp", _)), _) => fun(nxt, e)
           case (In(Fun(v, e_)), nxt) => fun(nxt, fun(v, e_))
+        }
+      })
+    }
+//    | "let" ~> (ident <~ "=") ~ (expr <~ "in") ~ expr ^^ {
+//    case lhs ~ rhs ~ e => app(fun(lhs, e), rhs)
+    | "let" ~> rep1(ident ~ "=" ~ expr) ~ "in" ~ expr ^^ {
+      case xs ~ _ ~ e => xs.reverse.foldLeft (app(fun("tmp", variable("tmp")), variable("tmp"))) ((res, nxt) => {
+        (res, nxt) match {
+          case (In(App(In(Fun("tmp", In(Var("tmp")))), In(Var("tmp")))), ((vari~_)~valu)) =>
+            app(fun(vari, e), valu)
+//          case (In(App(In(Fun(x0, e_)), e0)), ((vari~_)~valu)) =>
+          case (In(App(l_, r_)), ((vari~_)~valu)) =>
+            app(app(fun(vari, l_), r_), valu)
+//          case (_,_) => app(variable("Unkown"), variable("unknown"))
         }
       })
     }

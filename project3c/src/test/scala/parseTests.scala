@@ -28,8 +28,14 @@ class parseTests extends FunSuite {
       app(app(variable("x"), variable("y")), variable("z")))/*pass*/
 
     // Function currying
-    assert (parse("λ x1 x2 x3 . (x1+x2)").get ==
-      fun("x1", fun("x2", fun("x3", plus(variable("x1"), variable("x2"))))) )
+    assert (parse("λ x1 x2 x3 . (x1+x2)+x3").get ==
+      fun("x1", fun("x2", fun("x3", plus(plus(variable("x1"), variable("x2")), variable("x3"))))) )
+
+    assert (parse("let x=e in f").get == app(fun("x", variable("f")), variable("e")))
+    assert (parse("let x1=e1 x2=e2 in e").get ==
+      app(app(fun("x1", fun("x2", variable("e"))), variable("e2")), variable("e1")) )
+//    assert (parse("let x1=e1 x2=e2 x3=e3 in e").get ==
+//      app(app(app(fun("x1", fun("x2", fun("x3", variable("e")))), variable("e3")), variable("e2")), variable("e1")) )
   }
 
   test("parsing incorrect expressions fails") {
