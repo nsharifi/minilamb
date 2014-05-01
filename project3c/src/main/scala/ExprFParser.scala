@@ -43,32 +43,27 @@ object ExprFParser extends StandardTokenParsers {
         }
       })
     }
-//    | "let" ~> (ident <~ "=") ~ (expr <~ "in") ~ expr ^^ {
-//    case lhs ~ rhs ~ e => app(fun(lhs, e), rhs)
+
     | "let" ~> rep1(ident ~ "=" ~ expr) ~ "in" ~ expr ^^ {
       case xs ~ _ ~ e => xs.reverse.foldLeft (app(fun("tmp", variable("tmp")), variable("tmp"))) ((res, nxt) => {
         (res, nxt) match {
           case (In(App(In(Fun("tmp", In(Var("tmp")))), In(Var("tmp")))), ((vari~_)~valu)) =>
             app(fun(vari, e), valu)
-//          case (In(App(In(Fun(x0, e_)), e0)), ((vari~_)~valu)) =>
           case (In(App(l_, r_)), ((vari~_)~valu)) =>
             app(app(fun(vari, l_), r_), valu)
-//          case (_,_) => app(variable("Unkown"), variable("unknown"))
         }
       })
     }
     |  "if" ~ exprs ~ "then" ~ exprs ~ "else" ~ exprs ^^ { case _~c~_~t~_~e => iff(c, t, e) }
     | "(" ~> numericLit ~ rep1("::" ~> (numericLit|"nil")) <~ ")" ^^ {
-      case h~t => t.foldLeft (cell(constant(h.toInt), constant(0))) ( (v, l) => {
-        (v, l) match {
-          case (In(Cell(head, tail)), "nil") => cell(head, constant(0))
-          case (In(Cell(head, In(Constant(0)))), _) => cell(head, constant(l.toInt))
-          case (In(Cell(head, tail)), _)     => cell(cell(head, tail), constant(l.toInt))
-        }
-
+    case h ~ t => t.foldLeft(cell(constant(h.toInt), constant(0)))((v, l) => {
+      (v, l) match {
+        case (In(Cell(head, tail)), "nil") => cell(head, constant(0))
+        case (In(Cell(head, In(Constant(0)))), _) => cell(head, constant(l.toInt))
+        case (In(Cell(head, tail)), _) => cell(cell(head, tail), constant(l.toInt))
+      }
       })
     }
-
     )
 
   def exprs: Parser[Expr] =
