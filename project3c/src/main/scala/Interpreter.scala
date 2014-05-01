@@ -1,3 +1,4 @@
+import javax.smartcardio.TerminalFactory
 import project3c.ExprFParser
 import project3c.behaviors._
 
@@ -10,7 +11,11 @@ object Interpreter extends App {
   def read() = {
     print("miniLamb> ")
     line = readLine
-    if (line.equals("quit")) { println("Goodbye!"); sys.exit() }
+    if (line.equals("quit")) {
+      println("Goodbye!")
+      TerminalFactory.getDefault()
+      println("Terminal restore!")
+      sys.exit() }//if
     !line.isEmpty
   }
 
