@@ -9,6 +9,7 @@ Comments
 Exponentials
 
 Questions:
+print ast: scalaz.show fix point
 2+3+4 vs (2+3)+4
 left associative cons?
-cons with parans
+cons with parens
